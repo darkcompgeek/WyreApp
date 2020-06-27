@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		969A98F024A7D9B600E5692F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A98EF24A7D9B600E5692F /* ViewRouter.swift */; };
 		96C84B5224A7C2D1003279C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C84B5124A7C2D1003279C1 /* AppDelegate.swift */; };
 		96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C84B5324A7C2D1003279C1 /* SceneDelegate.swift */; };
 		96C84B5624A7C2D1003279C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C84B5524A7C2D1003279C1 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		969A98EF24A7D9B600E5692F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		96C84B4E24A7C2D1003279C1 /* Wyre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wyre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C84B5124A7C2D1003279C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96C84B5324A7C2D1003279C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				96C84B5124A7C2D1003279C1 /* AppDelegate.swift */,
 				96C84B5324A7C2D1003279C1 /* SceneDelegate.swift */,
 				96C84B5524A7C2D1003279C1 /* ContentView.swift */,
+				969A98EF24A7D9B600E5692F /* ViewRouter.swift */,
 				96C84B5724A7C2D3003279C1 /* Assets.xcassets */,
 				96C84B5C24A7C2D3003279C1 /* LaunchScreen.storyboard */,
 				96C84B5F24A7C2D3003279C1 /* Info.plist */,
@@ -173,6 +176,7 @@
 				96C84B5224A7C2D1003279C1 /* AppDelegate.swift in Sources */,
 				96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */,
 				96C84B5624A7C2D1003279C1 /* ContentView.swift in Sources */,
+				969A98F024A7D9B600E5692F /* ViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
