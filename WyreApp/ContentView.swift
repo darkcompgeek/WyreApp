@@ -14,21 +14,15 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selection){
             Text("Home")
-                .font(.title)
+                .font(.custom("Gotham-Bold", size: 50))
                 .tabItem {
-                    VStack {
                         Image("first")
-                        Text("Home")
-                    }
                 }
                 .tag(0)
             Text("Me")
-                .font(.title)
+                .font(.custom("Gotham-Bold", size: 50))
                 .tabItem {
-                    VStack {
                         Image("second")
-                        Text("Me")
-                    }
                 }
                 .tag(1)
         }
