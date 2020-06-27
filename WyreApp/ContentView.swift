@@ -20,24 +20,41 @@ struct ContentView: View {
                 Text("Home").font(.custom("Gotham-Bold", size: 30))
                 Spacer()
                 //THe spacers help center the text vertically
+                
+//this is for the Navigation Bar.
                 HStack{
-                    //this is for the Navigation Bar.
+//Home Tab
+                    
                     Image("Home")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(22)
                         .frame(width: geometry.size.width/3, height: 75)
-                    Rectangle()
-                        .foregroundColor(Color.white)
-                        .frame(width: 75, height: 75)
+//New Wyre Button
+                    Button(action: {
+                        print("Hello button tapped!")
+                    }) {
+                        Image("Wyre Icon")
+                            .padding()
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 100)
+                                    .stroke(Color.blue, lineWidth: 5)
+                                    .background(Color.purple)
+                            )
+                        }
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+//Me Tab
                     Image("Person")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(22)
                         .frame(width: geometry.size.width/3, height: 75)
                       }
-                .frame(width: geometry.size.width, height: geometry.size.height/10)
-                .background(Color.white.shadow(radius: 2))
+                .frame(width: geometry.size.width, height: geometry.size.height/9.6)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15)
+                        .stroke(Color.blue, lineWidth: 1)
+                )
                 }.edgesIgnoringSafeArea(.bottom)
             }
         }
