@@ -12,21 +12,37 @@ struct ContentView: View {
     @State private var selection = 0
  
     var body: some View {
-        TabView(selection: $selection){
-            Text("Home")
-                .font(.custom("Gotham-Bold", size: 50))
-                .tabItem {
-                        Image("first")
-                }
-                .tag(0)
-            Text("Me")
-                .font(.custom("Gotham-Bold", size: 50))
-                .tabItem {
-                        Image("second")
-                }
-                .tag(1)
+        
+        GeometryReader { geometry in
+            VStack {
+                
+            //This is the Content in the main view
+                Spacer()
+                Text("Home").font(.custom("Gotham-Bold", size: 30))
+                Spacer()
+                //THe spacers help center the text vertically
+                HStack{
+                    //this is for the Navigation Bar.
+                    Image("Home")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(22)
+                        .frame(width: geometry.size.width/3, height: 75)
+                    Rectangle()
+                        .foregroundColor(Color.white)
+                        .frame(width: 75, height: 75)
+                    Image("Person")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(22)
+                        .frame(width: geometry.size.width/3, height: 75)
+                      }
+                .frame(width: geometry.size.width, height: geometry.size.height/10)
+                .background(Color.white.shadow(radius: 2))
+                }.edgesIgnoringSafeArea(.bottom)
+            }
         }
-    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
