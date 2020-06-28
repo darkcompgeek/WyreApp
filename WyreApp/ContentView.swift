@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+var wyrePurple: Color = Color(red: 112, green: 100, blue: 255)
+
 struct ContentView: View {
     @State private var selection = 0
     var body: some View {
@@ -17,14 +19,18 @@ struct ContentView: View {
                 
             //This is the Content in the main view
                 Rectangle()
-                    .fill(Color.blue)
+                    .fill(Color.purple)
                     .edgesIgnoringSafeArea(.top)
                     .frame(height: geometry.size.height/3)
-                Spacer()
-                Text("Balance").font(.custom("Gotham-Bold", size: 30))
-                Spacer()
+                    
+                HStack {
+                    List {
+                        Text("Content")
+                            .font(.custom("Gotham-Book", size: 20))
+                    }
+                }
+//                Text("Balance").font(.custom("Gotham-Bold", size: 30))
                 
-                //THe spacers help center the text vertically
                 
 //this is for the Navigation Bar.
                 HStack{
@@ -43,10 +49,10 @@ struct ContentView: View {
                             .padding()
                             .overlay(
                                 RoundedRectangle(cornerRadius: 100)
-                                    .stroke(Color.blue, lineWidth: 5)
+                                    .stroke(Color.purple, lineWidth: 5)
                             )
                         }
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.purple)
 //Me Tab
                     Image("Person")
                         .resizable()
@@ -57,7 +63,7 @@ struct ContentView: View {
                 .frame(width: geometry.size.width, height: geometry.size.height/9.6)
                 .overlay(
                     RoundedRectangle(cornerRadius: 15)
-                        .stroke(Color.blue, lineWidth: 1)
+                        .stroke(Color.purple, lineWidth: 1)
                 )
                 }.edgesIgnoringSafeArea(.bottom)
             }
