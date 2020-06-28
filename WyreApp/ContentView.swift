@@ -15,46 +15,59 @@ struct ContentView: View {
     var body: some View {
         
         GeometryReader { geometry in
-            VStack {
+            VStack(alignment: .leading) {
             //This is the Content in the main view
                 ZStack {
-                Rectangle()
+                    Rectangle()
                     .fill(ColorManager.wyrePurple)
+                    .padding(0.0)
                     .edgesIgnoringSafeArea(.top)
-                    .frame(height: geometry.size.height/3)
-                    VStack{
+                    .frame(height: geometry.size.height/4)
+                    VStack(alignment: .leading){
                         Text("BALANCE")
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.leading)
-                            .font(.custom("Gotham-Bold", size: 20))
-                        
+                            .font(.custom("Gotham-Bold", size: 16))
                         Text("$25.00")
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.leading)
                             .font(.custom("Gotham-Black", size: 50))
-                        HStack{
-                            Button(action: {
-                                print("Hello button tapped!")
-                            }) {
-                                Text("ADD FUNDS")
-                                    .foregroundColor(Color.white)
-                                    .font(.custom("Gotham-Medium", size: 20))
-                                    .padding()
-                            }.background(ColorManager.wyreDarkPurple)
-                            Button(action: {
-                                print("Hello button tapped!")
-                            }) {
-                                Text("MOVE TO BANK")
-                                    .font(.custom("Gotham-Medium", size: 20))
-                                    .foregroundColor(Color.white)
-
-                                    .padding()
-                                }
-                                .background(ColorManager.wyreDarkPurple)
+                        
+                }
+                }
+                HStack{
+                    Button(action: {
+                        print("Hello button tapped!")
+                    }) {
+                        Text("ADD FUNDS")
+                            .foregroundColor(Color.white)
+                            .font(.custom("Gotham-Medium", size: 16))
+                            .padding()
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                    }.background(ColorManager.wyreDarkPurple)
+                    Button(action: {
+                        print("Hello button tapped!")
+                    }) {
+                        Text("MOVE TO BANK")
+                            .font(.custom("Gotham-Medium", size: 16))
+                            .foregroundColor(Color.white)
+                            .padding()
+                            .frame(minWidth: 0, maxWidth: .infinity)
                         }
-                    }
-                    
-            }
+                        .background(ColorManager.wyreDarkPurple)
+                }
+                
+                HStack {
+                    Spacer()
+                    Spacer()
+                    Text("Public")
+                        .font(.custom("Gotham-Bold", size: 16))
+                    Spacer()
+                    Text("Friends")
+                    .font(.custom("Gotham-Bold", size: 16))
+                    Spacer()
+                    Spacer()
+                }.padding()
                 HStack {
                     List {
                         Text("Content")
@@ -65,13 +78,15 @@ struct ContentView: View {
                 
                 
 //this is for the Navigation Bar.
+                ZStack{
+                    RoundedRectangle(cornerRadius: 15)
+                        .fill(Color.white)
+                        .shadow(color: .gray, radius: 20.0, x: 20, y: 10)
                 HStack{
 //Home Tab
                     
                     Image("Home")
-                        .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding(22)
                         .frame(width: geometry.size.width/3, height: 75)
 //New Wyre Button
                     Button(action: {
@@ -84,21 +99,16 @@ struct ContentView: View {
                                 
                             Image("Wyre Icon")
                                 .foregroundColor(Color.white)
-                                
                         }
                         }
 //Me Tab
                     Image("Person")
-                        .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding(22)
                         .frame(width: geometry.size.width/3, height: 75)
                       }
+                }
+
                 .frame(width: geometry.size.width, height: geometry.size.height/9.6)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 15)
-                        .stroke(ColorManager.wyrePurple, lineWidth: 1)
-                )
                 }.edgesIgnoringSafeArea(.bottom)
             }
         }
