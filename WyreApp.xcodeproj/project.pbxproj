@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960C661324A8E5EF00977A93 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960C661224A8E5EF00977A93 /* Colors.xcassets */; };
 		969A98F024A7D9B600E5692F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A98EF24A7D9B600E5692F /* ViewRouter.swift */; };
 		96C84B5224A7C2D1003279C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C84B5124A7C2D1003279C1 /* AppDelegate.swift */; };
 		96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C84B5324A7C2D1003279C1 /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		960C661224A8E5EF00977A93 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		969A98EF24A7D9B600E5692F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		96C84B4E24A7C2D1003279C1 /* Wyre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wyre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C84B5124A7C2D1003279C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				96C84B5C24A7C2D3003279C1 /* LaunchScreen.storyboard */,
 				96C84B5F24A7C2D3003279C1 /* Info.plist */,
 				96C84B5924A7C2D3003279C1 /* Preview Content */,
+				960C661224A8E5EF00977A93 /* Colors.xcassets */,
 			);
 			path = WyreApp;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				96C84B5E24A7C2D3003279C1 /* LaunchScreen.storyboard in Resources */,
 				96C84B8024A7D065003279C1 /* Gotham-Medium.otf in Resources */,
 				96C84B7D24A7D065003279C1 /* Gotham-Black.otf in Resources */,
+				960C661324A8E5EF00977A93 /* Colors.xcassets in Resources */,
 				96C84B5B24A7C2D3003279C1 /* Preview Assets.xcassets in Resources */,
 				96C84B5824A7C2D3003279C1 /* Assets.xcassets in Resources */,
 			);
