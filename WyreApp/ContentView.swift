@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-var wyrePurple: Color = Color(red: 112, green: 100, blue: 255)
 var currentBalance = 25.00
 
 struct ContentView: View {
@@ -20,7 +19,7 @@ struct ContentView: View {
             //This is the Content in the main view
                 ZStack {
                 Rectangle()
-                    .fill(Color.purple)
+                    .fill(ColorManager.wyrePurple)
                     .edgesIgnoringSafeArea(.top)
                     .frame(height: geometry.size.height/3)
                     VStack{
@@ -37,29 +36,21 @@ struct ContentView: View {
                             Button(action: {
                                 print("Hello button tapped!")
                             }) {
-                                Text("Add Funds")
+                                Text("ADD FUNDS")
                                     .foregroundColor(Color.white)
-                                    .padding()
                                     .font(.custom("Gotham-Medium", size: 20))
-                                    .overlay(
-                                        Rectangle()
-                                            .stroke(Color.white, lineWidth: 5)
-                                    )
-                                }
-                            .foregroundColor(.purple)
+                                    .padding()
+                            }.background(ColorManager.wyreDarkPurple)
                             Button(action: {
                                 print("Hello button tapped!")
                             }) {
-                                Text("Move To Bank")
+                                Text("MOVE TO BANK")
                                     .font(.custom("Gotham-Medium", size: 20))
                                     .foregroundColor(Color.white)
+
                                     .padding()
-                                    .overlay(
-                                        Rectangle()
-                                            .stroke(Color.white, lineWidth: 5)
-                                    )
                                 }
-                            .foregroundColor(.purple)
+                                .background(ColorManager.wyreDarkPurple)
                         }
                     }
                     
@@ -86,14 +77,16 @@ struct ContentView: View {
                     Button(action: {
                         print("Hello button tapped!")
                     }) {
-                        Image("Wyre Icon")
-                            .padding()
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 100)
-                                    .stroke(Color.purple, lineWidth: 5)
-                            )
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 100)
+                                .fill(ColorManager.wyrePurple)
+                                .padding(10)
+                                
+                            Image("Wyre Icon")
+                                .foregroundColor(Color.white)
+                                
                         }
-                    .foregroundColor(.purple)
+                        }
 //Me Tab
                     Image("Person")
                         .resizable()
@@ -104,7 +97,7 @@ struct ContentView: View {
                 .frame(width: geometry.size.width, height: geometry.size.height/9.6)
                 .overlay(
                     RoundedRectangle(cornerRadius: 15)
-                        .stroke(Color.purple, lineWidth: 1)
+                        .stroke(ColorManager.wyrePurple, lineWidth: 1)
                 )
                 }.edgesIgnoringSafeArea(.bottom)
             }
