@@ -28,10 +28,12 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.leading)
                             .font(.custom("Gotham-Bold", size: 16))
+                            .lineLimit(1)
                         Text("$25.00")
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.leading)
                             .font(.custom("Gotham-Black", size: 50))
+                            .lineLimit(1)
                         
                 }
                 }
@@ -42,7 +44,7 @@ struct ContentView: View {
                         Text("ADD FUNDS")
                             .foregroundColor(Color.white)
                             .font(.custom("Gotham-Medium", size: 16))
-                            .padding()
+                            .padding(20)
                         .frame(minWidth: 0, maxWidth: .infinity)
                     }.background(ColorManager.wyreDarkPurple)
                     Button(action: {
@@ -51,7 +53,7 @@ struct ContentView: View {
                         Text("MOVE TO BANK")
                             .font(.custom("Gotham-Medium", size: 16))
                             .foregroundColor(Color.white)
-                            .padding()
+                            .padding(20)
                             .frame(minWidth: 0, maxWidth: .infinity)
                         }
                         .background(ColorManager.wyreDarkPurple)
@@ -68,10 +70,25 @@ struct ContentView: View {
                     Spacer()
                     Spacer()
                 }.padding()
-                HStack {
+                HStack(alignment: .center) {
                     List {
-                        Text("Content")
-                            .font(.custom("Gotham-Medium", size: 20))
+                        HStack{
+                            Spacer()
+                            VStack{
+                                Text("Sai paid Vipin")
+                                    .font(.custom("Gotham-Medium", size: 16))
+                                    .multilineTextAlignment(.center)
+                                HStack{
+                                    Circle()
+                                    Circle()
+                                }
+                                Text("Thanks! :)")
+                                    .font(.custom("Gotham-Book", size: 16))
+                                    .multilineTextAlignment(.center)
+                            }
+                            Spacer()
+                        }.frame(height: geometry.size.height/10)
+                        .padding()
                     }
                 }
 //                Text("Balance").font(.custom("Gotham-Bold", size: 30))
@@ -83,6 +100,7 @@ struct ContentView: View {
                         .fill(Color.white)
                         .shadow(color: .gray, radius: 20.0, x: 20, y: 10)
                     VStack{
+                        
                         HStack(spacing: 0.0){
          //Home Tab
                              Image("Home")
