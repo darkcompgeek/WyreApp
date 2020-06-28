@@ -17,26 +17,28 @@ struct ContentView: View {
         GeometryReader { geometry in
             VStack(alignment: .leading, spacing: 0.0) {
             //This is the Content in the main view
-                ZStack {
-                    Rectangle()
-                    .fill(ColorManager.wyrePurple)
-                    .padding(0.0)
-                    .edgesIgnoringSafeArea(.top)
-                    .frame(height: geometry.size.height/4)
-                    VStack(alignment: .leading){
-                        Text("BALANCE")
-                            .foregroundColor(Color.white)
-                            .multilineTextAlignment(.leading)
-                            .font(.custom("Gotham-Bold", size: 16))
-                            .lineLimit(1)
-                        Text("$25.00")
-                            .foregroundColor(Color.white)
-                            .multilineTextAlignment(.leading)
-                            .font(.custom("Gotham-Black", size: 50))
-                            .lineLimit(1)
-                        
-                }
-                }
+                    Rectangle().fill(ColorManager.wyrePurple)
+                        .edgesIgnoringSafeArea(.top)
+                        .frame(height: geometry.size.height/4.5)
+                        .overlay(VStack(alignment: .leading){
+                            Spacer()
+                            Text("BALANCE")
+                                .foregroundColor(Color.white)
+                                .multilineTextAlignment(.leading)
+                                .font(.custom("Gotham-Bold", size: 16))
+                                .lineLimit(1)
+                            HStack {
+                                Text("$25.00")
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.leading)
+                                    .font(.custom("Gotham-Black", size: 50))
+                                    .lineLimit(1)
+                                Spacer()
+                            }
+                            
+                        }.padding(.bottom, 15.0)
+                        .padding(.leading, 25))
+
                 HStack(alignment: .center, spacing: 0.0){
                     Button(action: {
                         print("Hello button tapped!")
@@ -99,13 +101,15 @@ struct ContentView: View {
                     RoundedRectangle(cornerRadius: 15)
                         .fill(Color.white)
                         .shadow(color: .gray, radius: 20.0, x: 20, y: 10)
+                        
                     VStack{
                         
-                        HStack(spacing: 0.0){
+                        HStack(alignment: .center, spacing: 0.0){
+                            Spacer()
          //Home Tab
                              Image("Home")
                                  .aspectRatio(contentMode: .fit)
-                                 .frame(width: geometry.size.width/3, height: 75)
+                                .padding()
          //New Wyre Button
                              Button(action: {
                                  print("Hello button tapped!")
@@ -114,20 +118,24 @@ struct ContentView: View {
                                      RoundedRectangle(cornerRadius: 100)
                                          .fill(ColorManager.wyrePurple)
                                          .padding(10)
+                                        .frame(width: 150, height: 75)
                                          
                                      Image("Wyre Icon")
                                          .foregroundColor(Color.white)
                                  }
-                                 }
+                             }
+                             .padding(.horizontal, 25.0)
          //Me Tab
-                             Image("Person")
-                                 .aspectRatio(contentMode: .fit)
-                                 .frame(width: geometry.size.width/3, height: 75)
-                               }
+                            Image("Person")
+                                        .aspectRatio(contentMode: .fit)
+                                        .padding()
+                            Spacer()
+                        }
                         Spacer()
                     }
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height/9.6)
+                
                 
                 }.edgesIgnoringSafeArea(.bottom)
             }
