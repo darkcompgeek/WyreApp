@@ -16,9 +16,14 @@ struct ContentView: View {
             VStack {
                 
             //This is the Content in the main view
+                Rectangle()
+                    .fill(Color.blue)
+                    .edgesIgnoringSafeArea(.top)
+                    .frame(height: geometry.size.height/3)
                 Spacer()
-                Text("Home").font(.custom("Gotham-Bold", size: 30))
+                Text("Balance").font(.custom("Gotham-Bold", size: 30))
                 Spacer()
+                
                 //THe spacers help center the text vertically
                 
 //this is for the Navigation Bar.
@@ -39,7 +44,6 @@ struct ContentView: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 100)
                                     .stroke(Color.blue, lineWidth: 5)
-                                    .background(Color.purple)
                             )
                         }
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
