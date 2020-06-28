@@ -9,6 +9,7 @@
 import SwiftUI
 
 var wyrePurple: Color = Color(red: 112, green: 100, blue: 255)
+var currentBalance = 25.00
 
 struct ContentView: View {
     @State private var selection = 0
@@ -16,17 +17,57 @@ struct ContentView: View {
         
         GeometryReader { geometry in
             VStack {
-                
             //This is the Content in the main view
+                ZStack {
                 Rectangle()
                     .fill(Color.purple)
                     .edgesIgnoringSafeArea(.top)
                     .frame(height: geometry.size.height/3)
+                    VStack{
+                        Text("BALANCE")
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.leading)
+                            .font(.custom("Gotham-Bold", size: 20))
+                        
+                        Text("$25.00")
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.leading)
+                            .font(.custom("Gotham-Black", size: 50))
+                        HStack{
+                            Button(action: {
+                                print("Hello button tapped!")
+                            }) {
+                                Text("Add Funds")
+                                    .foregroundColor(Color.white)
+                                    .padding()
+                                    .font(.custom("Gotham-Medium", size: 20))
+                                    .overlay(
+                                        Rectangle()
+                                            .stroke(Color.white, lineWidth: 5)
+                                    )
+                                }
+                            .foregroundColor(.purple)
+                            Button(action: {
+                                print("Hello button tapped!")
+                            }) {
+                                Text("Move To Bank")
+                                    .font(.custom("Gotham-Medium", size: 20))
+                                    .foregroundColor(Color.white)
+                                    .padding()
+                                    .overlay(
+                                        Rectangle()
+                                            .stroke(Color.white, lineWidth: 5)
+                                    )
+                                }
+                            .foregroundColor(.purple)
+                        }
+                    }
                     
+            }
                 HStack {
                     List {
                         Text("Content")
-                            .font(.custom("Gotham-Book", size: 20))
+                            .font(.custom("Gotham-Medium", size: 20))
                     }
                 }
 //                Text("Balance").font(.custom("Gotham-Bold", size: 30))
