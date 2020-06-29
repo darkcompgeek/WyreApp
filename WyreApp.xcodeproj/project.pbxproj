@@ -20,6 +20,7 @@
 		96C84B7E24A7D065003279C1 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96C84B7924A7CE4A003279C1 /* Gotham-Bold.otf */; };
 		96C84B7F24A7D065003279C1 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96C84B7824A7CE4A003279C1 /* Gotham-Book.otf */; };
 		96C84B8024A7D065003279C1 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96C84B7A24A7CE4A003279C1 /* Gotham-Medium.otf */; };
+		96E8C34624A9683C000444BA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34524A9683C000444BA /* NavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		96C84B7924A7CE4A003279C1 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Bold.otf"; path = "fonts/Gotham-Bold.otf"; sourceTree = SOURCE_ROOT; };
 		96C84B7A24A7CE4A003279C1 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Medium.otf"; path = "fonts/Gotham-Medium.otf"; sourceTree = SOURCE_ROOT; };
 		96C84B7B24A7CE4A003279C1 /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Black.otf"; path = "fonts/Gotham-Black.otf"; sourceTree = SOURCE_ROOT; };
+		96E8C34524A9683C000444BA /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		96C84B4524A7C2D1003279C1 = {
 			isa = PBXGroup;
 			children = (
+				96E8C34524A9683C000444BA /* NavigationBar.swift */,
 				96C84B5024A7C2D1003279C1 /* WyreApp */,
 				96C84B4F24A7C2D1003279C1 /* Products */,
 			);
@@ -184,6 +187,7 @@
 				960C661524A8ED0200977A93 /* ColorManager.swift in Sources */,
 				96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */,
 				96C84B5624A7C2D1003279C1 /* ContentView.swift in Sources */,
+				96E8C34624A9683C000444BA /* NavigationBar.swift in Sources */,
 				969A98F024A7D9B600E5692F /* ViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
