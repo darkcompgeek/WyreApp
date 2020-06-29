@@ -27,7 +27,7 @@ struct HomePurpleBar: View {
                             VStack(alignment: .leading){
                                 Spacer()
                                 HStack{
-                                    Text("BALANCE")
+                                    Text("WYRE BALANCE")
                                         .foregroundColor(Color.white)
                                         .multilineTextAlignment(.leading)
                                         .font(.custom("Gotham-Bold", size: 16))
