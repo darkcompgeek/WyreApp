@@ -31,6 +31,7 @@
 /* Begin PBXFileReference section */
 		960C661224A8E5EF00977A93 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		960C661424A8ED0200977A93 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		962D6F1024AA73EF00EC2A30 /* Wyre.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wyre.entitlements; sourceTree = "<group>"; };
 		9668C77F24AA66AA009C08B5 /* FeedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPost.swift; sourceTree = "<group>"; };
 		969A98EF24A7D9B600E5692F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		96C84B4E24A7C2D1003279C1 /* Wyre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wyre.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +83,7 @@
 		96C84B5024A7C2D1003279C1 /* WyreApp */ = {
 			isa = PBXGroup;
 			children = (
+				962D6F1024AA73EF00EC2A30 /* Wyre.entitlements */,
 				96E8C34F24A96ECC000444BA /* SwiftUI Compoments */,
 				96C84B7C24A7CE5E003279C1 /* Fonts */,
 				96C84B5124A7C2D1003279C1 /* AppDelegate.swift */,
@@ -351,18 +353,21 @@
 		96C84B6324A7C2D3003279C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon (iOS)";
+				CODE_SIGN_ENTITLEMENTS = WyreApp/Wyre.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WyreApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 8YU52LF34Y;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WyreApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SaiKannekanti.WyreApp;
 				PRODUCT_NAME = Wyre;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -371,18 +376,21 @@
 		96C84B6424A7C2D3003279C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon (iOS)";
+				CODE_SIGN_ENTITLEMENTS = WyreApp/Wyre.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WyreApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 8YU52LF34Y;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WyreApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SaiKannekanti.WyreApp;
 				PRODUCT_NAME = Wyre;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
