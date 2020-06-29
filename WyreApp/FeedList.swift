@@ -15,14 +15,15 @@ struct FeedList: View {
                 HStack{
                     Spacer().frame(width: 50)
                     VStack{
-                        Text("Sai paid Vipin")
+                        Text("You paid Dalia")
                             .font(.custom("Gotham-Medium", size: 16))
                             .multilineTextAlignment(.center)
                         HStack{
-                            Circle().frame(width:50)
-                            Rectangle().frame(height: 2)
+                            Circle().frame(height: 40)
+                            Rectangle()
                                 .foregroundColor(ColorManager.wyrePurple)
-                            Circle().frame(width:50)
+                                .frame(height: 2)
+                            Circle()
 
                         }
                         Text("Thanks! :)")

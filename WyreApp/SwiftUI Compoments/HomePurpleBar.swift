@@ -31,6 +31,7 @@ struct HomePurpleBar: View {
                                         .multilineTextAlignment(.leading)
                                         .font(.custom("Gotham-Bold", size: 16))
                                         .lineLimit(1)
+                                        .padding(.bottom, 5.0)
                                     Spacer()
                                 }
                                 HStack {

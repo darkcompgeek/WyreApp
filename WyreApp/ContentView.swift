@@ -13,16 +13,17 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             VStack(spacing: 0.0){
-            HomePurpleBar().frame(height: 250).edgesIgnoringSafeArea(.top)
-            DarkPurpleRow()
-            Spacer()
+                VStack(spacing: 0.0){
+                    HomePurpleBar().edgesIgnoringSafeArea(.top)
+                    DarkPurpleRow()
+                }.frame(height: 225)
             FeedTabBar()
             FeedList()
         }
             VStack{
             Spacer()
-              NavigationBar()
-            }
+                NavigationBar()
+        }
         }.edgesIgnoringSafeArea(.bottom)
     }
 
