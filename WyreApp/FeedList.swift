@@ -13,22 +13,24 @@ struct PostContent{
     var caption: String
     var time: String
     var likeCount: Int
+    var profileLeft: String
+    var profileRight: String
 }
 
 struct FeedList: View {
     //each feed post that goes in the list
     var postList = [
-        PostContent(title: "You paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
-        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "10m", likeCount: 2),
-        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
-        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
-        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
-        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
-        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
-        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
-        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
-        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
-        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
+        PostContent(title: "You paid Gari", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "sai", profileRight: "002"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
 
     ]
     
@@ -48,13 +50,13 @@ struct FeedList: View {
                             .multilineTextAlignment(.center)
                         
                         HStack{
-                            Image("001").resizable()
+                            Image("\(PostContent.profileLeft)").resizable()
                                 .frame(width: 40, height: 40)
                             .clipShape(Circle())
                             Rectangle()
                                 .foregroundColor(ColorManager.wyrePurple)
                                 .frame(height: 2)
-                            Image("001").resizable()
+                            Image("\(PostContent.profileRight)").resizable()
                                 .frame(width: 40, height: 40)
                             .clipShape(Circle())
                         }
