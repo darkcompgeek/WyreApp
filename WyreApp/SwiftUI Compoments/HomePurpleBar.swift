@@ -18,6 +18,7 @@ struct HomePurpleBar: View {
                                 }) {
                                     Image(systemName: "gear")
                                         .foregroundColor(Color.white)
+                                        .font(.system(size: 25))
                                         .padding(20)
                                 }
             }.background(

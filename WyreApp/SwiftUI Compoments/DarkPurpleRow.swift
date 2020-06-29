@@ -11,31 +11,37 @@ import SwiftUI
 struct DarkPurpleRow: View {
     var body: some View {
                         HStack(alignment: .center, spacing: 0.0){
+                            Spacer()
                                 Button(action: {
                                     print("Hello button tapped!")
                                 }) {
                                     Image(systemName: "dollarsign.circle")
+                                        .font(.system(size: 30))
                                         .foregroundColor(Color.white)
                                     Text("ADD FUNDS")
                                         .foregroundColor(Color.white)
-                                        .font(.custom("Gotham-Medium", size: 16))
+                                        .font(.custom("Gotham-Medium", size: 14))
                                         .frame(maxWidth: .infinity)
                                 }.padding(20)
                                 .background(ColorManager.wyreDarkPurple)
                             
+                            
+                            
                                 Button(action: {
                                     print("Hello button tapped!")
                                 }) {
                                     Image(systemName: "dollarsign.circle")
+                                        .font(.system(size: 30))
                                     .foregroundColor(Color.white)
                                     Text("MOVE TO BANK")
-                                        .font(.custom("Gotham-Medium", size: 16))
+                                        .font(.custom("Gotham-Medium", size: 14))
                                         .foregroundColor(Color.white)
                                         .frame(maxWidth: .infinity)
                                     }.padding(20)          .background(ColorManager.wyreDarkPurple)
-
                             
-                        }
+Spacer()
+                            
+                        }.background(ColorManager.wyreDarkPurple)
     }
 }
 
