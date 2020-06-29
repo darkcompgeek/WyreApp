@@ -13,6 +13,10 @@ struct FeedList: View {
         HStack(alignment: .center) {
             List {
                 HStack{
+                    VStack{
+                        Image(systemName: "globe")
+                        Text("2m").font(.custom("Gotham-Book", size: 16))
+                    }
                     Spacer().frame(width: 50)
                     VStack{
                         Text("You paid Dalia")
@@ -31,6 +35,10 @@ struct FeedList: View {
                             .multilineTextAlignment(.center)
                     }
                     Spacer().frame(width: 50)
+                    HStack{
+                        Image(systemName: "heart")
+                        Text("1").font(.custom("Gotham-Book", size: 16))
+                    }
                 }
                 .padding()
             }

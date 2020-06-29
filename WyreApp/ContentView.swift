@@ -14,9 +14,11 @@ struct ContentView: View {
         ZStack{
             VStack(spacing: 0.0){
                 VStack(spacing: 0.0){
-                    HomePurpleBar().edgesIgnoringSafeArea(.top)
+                    Rectangle().foregroundColor(ColorManager.wyrePurple).edgesIgnoringSafeArea(.top)
+                        
+                    HomePurpleBar()
                     DarkPurpleRow()
-                }.frame(height: 225)
+                }.frame(height: 215)
             FeedTabBar()
             FeedList()
         }
