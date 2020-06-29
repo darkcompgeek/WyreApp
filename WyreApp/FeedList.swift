@@ -8,10 +8,28 @@
 
 import SwiftUI
 
+struct PostContent{
+    let title: String
+    let caption: String
+}
+
 struct FeedList: View {
+    
+    var postList = [
+        PostContent(title: "Sai paid Dalia", caption: "amazing"),
+      PostContent(title: "Sai paid Dalia", caption: "amazing"),
+      PostContent(title: "Sai paid Dalia", caption: "amazing"),
+      PostContent(title: "Sai paid Dalia", caption: "amazing"),
+      PostContent(title: "Sai paid Dalia", caption: "amazing"),
+      PostContent(title: "Sai paid Dalia", caption: "amazing"),
+      PostContent(title: "Sai paid Dalia", caption: "amazing"),
+      PostContent(title: "Sai paid Dalia", caption: "amazing"),
+      PostContent(title: "Sai paid Dalia", caption: "amazing"),
+      PostContent(title: "Sai paid Dalia", caption: "amazing"),
+    ]
+    
     var body: some View {
-        HStack(alignment: .center) {
-            List {
+        List(postList, id: \.title) { PostContent in
                 HStack{
                     VStack{
                         Image(systemName: "globe")
@@ -41,13 +59,11 @@ struct FeedList: View {
                     }
                 }
                 .padding()
-            }
-        }
-    }
-}
+        }    }
 
 struct FeedList_Previews: PreviewProvider {
     static var previews: some View {
         FeedList()
     }
+}
 }

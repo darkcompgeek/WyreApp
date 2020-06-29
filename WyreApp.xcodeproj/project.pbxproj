@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		960C661324A8E5EF00977A93 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960C661224A8E5EF00977A93 /* Colors.xcassets */; };
 		960C661524A8ED0200977A93 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C661424A8ED0200977A93 /* ColorManager.swift */; };
+		9668C78024AA66AA009C08B5 /* FeedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668C77F24AA66AA009C08B5 /* FeedPost.swift */; };
 		969A98F024A7D9B600E5692F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A98EF24A7D9B600E5692F /* ViewRouter.swift */; };
 		96C84B5224A7C2D1003279C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C84B5124A7C2D1003279C1 /* AppDelegate.swift */; };
 		96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C84B5324A7C2D1003279C1 /* SceneDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		960C661224A8E5EF00977A93 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		960C661424A8ED0200977A93 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		9668C77F24AA66AA009C08B5 /* FeedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPost.swift; sourceTree = "<group>"; };
 		969A98EF24A7D9B600E5692F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		96C84B4E24A7C2D1003279C1 /* Wyre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wyre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C84B5124A7C2D1003279C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		96E8C34F24A96ECC000444BA /* SwiftUI Compoments */ = {
 			isa = PBXGroup;
 			children = (
+				9668C77F24AA66AA009C08B5 /* FeedPost.swift */,
 				96E8C35024A96FF9000444BA /* DarkPurpleRow.swift */,
 				96E8C34D24A96E52000444BA /* FeedTabBar.swift */,
 				96E8C34B24A96E0E000444BA /* FeedList.swift */,
@@ -208,6 +211,7 @@
 				96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */,
 				96C84B5624A7C2D1003279C1 /* ContentView.swift in Sources */,
 				96E8C34C24A96E0E000444BA /* FeedList.swift in Sources */,
+				9668C78024AA66AA009C08B5 /* FeedPost.swift in Sources */,
 				96E8C34E24A96E53000444BA /* FeedTabBar.swift in Sources */,
 				96E8C34A24A96D2B000444BA /* HomePurpleBar.swift in Sources */,
 				96E8C34624A9683C000444BA /* NavigationBar.swift in Sources */,

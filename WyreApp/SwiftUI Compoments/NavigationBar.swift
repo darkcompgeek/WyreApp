@@ -46,7 +46,7 @@ struct NavigationBar: View {
                         Spacer()
                    }.overlay(
                        RoundedRectangle(cornerRadius: 15)
-                           .stroke(Color.gray, lineWidth: 1)
+                        .stroke(Color.gray, lineWidth: 0.5)
                    )
                }.frame(height: 90)
     }
