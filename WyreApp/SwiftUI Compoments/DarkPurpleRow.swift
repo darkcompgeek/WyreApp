@@ -11,26 +11,29 @@ import SwiftUI
 struct DarkPurpleRow: View {
     var body: some View {
                         HStack(alignment: .center, spacing: 0.0){
-                            Button(action: {
-                                print("Hello button tapped!")
-                            }) {
-                                Text("ADD FUNDS")
-                                    .foregroundColor(Color.white)
-                                    .font(.custom("Gotham-Medium", size: 16))
-                                    .padding(20)
-                                    .frame(maxWidth: .infinity)
-                            }.background(ColorManager.wyreDarkPurple)
-                            
-                            Button(action: {
-                                print("Hello button tapped!")
-                            }) {
-                                Text("MOVE TO BANK")
-                                    .font(.custom("Gotham-Medium", size: 16))
-                                    .foregroundColor(Color.white)
-                                    .padding(20)
-                                    .frame(maxWidth: .infinity)
-                                }
+                                Button(action: {
+                                    print("Hello button tapped!")
+                                }) {
+                                    Image(systemName: "dollarsign.circle")
+                                        .foregroundColor(Color.white)
+                                    Text("ADD FUNDS")
+                                        .foregroundColor(Color.white)
+                                        .font(.custom("Gotham-Medium", size: 16))
+                                        .frame(maxWidth: .infinity)
+                                }.padding(20)
                                 .background(ColorManager.wyreDarkPurple)
+                            
+                                Button(action: {
+                                    print("Hello button tapped!")
+                                }) {
+                                    Image(systemName: "dollarsign.circle")
+                                    .foregroundColor(Color.white)
+                                    Text("MOVE TO BANK")
+                                        .font(.custom("Gotham-Medium", size: 16))
+                                        .foregroundColor(Color.white)
+                                        .frame(maxWidth: .infinity)
+                                    }.padding(20)          .background(ColorManager.wyreDarkPurple)
+
                             
                         }
     }

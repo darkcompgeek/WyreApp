@@ -48,7 +48,7 @@ struct NavigationBar: View {
                        RoundedRectangle(cornerRadius: 15)
                            .stroke(Color.gray, lineWidth: 1)
                    )
-               }.frame(height: 100)
+               }.frame(height: 85)
     }
 }
 
