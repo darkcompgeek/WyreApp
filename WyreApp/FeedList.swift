@@ -69,11 +69,7 @@ struct FeedList: View {
                     Spacer().frame(width: 50)
                     
                     HStack{
-                        Button(action: {
-                            print("Hello button tapped!")
-                        }) {
                             Image(systemName: "heart")
-                        }
                         Text("\(PostContent.likeCount)").font(.custom("Gotham-Book", size: 16))
                     }
                     
