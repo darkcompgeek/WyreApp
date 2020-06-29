@@ -36,20 +36,20 @@ struct FeedList: View {
     
     var body: some View {
         List(postList, id: \.title) { PostContent in
-                HStack{
-                    VStack{
+            HStack(alignment: .center){
+                VStack(alignment: .center){
                         Image(systemName: "globe")
                         Text("\(PostContent.time)").font(.custom("Gotham-Book", size: 16))
                     }
                     
                     Spacer().frame(width: 50)
                     
-                    VStack{
+                VStack(alignment: .center){
                         Text("\(PostContent.title)")
                             .font(.custom("Gotham-Medium", size: 16))
                             .multilineTextAlignment(.center)
                         
-                        HStack{
+                    HStack(alignment: .center){
                             Image("\(PostContent.profileLeft)").resizable()
                                 .frame(width: 40, height: 40)
                             .clipShape(Circle())
@@ -69,7 +69,11 @@ struct FeedList: View {
                     Spacer().frame(width: 50)
                     
                     HStack{
-                        Image(systemName: "heart")
+                        Button(action: {
+                            print("Hello button tapped!")
+                        }) {
+                            Image(systemName: "heart")
+                        }
                         Text("\(PostContent.likeCount)").font(.custom("Gotham-Book", size: 16))
                     }
                     
