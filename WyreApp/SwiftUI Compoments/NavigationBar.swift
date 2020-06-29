@@ -41,11 +41,11 @@ struct NavigationBar: View {
                            Image("Person")
                                        .aspectRatio(contentMode: .fit)
                                        .padding()
-                           Spacer()
+                        Spacer()
                        }
-
+                        Spacer()
                    }
-               }
+               }.frame(height: 100)
     }
 }
 
