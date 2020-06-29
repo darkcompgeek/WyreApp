@@ -24,6 +24,7 @@
 		96E8C34A24A96D2B000444BA /* HomePurpleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34924A96D2B000444BA /* HomePurpleBar.swift */; };
 		96E8C34C24A96E0E000444BA /* FeedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34B24A96E0E000444BA /* FeedList.swift */; };
 		96E8C34E24A96E53000444BA /* FeedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34D24A96E52000444BA /* FeedTabBar.swift */; };
+		96E8C35124A96FF9000444BA /* DarkPurpleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C35024A96FF9000444BA /* DarkPurpleRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		96E8C34924A96D2B000444BA /* HomePurpleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePurpleBar.swift; sourceTree = "<group>"; };
 		96E8C34B24A96E0E000444BA /* FeedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedList.swift; path = ../FeedList.swift; sourceTree = "<group>"; };
 		96E8C34D24A96E52000444BA /* FeedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTabBar.swift; sourceTree = "<group>"; };
+		96E8C35024A96FF9000444BA /* DarkPurpleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkPurpleRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		96E8C34F24A96ECC000444BA /* SwiftUI Compoments */ = {
 			isa = PBXGroup;
 			children = (
+				96E8C35024A96FF9000444BA /* DarkPurpleRow.swift */,
 				96E8C34D24A96E52000444BA /* FeedTabBar.swift */,
 				96E8C34B24A96E0E000444BA /* FeedList.swift */,
 				96E8C34924A96D2B000444BA /* HomePurpleBar.swift */,
@@ -208,6 +211,7 @@
 				96E8C34E24A96E53000444BA /* FeedTabBar.swift in Sources */,
 				96E8C34A24A96D2B000444BA /* HomePurpleBar.swift in Sources */,
 				96E8C34624A9683C000444BA /* NavigationBar.swift in Sources */,
+				96E8C35124A96FF9000444BA /* DarkPurpleRow.swift in Sources */,
 				969A98F024A7D9B600E5692F /* ViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

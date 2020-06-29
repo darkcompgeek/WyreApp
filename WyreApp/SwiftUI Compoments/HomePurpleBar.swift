@@ -45,26 +45,6 @@ struct HomePurpleBar: View {
                                 .padding(.bottom, 15.0)
                             .padding(.leading, 25)
                                 .background(ColorManager.wyrePurple)
-            //ADD FUNDS AND MOVE TO BANK BUTTON ROW
-                            HStack(alignment: .center, spacing: 0.0){
-                                Button(action: {
-                                    print("Hello button tapped!")
-                                }) {
-                                    Text("ADD FUNDS")
-                                        .foregroundColor(Color.white)
-                                        .font(.custom("Gotham-Medium", size: 16))
-                                        .padding(20)
-                                }.background(ColorManager.wyreDarkPurple)
-                                Button(action: {
-                                    print("Hello button tapped!")
-                                }) {
-                                    Text("MOVE TO BANK")
-                                        .font(.custom("Gotham-Medium", size: 16))
-                                        .foregroundColor(Color.white)
-                                        .padding(20)
-                                    }
-                                    .background(ColorManager.wyreDarkPurple)
-                            }
         }
     }
 }
