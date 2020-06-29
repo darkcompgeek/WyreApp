@@ -16,9 +16,8 @@ struct HomePurpleBar: View {
                                 Button(action: {
                                     print("Hello button tapped!")
                                 }) {
-                                    Image(systemName: "gear")
+                                    Image("settings")
                                         .foregroundColor(Color.white)
-                                        .font(.system(size: 25))
                                         .padding(20)
                                 }
             }.background(

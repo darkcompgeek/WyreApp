@@ -19,7 +19,7 @@ struct NavigationBar: View {
                        HStack(alignment: .center, spacing: 0.0){
                            Spacer()
         //Home Tab
-                            Image("Home")
+                            Image("homeFilled")
                                 .aspectRatio(contentMode: .fit)
                                .padding()
         //New Wyre Button
@@ -38,7 +38,7 @@ struct NavigationBar: View {
                             }
                             .padding(.horizontal, 25.0)
         //Me Tab
-                           Image("Person")
+                           Image("person")
                                        .aspectRatio(contentMode: .fit)
                                        .padding()
                         Spacer()

@@ -9,23 +9,28 @@
 import SwiftUI
 
 struct PostContent{
-    let title: String
-    let caption: String
+    var title: String
+    var caption: String
+    var time: String
+    var likeCount: Int
+
 }
 
 struct FeedList: View {
-    
+    //each feed post that goes in the list
     var postList = [
-        PostContent(title: "Sai paid Dalia", caption: "amazing"),
-      PostContent(title: "Sai paid Dalia", caption: "amazing"),
-      PostContent(title: "Sai paid Dalia", caption: "amazing"),
-      PostContent(title: "Sai paid Dalia", caption: "amazing"),
-      PostContent(title: "Sai paid Dalia", caption: "amazing"),
-      PostContent(title: "Sai paid Dalia", caption: "amazing"),
-      PostContent(title: "Sai paid Dalia", caption: "amazing"),
-      PostContent(title: "Sai paid Dalia", caption: "amazing"),
-      PostContent(title: "Sai paid Dalia", caption: "amazing"),
-      PostContent(title: "Sai paid Dalia", caption: "amazing"),
+//        PostContent(title: "You paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
+        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "10m", likeCount: 2),
+        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
+        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
+        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
+        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
+        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
+        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
+        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
+        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
+        PostContent(title: "Sai paid Dalia", caption: "amazing", time: "2m", likeCount: 1),
+
     ]
     
     var body: some View {
@@ -33,11 +38,11 @@ struct FeedList: View {
                 HStack{
                     VStack{
                         Image(systemName: "globe")
-                        Text("2m").font(.custom("Gotham-Book", size: 16))
+                        Text("\(PostContent.time)").font(.custom("Gotham-Book", size: 16))
                     }
                     Spacer().frame(width: 50)
                     VStack{
-                        Text("You paid Dalia")
+                        Text("\(PostContent.title)")
                             .font(.custom("Gotham-Medium", size: 16))
                             .multilineTextAlignment(.center)
                         HStack{
@@ -48,14 +53,14 @@ struct FeedList: View {
                             Circle()
 
                         }
-                        Text("Thanks! :)")
+                        Text("\(PostContent.caption)")
                             .font(.custom("Gotham-Book", size: 16))
                             .multilineTextAlignment(.center)
                     }
                     Spacer().frame(width: 50)
                     HStack{
                         Image(systemName: "heart")
-                        Text("1").font(.custom("Gotham-Book", size: 16))
+                        Text("\(PostContent.likeCount)").font(.custom("Gotham-Book", size: 16))
                     }
                 }
                 .padding()

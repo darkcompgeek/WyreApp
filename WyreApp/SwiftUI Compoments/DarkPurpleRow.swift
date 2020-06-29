@@ -15,14 +15,13 @@ struct DarkPurpleRow: View {
                                 Button(action: {
                                     print("Hello button tapped!")
                                 }) {
-                                    Image(systemName: "dollarsign.circle")
-                                        .font(.system(size: 30))
+                                    Image("coin")
                                         .foregroundColor(Color.white)
                                     Text("ADD FUNDS")
                                         .foregroundColor(Color.white)
                                         .font(.custom("Gotham-Medium", size: 14))
                                         .frame(maxWidth: .infinity)
-                                }.padding(20)
+                                }.padding(15)
                                 .background(ColorManager.wyreDarkPurple)
                             
                             
@@ -30,14 +29,13 @@ struct DarkPurpleRow: View {
                                 Button(action: {
                                     print("Hello button tapped!")
                                 }) {
-                                    Image(systemName: "dollarsign.circle")
-                                        .font(.system(size: 30))
+                                    Image("bank")
                                     .foregroundColor(Color.white)
                                     Text("MOVE TO BANK")
                                         .font(.custom("Gotham-Medium", size: 14))
                                         .foregroundColor(Color.white)
                                         .frame(maxWidth: .infinity)
-                                    }.padding(20)          .background(ColorManager.wyreDarkPurple)
+                                    }.padding(15)          .background(ColorManager.wyreDarkPurple)
                             
 Spacer()
                             
