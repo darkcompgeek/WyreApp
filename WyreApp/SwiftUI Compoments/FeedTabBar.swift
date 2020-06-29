@@ -8,19 +8,40 @@
 
 import SwiftUI
 
+   
 struct FeedTabBar: View {
+    @State private var pickerSelection = "public"
     var body: some View {
-        HStack {
+        HStack{
             Spacer()
+            Picker("", selection: $pickerSelection) {
+              // 3        // 4
+              Text("Public").tag("public")
+                .font(.custom("Gotham-Bold", size: 16
+                    ))
+              Text("Friends").tag("Friends")
+                .font(.custom("Gotham-Bold", size: 16
+                    ))
+            }.background(Color.white)
+            
+            .pickerStyle(SegmentedPickerStyle())
+            // 6
+            .padding()
             Spacer()
-            Text("Public")
-                .font(.custom("Gotham-Bold", size: 16))
-            Spacer()
-            Text("Friends")
-            .font(.custom("Gotham-Bold", size: 16))
-            Spacer()
-            Spacer()
-        }.padding()
+        }
+
+        
+//        HStack {
+//            Spacer()
+//            Spacer()
+//            Text("Public")
+//                .font(.custom("Gotham-Bold", size: 16))
+//            Spacer()
+//            Text("Friends")
+//            .font(.custom("Gotham-Bold", size: 16))
+//            Spacer()
+//            Spacer()
+//        }.padding()
     }
 }
 
