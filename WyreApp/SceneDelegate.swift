@@ -20,6 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = UIHostingController(rootView: ContentView(viewRouter: ViewRouter()))
             self.window = window
             window.makeKeyAndVisible()
+            //hide the stock MAC title bar
+            #if targetEnvironment(macCatalyst)
+            if let titlebar = windowScene.titlebar {
+                titlebar.titleVisibility = .hidden
+                titlebar.toolbar = nil
+            }
+            #endif
         }
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
