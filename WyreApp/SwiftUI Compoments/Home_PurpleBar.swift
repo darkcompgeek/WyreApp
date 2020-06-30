@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct HomePurpleBar: View {
+struct Home_PurpleBar: View {
     var body: some View {
                         VStack{
             HStack{
@@ -50,8 +50,8 @@ struct HomePurpleBar: View {
     }
 }
 
-struct HomePurpleBar_Previews: PreviewProvider {
+struct Home_PurpleBar_Previews: PreviewProvider {
     static var previews: some View {
-        HomePurpleBar()
+        Home_PurpleBar()
     }
 }

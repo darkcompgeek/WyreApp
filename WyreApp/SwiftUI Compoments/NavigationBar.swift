@@ -22,17 +22,16 @@ struct NavigationBar: View {
         //Home Tab
                         Button(action: {                                self.viewRouter.currentView = "home"}) {
             if viewRouter.currentView == "home"{
-                Image("homeFilled")
-                    .renderingMode(.original)
+                Image("home")
+                    .foregroundColor(Color.black)
                     .aspectRatio(contentMode: .fit)
-                   .padding()
+                   
                 } else if viewRouter.currentView == "settings"{
             Image("home")
              .renderingMode(.original)
              .aspectRatio(contentMode: .fit)
-            .padding()
         }
-                    }
+                    }.padding()
 
         //New Wyre Button
                             Button(action: {
@@ -52,17 +51,14 @@ struct NavigationBar: View {
         //Me Tab
                         Button(action: {                           self.viewRouter.currentView = "settings"}) {
                             if viewRouter.currentView == "settings"{
-                                Image("personFilled")
-                                    .renderingMode(.original)
+                                    Image("person")
+                                    .foregroundColor(Color.black)
                                     .aspectRatio(contentMode: .fit)
-                                   .padding()
                                 } else if viewRouter.currentView == "home"{
-                            Image("person")
-                             .renderingMode(.original)
-                             .aspectRatio(contentMode: .fit)
-                            .padding()
+                                Image("person").renderingMode(.original).aspectRatio(contentMode: .fit)
                         }
-                            }
+
+                            }.padding()
                         Spacer()
                        }
                         Spacer()

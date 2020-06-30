@@ -15,8 +15,8 @@ struct HomeTab: View {
                 VStack(spacing: 0.0){
                     Rectangle().foregroundColor(ColorManager.wyrePurple).edgesIgnoringSafeArea(.top)
                         
-                    HomePurpleBar()
-                    DarkPurpleRow()
+                    Home_PurpleBar()
+                    Home_DarkPurpleRow()
                 }.frame(height: 215)
             FeedTabBar()
             FeedList()

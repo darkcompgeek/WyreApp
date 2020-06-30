@@ -11,8 +11,13 @@ import SwiftUI
 struct MeTab: View {
             @ObservedObject var viewRouter: ViewRouter
     var body: some View {
-        VStack{
-            Rectangle().fill(ColorManager.wyrePurple).edgesIgnoringSafeArea(.top)
+        VStack(spacing: 0.0){
+            VStack(spacing: 0.0){
+                Rectangle().fill(ColorManager.wyrePurple).edgesIgnoringSafeArea(.top)
+                Me_PurpleBar()
+                Me_DarkPurpleRow()
+            }.frame(height: 250)
+
             List{
                 Text("Me Tab")
             }

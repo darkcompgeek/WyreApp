@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct DarkPurpleRow: View {
+struct Home_DarkPurpleRow: View {
     var body: some View {
                         HStack(alignment: .center, spacing: 0.0){
                             Spacer()
@@ -43,8 +43,8 @@ Spacer()
     }
 }
 
-struct DarkPurpleRow_Previews: PreviewProvider {
+struct Home_DarkPurpleRow_Previews: PreviewProvider {
     static var previews: some View {
-        DarkPurpleRow()
+        Home_DarkPurpleRow()
     }
 }
