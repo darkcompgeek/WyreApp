@@ -12,6 +12,7 @@ struct ContentView: View {
     @ObservedObject var viewRouter = ViewRouter()
 //    @State private var selection = 0
     var body: some View {
+        
         Group{
             if UIDevice.current.userInterfaceIdiom == .phone {
                 //iphone ui
@@ -22,6 +23,7 @@ struct ContentView: View {
                         MeTab(viewRouter: viewRouter)
                     }
                         NavigationBar(viewRouter: viewRouter)
+
                 }.edgesIgnoringSafeArea(.bottom)
             } else {
                 //ipad and mac UI

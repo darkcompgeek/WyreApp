@@ -14,7 +14,7 @@ struct MacAppLayout: View {
         NavigationView {
             VStack{
                 Text("Home")
-            }.background(Color.purple)
+            }
             FeedList()
         }
 //        HStack{

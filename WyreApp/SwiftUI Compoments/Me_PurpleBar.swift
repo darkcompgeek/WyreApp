@@ -35,7 +35,7 @@ struct Me_PurpleBar: View {
                                         .foregroundColor(Color.white)
                                     
                                     Text("@darkcompgeek")
-                                        .font(.custom("Gotham-Medium", size: 16))
+                                        .font(.custom("Gotham-Book", size: 16))
                                         .foregroundColor(Color.white)
                                 }
 

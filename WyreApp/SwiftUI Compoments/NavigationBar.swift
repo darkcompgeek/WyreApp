@@ -10,6 +10,7 @@ import SwiftUI
 
 struct NavigationBar: View {
     @ObservedObject var viewRouter: ViewRouter
+    @State private var showingSheet = false
     var body: some View {
         //this is for the Navigation Bar.
                ZStack{
@@ -36,18 +37,23 @@ struct NavigationBar: View {
         //New Wyre Button
                             Button(action: {
                                 print("Hello button tapped!")
+                                self.showingSheet.toggle()
                             }) {
                                 ZStack{
                                     RoundedRectangle(cornerRadius: 100)
                                         .fill(ColorManager.wyrePurple)
                                         .padding(10)
                                        .frame(width: 150, height: 75)
-                                        
+                            
                                     Image("Wyre Icon")
                                         .foregroundColor(Color.white)
                                 }
+                                
                             }
                             .padding(.horizontal, 25.0)
+                            .sheet(isPresented: $showingSheet) {
+                                NewWyreSheet()
+                            }
         //Me Tab
                         Button(action: {                           self.viewRouter.currentView = "settings"}) {
                             if viewRouter.currentView == "settings"{
