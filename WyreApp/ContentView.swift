@@ -12,14 +12,48 @@ struct ContentView: View {
     @ObservedObject var viewRouter = ViewRouter()
 //    @State private var selection = 0
     var body: some View {
-        VStack(spacing: 0.0){
-            if viewRouter.currentView == "home" {
-                HomeTab(viewRouter: viewRouter)
-            } else if viewRouter.currentView == "settings" {
-                MeTab(viewRouter: viewRouter)
+        Group{
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                //iphone ui
+                VStack(spacing: 0.0){
+                    if viewRouter.currentView == "home" {
+                        HomeTab(viewRouter: viewRouter)
+                    } else if viewRouter.currentView == "settings" {
+                        MeTab(viewRouter: viewRouter)
+                    }
+                        NavigationBar(viewRouter: viewRouter)
+                }.edgesIgnoringSafeArea(.bottom)
+            } else {
+                //ipad and mac UI
+                HStack{
+                    VStack(alignment: .leading, spacing: 0.0){
+                        Home_PurpleBar().frame(height:175)
+                        Home_DarkPurpleRow()
+                        Group{
+                            HStack(alignment: .center, spacing: 20.0){
+                            Image("home")
+                             Text("Home")                .font(.custom("Gotham-Medium", size: 16
+                                 ))
+                            }.padding()
+                            HStack(alignment: .center, spacing: 20.0){
+                            Image("person")
+                             Text("Profile")                .font(.custom("Gotham-Medium", size: 16
+                                 ))
+                            }.padding()
+                            Spacer()
+                            HStack(alignment: .center){
+                            Text("My Account").font(.custom("Gotham-Medium", size: 16
+                            ))
+                            }.padding()
+                            
+                        }
+
+                    }.frame(width:375).background(ColorManager.wyreGray)
+                    FeedList()
+                }.edgesIgnoringSafeArea(.top)
             }
-                NavigationBar(viewRouter: viewRouter)
-        }.edgesIgnoringSafeArea(.bottom)
+
+        }
         
 
     }

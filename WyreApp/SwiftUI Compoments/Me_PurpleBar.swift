@@ -28,7 +28,7 @@ struct Me_PurpleBar: View {
                                 Image("sai")
                                 .resizable()
                                 .clipShape(Circle())
-                                .frame(width: 150, height: 150)
+                                .frame(width: 125, height: 125)
                                 VStack(spacing: 5.0){
                                     Text("Sai Kannekanti")
                                         .font(.custom("Gotham-Bold", size: 20))
