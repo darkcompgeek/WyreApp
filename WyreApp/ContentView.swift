@@ -12,7 +12,7 @@ struct ContentView: View {
     @ObservedObject var viewRouter = ViewRouter()
 //    @State private var selection = 0
     var body: some View {
-        VStack{
+        VStack(spacing: 0.0){
             if viewRouter.currentView == "home" {
                 HomeTab(viewRouter: viewRouter)
             } else if viewRouter.currentView == "settings" {

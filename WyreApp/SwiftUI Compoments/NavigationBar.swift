@@ -21,10 +21,17 @@ struct NavigationBar: View {
                            Spacer()
         //Home Tab
                         Button(action: {                                self.viewRouter.currentView = "home"}) {
-        Image("homeFilled")
-            .renderingMode(.original)
-            .aspectRatio(contentMode: .fit)
-           .padding()
+            if viewRouter.currentView == "home"{
+                Image("homeFilled")
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fit)
+                   .padding()
+                } else if viewRouter.currentView == "settings"{
+            Image("home")
+             .renderingMode(.original)
+             .aspectRatio(contentMode: .fit)
+            .padding()
+        }
                     }
 
         //New Wyre Button
@@ -44,11 +51,18 @@ struct NavigationBar: View {
                             .padding(.horizontal, 25.0)
         //Me Tab
                         Button(action: {                           self.viewRouter.currentView = "settings"}) {
-                           Image("person")
-                               .renderingMode(.original)
-                               .aspectRatio(contentMode: .fit)
-                              .padding()
-                           }
+                            if viewRouter.currentView == "settings"{
+                                Image("personFilled")
+                                    .renderingMode(.original)
+                                    .aspectRatio(contentMode: .fit)
+                                   .padding()
+                                } else if viewRouter.currentView == "home"{
+                            Image("person")
+                             .renderingMode(.original)
+                             .aspectRatio(contentMode: .fit)
+                            .padding()
+                        }
+                            }
                         Spacer()
                        }
                         Spacer()
