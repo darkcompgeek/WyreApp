@@ -21,16 +21,16 @@ struct FeedList: View {
     //each feed post that goes in the list
     var postList = [
         PostContent(title: "You paid Gari", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "sai", profileRight: "002"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "001", profileRight: "002"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "003", profileRight: "004"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "005", profileRight: "006"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "007", profileRight: "008"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "009", profileRight: "010"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "011", profileRight: "012"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "013", profileRight: "014"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "015", profileRight: "016"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "017", profileRight: "018"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "019", profileRight: "020"),
+        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "021", profileRight: "022"),
 
     ]
     

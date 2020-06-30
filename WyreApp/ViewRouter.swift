@@ -12,6 +12,12 @@ import Combine
 
 class ViewRouter: ObservableObject {
     //With the @Published property wrapper, we notify all observing views to update themselves whenever the currentView variable changes.
-    @Published var currentView = "home"
+    let objectWillChange = PassthroughSubject<ViewRouter,Never>()
+    @Published var currentView:String = "home" {
+        didSet {
+            objectWillChange.send(self)
+        }
+    }
+    
     
 }

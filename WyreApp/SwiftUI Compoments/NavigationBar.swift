@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct NavigationBar: View {
+    @ObservedObject var viewRouter: ViewRouter
     var body: some View {
         //this is for the Navigation Bar.
                ZStack{
@@ -19,9 +20,13 @@ struct NavigationBar: View {
                        HStack(alignment: .center, spacing: 0.0){
                            Spacer()
         //Home Tab
-                            Image("homeFilled")
-                                .aspectRatio(contentMode: .fit)
-                               .padding()
+                        Button(action: {                                self.viewRouter.currentView = "home"}) {
+        Image("homeFilled")
+            .renderingMode(.original)
+            .aspectRatio(contentMode: .fit)
+           .padding()
+                    }
+
         //New Wyre Button
                             Button(action: {
                                 print("Hello button tapped!")
@@ -38,9 +43,12 @@ struct NavigationBar: View {
                             }
                             .padding(.horizontal, 25.0)
         //Me Tab
+                        Button(action: {                           self.viewRouter.currentView = "settings"}) {
                            Image("person")
-                                       .aspectRatio(contentMode: .fit)
-                                       .padding()
+                               .renderingMode(.original)
+                               .aspectRatio(contentMode: .fit)
+                              .padding()
+                           }
                         Spacer()
                        }
                         Spacer()
@@ -54,6 +62,6 @@ struct NavigationBar: View {
 
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBar()
+        NavigationBar(viewRouter: ViewRouter())
     }
 }

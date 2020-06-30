@@ -9,30 +9,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection = 0
+    @ObservedObject var viewRouter = ViewRouter()
+//    @State private var selection = 0
     var body: some View {
-        ZStack{
-            VStack(spacing: 0.0){
-                VStack(spacing: 0.0){
-                    Rectangle().foregroundColor(ColorManager.wyrePurple).edgesIgnoringSafeArea(.top)
-                        
-                    HomePurpleBar()
-                    DarkPurpleRow()
-                }.frame(height: 215)
-            FeedTabBar()
-            FeedList()
-        }
-            VStack{
-            Spacer()
-                NavigationBar()
-        }
+        VStack{
+            if viewRouter.currentView == "home" {
+                HomeTab(viewRouter: viewRouter)
+            } else if viewRouter.currentView == "settings" {
+                MeTab(viewRouter: viewRouter)
+            }
+                NavigationBar(viewRouter: viewRouter)
         }.edgesIgnoringSafeArea(.bottom)
+
+
     }
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewRouter: ViewRouter())
     }
 }
 }
