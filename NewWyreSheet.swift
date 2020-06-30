@@ -11,21 +11,23 @@ import SwiftUI
 struct NewWyreSheet: View {
     var body: some View {
         VStack(spacing: 0.0){
-            VStack(spacing: 0.0){
-                Rectangle().fill(ColorManager.wyrePurple)
                 HStack{
+                    Button(action: {
+                        print("lol")
+                        }) {
+                            Image(systemName: "xmark").font(.system(size: 25, weight: .semibold))
+                        }
+                    .foregroundColor(Color.white).padding()
                     Spacer()
-                    Text("Pay").padding()
-                    Text("Request").padding()
+                    Text("Pay").foregroundColor(Color.white).font(.custom("Gotham-Bold", size: 20)).padding()
+                    Text("Request").foregroundColor(Color.white).font(.custom("Gotham-Bold", size: 20)).padding()
                     Spacer()
-                }.background(ColorManager.wyrePurple)
-            }.frame(height: 80)
-            
+                }.frame(height: 60).background(ColorManager.wyrePurple)
             List{
                 Text("Username")
             }
             
-        }.edgesIgnoringSafeArea(.top)
+        }
     }
 }
 
