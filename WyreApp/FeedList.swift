@@ -75,7 +75,9 @@ struct FeedList: View {
                     
                 }
                 .padding()
-        }    }
+        }
+        
+    }
 
 struct FeedList_Previews: PreviewProvider {
     static var previews: some View {

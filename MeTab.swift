@@ -17,10 +17,12 @@ struct MeTab: View {
                 Me_PurpleBar()
                 Me_DarkPurpleRow()
             }.frame(height: 300)
-
-            List{
-                Text("Me Tab")
+            HStack{
+                Text("Your Activity").font(.custom("Gotham-Medium", size: 14))
+                    .padding([.top, .leading])
+                Spacer()
             }
+            FeedList()
         }
     }
 }
