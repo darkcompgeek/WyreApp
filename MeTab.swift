@@ -16,7 +16,7 @@ struct MeTab: View {
                 Rectangle().fill(ColorManager.wyrePurple).edgesIgnoringSafeArea(.top)
                 Me_PurpleBar()
                 Me_DarkPurpleRow()
-            }.frame(height: 250)
+            }.frame(height: 300)
 
             List{
                 Text("Me Tab")

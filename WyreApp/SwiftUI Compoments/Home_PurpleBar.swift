@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Home_PurpleBar: View {
     var body: some View {
-                        VStack{
+                                VStack{
             HStack{
                                 Spacer()
                                 Button(action: {

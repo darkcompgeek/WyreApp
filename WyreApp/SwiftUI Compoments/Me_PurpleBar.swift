@@ -10,7 +10,8 @@ import SwiftUI
 
 struct Me_PurpleBar: View {
     var body: some View {
-                                VStack{
+        
+        VStack(spacing: 0.0){
             HStack{
                                 Spacer()
                                 Button(action: {
@@ -23,30 +24,28 @@ struct Me_PurpleBar: View {
             }.background(
                                 ColorManager.wyrePurple
                             )
-                            VStack(alignment: .leading){
-                                Spacer()
-                                HStack{
-                                    Text("WYRE BALANCE")
+                            VStack{
+                                Image("sai")
+                                .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 150, height: 150)
+                                VStack(spacing: 5.0){
+                                    Text("Sai Kannekanti")
+                                        .font(.custom("Gotham-Bold", size: 20))
                                         .foregroundColor(Color.white)
-                                        .multilineTextAlignment(.leading)
-                                        .font(.custom("Gotham-Bold", size: 16))
-                                        .lineLimit(1)
-                                        .padding(.bottom, 5.0)
-                                    Spacer()
-                                }
-                                HStack {
-                                    Text("$25.00")
+                                    
+                                    Text("@darkcompgeek")
+                                        .font(.custom("Gotham-Medium", size: 16))
                                         .foregroundColor(Color.white)
-                                        .multilineTextAlignment(.leading)
-                                        .font(.custom("Gotham-Black", size: 50))
-                                        .lineLimit(1)
-                                    Spacer()
                                 }
-                            }
-                                .padding(.bottom, 15.0)
-                            .padding(.leading, 25)
-                                .background(ColorManager.wyrePurple)
-        }
+
+                            }.padding(.top, -40.0)
+            .padding()
+                            
+            }
+        .background(ColorManager.wyrePurple)
+        
+
     }
 }
 
