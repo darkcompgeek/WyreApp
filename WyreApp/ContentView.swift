@@ -25,32 +25,7 @@ struct ContentView: View {
                 }.edgesIgnoringSafeArea(.bottom)
             } else {
                 //ipad and mac UI
-                HStack{
-                    VStack(alignment: .leading, spacing: 0.0){
-                        Home_PurpleBar().frame(height:175)
-                        Home_DarkPurpleRow()
-                        Group{
-                            HStack(alignment: .center, spacing: 20.0){
-                            Image("home")
-                             Text("Home")                .font(.custom("Gotham-Medium", size: 16
-                                 ))
-                            }.padding()
-                            HStack(alignment: .center, spacing: 20.0){
-                            Image("person")
-                             Text("Profile")                .font(.custom("Gotham-Medium", size: 16
-                                 ))
-                            }.padding()
-                            Spacer()
-                            HStack(alignment: .center){
-                            Text("My Account").font(.custom("Gotham-Medium", size: 16
-                            ))
-                            }.padding()
-                            
-                        }
-
-                    }.frame(width:375).background(ColorManager.wyreGray)
-                    FeedList()
-                }.edgesIgnoringSafeArea(.top)
+MacAppLayout()
             }
 
         }
