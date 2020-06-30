@@ -20,10 +20,9 @@ struct ContentView: View {
             }
                 NavigationBar(viewRouter: viewRouter)
         }.edgesIgnoringSafeArea(.bottom)
-
+        
 
     }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

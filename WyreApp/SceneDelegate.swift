@@ -18,8 +18,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: ContentView(viewRouter: ViewRouter()))
-            self.window = window
             window.makeKeyAndVisible()
+            
+//            guard let scene = (scene as? UIWindowScene) else { return }
+//            #if targetEnvironment(macCatalyst)
+//                scene.sizeRestrictions?.minimumSize = CGSize(width: 400, height: 800)
+//                scene.sizeRestrictions?.maximumSize = CGSize(width: 1280, height: 1200)
+//            #endif
+            
             //hide the stock MAC title bar
             #if targetEnvironment(macCatalyst)
             if let titlebar = windowScene.titlebar {
