@@ -24,7 +24,7 @@ struct NewWyre_SuggestionList: View {
                         .resizable()
                             .clipShape(Circle())
                             .frame(width: 40, height: 40)
-                        VStack(alignment: .leading){
+                        VStack(alignment: .leading, spacing: 3.5){
                             Text(suggestion.fullName)
                             .font(.custom("Gotham-Medium", size: 16))
                             Text(suggestion.userName)
