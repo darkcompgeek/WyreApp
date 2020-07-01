@@ -10,43 +10,90 @@ import SwiftUI
 
 struct Home_PurpleBar: View {
     var body: some View {
-                                VStack{
-            HStack{
-                                Spacer()
-                                Button(action: {
-                                    print("Hello button tapped!")
-                                }) {
-                                    Image("settings")
-                                        .foregroundColor(Color.white)
-                                        .padding(20)
-                                }
-            }.background(
-                                ColorManager.wyrePurple
-                            )
-                            VStack(alignment: .leading){
-                                Spacer()
-                                HStack{
-                                    Text("WYRE BALANCE")
-                                        .foregroundColor(Color.white)
-                                        .multilineTextAlignment(.leading)
-                                        .font(.custom("Gotham-Bold", size: 16))
-                                        .lineLimit(1)
-                                        .padding(.bottom, 5.0)
-                                    Spacer()
-                                }
-                                HStack {
-                                    Text("$25.00")
-                                        .foregroundColor(Color.white)
-                                        .multilineTextAlignment(.leading)
-                                        .font(.custom("Gotham-Black", size: 50))
-                                        .lineLimit(1)
-                                    Spacer()
-                                }
-                            }
-                                .padding(.bottom, 15.0)
-                            .padding(.leading, 25)
-                                .background(ColorManager.wyrePurple)
+        
+        Group{
+            if UIDevice.current.userInterfaceIdiom == .phone{
+                //iphoneUI
+                    VStack{
+                    HStack{
+                                        Spacer()
+                                        Button(action: {
+                                            print("Hello button tapped!")
+                                        }) {
+                                            Image("settings")
+                                            .resizable()
+                        .foregroundColor(Color.white)
+                                                .padding(20)
+                                        }
+                    }.background(
+                                        ColorManager.wyrePurple
+                                    )
+                                            VStack(alignment: .leading, spacing: 0.0){
+                                        Spacer()
+                                        HStack{
+                                            Image("wyreText")
+                                            Text("BALANCE")
+                                                .foregroundColor(Color.white)
+                                                .multilineTextAlignment(.leading)
+                                                .font(.custom("Gotham-Bold", size: 16))
+                                                .lineLimit(1)
+                                                
+                                            Spacer()
+                                        }
+                                        HStack {
+                                            Text("$25.00")
+                                                .foregroundColor(Color.white)
+                                                .multilineTextAlignment(.leading)
+                                                .font(.custom("Gotham-Black", size: 50))
+                                                .lineLimit(1)
+                                            Spacer()
+                                        }
+                                    }
+                                        .padding(.bottom, 15.0)
+                                    .padding(.leading, 25)
+                                        .background(ColorManager.wyrePurple)
+                }
+            } else {
+                                    VStack{
+                    HStack{
+                                        Spacer()
+                                        Button(action: {
+                                            print("Hello button tapped!")
+                                        }) {
+                                            Image("settings")
+                                                .frame(width: 16, height: 16)
+                                                .foregroundColor(Color.white)
+                                                .padding(20.0)
+                                        }
+                    }.background(
+                                        ColorManager.wyrePurple
+                                    )
+                                            VStack(alignment: .leading, spacing: 0.0){
+                                        Spacer()
+                                        HStack{
+                                            Text("BALANCE")
+                                                .foregroundColor(Color.white)
+                                                .multilineTextAlignment(.leading)
+                                                .font(.custom("Gotham-Bold", size: 12))
+                                                .lineLimit(1)
+                                                
+                                            Spacer()
+                                        }
+                                        HStack {
+                                            Text("$25.00")
+                                                .foregroundColor(Color.white)
+                                                .multilineTextAlignment(.leading)
+                                                .font(.custom("Gotham-Black", size: 30))
+                                                .lineLimit(1)
+                                            Spacer()
+                                        }
+                                    }
+                                        .padding(.bottom, 15.0)
+                                    .padding(.leading, 25)
+                                        .background(ColorManager.wyrePurple)
+                                    }.frame(height: 175)            }
         }
+
     }
 }
 

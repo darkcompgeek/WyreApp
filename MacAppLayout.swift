@@ -13,10 +13,20 @@ struct MacAppLayout: View {
         
         NavigationView {
             VStack{
-                Text("Home")
+                Home_PurpleBar()
+                List {
+                    NavigationLink("Home", destination: HomeTab(viewRouter: ViewRouter()))
+                    NavigationLink("Me", destination: MeTab(viewRouter: ViewRouter()))
+                    
+                }
+            }.navigationBarTitle(Text("Wyre"), displayMode: .inline)
+            
+                FeedList()
             }
-            FeedList()
+            
         }
+        
+        
 //        HStack{
 //            VStack(alignment: .leading, spacing: 0.0){
 //                Home_PurpleBar().frame(height:175)
@@ -45,7 +55,7 @@ struct MacAppLayout: View {
 //        }.edgesIgnoringSafeArea(.top)
     }
     
-}
+
 #if os(macOS)
 extension View {
     func navigationBarTitle(_ title: String) -> some View {
