@@ -21,7 +21,6 @@ struct Home_PurpleBar: View {
                                             print("Hello button tapped!")
                                         }) {
                                             Image("settings")
-                                            .resizable()
                         .foregroundColor(Color.white)
                                                 .padding(20)
                                         }
@@ -35,7 +34,7 @@ struct Home_PurpleBar: View {
                                             Text("BALANCE")
                                                 .foregroundColor(Color.white)
                                                 .multilineTextAlignment(.leading)
-                                                .font(.custom("Gotham-Bold", size: 16))
+                                                .font(.custom("Gotham-Bold", size: 14))
                                                 .lineLimit(1)
                                                 
                                             Spacer()
@@ -44,7 +43,7 @@ struct Home_PurpleBar: View {
                                             Text("$25.00")
                                                 .foregroundColor(Color.white)
                                                 .multilineTextAlignment(.leading)
-                                                .font(.custom("Gotham-Black", size: 50))
+                                                .font(.custom("Gotham-Black", size: 45))
                                                 .lineLimit(1)
                                             Spacer()
                                         }

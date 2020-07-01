@@ -38,15 +38,15 @@ struct FeedList: View {
         List(postList, id: \.title) { PostContent in
             HStack(alignment: .center){
                 VStack(alignment: .center){
-                        Image(systemName: "globe")
-                        Text("\(PostContent.time)").font(.custom("Gotham-Book", size: 16))
+                        Image(systemName: "globe").font(.system(size: 16.0))
+                        Text("\(PostContent.time)").font(.custom("Gotham-Book", size: 14))
                     }
                     
                     Spacer().frame(width: 50)
                     
                 VStack(alignment: .center){
                         Text("\(PostContent.title)")
-                            .font(.custom("Gotham-Medium", size: 16))
+                            .font(.custom("Gotham-Medium", size: 14))
                             .multilineTextAlignment(.center)
                         
                     HStack(alignment: .center){
@@ -62,15 +62,15 @@ struct FeedList: View {
                         }
                         
                         Text("\(PostContent.caption)")
-                            .font(.custom("Gotham-Book", size: 16))
+                            .font(.custom("Gotham-Book", size: 14))
                             .multilineTextAlignment(.center)
                     }
                     
                     Spacer().frame(width: 50)
                     
-                    HStack{
-                            Image(systemName: "heart")
-                        Text("\(PostContent.likeCount)").font(.custom("Gotham-Book", size: 16))
+                HStack(alignment: .center){
+                            Image(systemName: "heart").font(.system(size: 16.0))
+                        Text("\(PostContent.likeCount)").font(.custom("Gotham-Book", size: 14))
                     }
                     
                 }
