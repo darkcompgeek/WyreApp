@@ -4,7 +4,7 @@
 //
 //  Created by Sai Kannekanti on 6/27/20.
 //  Copyright © 2020 Sai Kannekanti. All rights reserved.
-//
+//
 
 import UIKit
 
@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
