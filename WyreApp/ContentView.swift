@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewRouter = ViewRouter()
-//    @State private var selection = 0
     var body: some View {
         
         Group{
