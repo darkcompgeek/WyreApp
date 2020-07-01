@@ -16,7 +16,7 @@ struct MeTab: View {
                 Rectangle().fill(ColorManager.wyrePurple).edgesIgnoringSafeArea(.top)
                 Me_PurpleBar()
                 Me_DarkPurpleRow()
-            }.frame(height: 275)
+            }.frame(height: 248)
             HStack{
                 Text("Your Activity").font(.custom("Gotham-Medium", size: 14))
                     .padding([.top, .leading])

@@ -74,7 +74,7 @@ struct FeedList: View {
                     }
                     
                 }
-                .padding()
+                .padding(15)
         }
         
     }

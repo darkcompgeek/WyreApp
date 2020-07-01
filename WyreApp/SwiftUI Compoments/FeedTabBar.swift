@@ -26,7 +26,7 @@ struct FeedTabBar: View {
             
             .pickerStyle(SegmentedPickerStyle())
             // 6
-            .padding()
+                .padding(10)
             Spacer()
         }
 

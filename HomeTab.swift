@@ -20,7 +20,7 @@ struct HomeTab: View {
                                 
                             Home_PurpleBar()
                             Home_DarkPurpleRow()
-                        }.frame(height: 215)
+                        }.frame(height: 200)
                     FeedTabBar()
                     FeedList()
                 }
