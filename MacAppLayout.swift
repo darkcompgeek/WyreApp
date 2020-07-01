@@ -12,16 +12,24 @@ struct MacAppLayout: View {
     var body: some View {
         
         NavigationView {
-            VStack{
-                Home_PurpleBar()
+            VStack(spacing: 0.0){
                 List {
-                    NavigationLink("Home", destination: HomeTab(viewRouter: ViewRouter()))
-                    NavigationLink("Me", destination: MeTab(viewRouter: ViewRouter()))
-                    
+                    NavigationLink(destination: HomeTab(viewRouter: ViewRouter())) {
+                        HStack{
+                            Image("home")
+                            Text("Home").font(.custom("Gotham-Medium", size: 20))
+                        }
+                    }
+                    NavigationLink(destination:
+                    MeTab(viewRouter: ViewRouter())) {
+                        HStack{
+                            Image("person")
+                            Text("My Profile").font(.custom("Gotham-Medium", size: 20))
+                        }
+                    }
                 }
-            }.navigationBarTitle(Text("Wyre"), displayMode: .inline)
-            
-                FeedList()
+            }
+            .navigationBarTitle(Text("$25.00"))
             }
             
         }

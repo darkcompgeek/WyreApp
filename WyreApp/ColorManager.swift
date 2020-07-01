@@ -14,6 +14,13 @@ struct ColorManager {
     static let wyreDarkPurple = Color("wyreDarkPurple")
     static let wyreGreen = Color("wyreGreen")
     static let wyreGray = Color("wyreGray")
+    
     //... add the rest of your colors here
 }
  
+struct UIColorManager{
+    static let wyrePurple = UIColor(named: "wyrePurple")
+    static let wyreDarkPurple = UIColor(named: "wyreDarkPurple")
+    static let wyreGreen = UIColor(named: "wyreGreen")
+    static let wyreGray = UIColor(named: "wyreGray")
+}

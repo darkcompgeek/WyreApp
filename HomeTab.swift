@@ -11,16 +11,27 @@ import SwiftUI
 struct HomeTab: View {
         @ObservedObject var viewRouter: ViewRouter
     var body: some View {
-            VStack(spacing: 0.0){
-                VStack(spacing: 0.0){
-                    Rectangle().foregroundColor(ColorManager.wyrePurple).edgesIgnoringSafeArea(.top)
-                        
-                    Home_PurpleBar()
-                    Home_DarkPurpleRow()
-                }.frame(height: 215)
-            FeedTabBar()
-            FeedList()
+        Group{
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                //iphone UI
+                    VStack(spacing: 0.0){
+                        VStack(spacing: 0.0){
+                            Rectangle().foregroundColor(ColorManager.wyrePurple).edgesIgnoringSafeArea(.top)
+                                
+                            Home_PurpleBar()
+                            Home_DarkPurpleRow()
+                        }.frame(height: 215)
+                    FeedTabBar()
+                    FeedList()
+                }
+            } else {
+                    VStack(spacing: 0.0){
+                    FeedTabBar()
+                    FeedList()
+                }
+            }
         }
+
     }
 }
 

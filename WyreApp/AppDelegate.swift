@@ -14,6 +14,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        //style navigation bar for mac
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColorManager.wyrePurple
+        let attrs: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white,
+            .font: UIFont(name: "Gotham-Black", size: 30) as Any
+        ]
+
+        appearance.largeTitleTextAttributes = attrs
+
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
+        
         return true
     }
 
