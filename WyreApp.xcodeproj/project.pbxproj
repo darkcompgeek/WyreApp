@@ -13,6 +13,7 @@
 		964C14E024AD1F8900FC770E /* NewWyre_Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14DF24AD1F8900FC770E /* NewWyre_Header.swift */; };
 		964C14E224AD1FE500FC770E /* NewWyre_UsernameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14E124AD1FE500FC770E /* NewWyre_UsernameField.swift */; };
 		964C14E424AD205900FC770E /* NewWyre_SuggestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14E324AD205900FC770E /* NewWyre_SuggestionList.swift */; };
+		964C14E624AD214000FC770E /* suggestionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 964C14E524AD214000FC770E /* suggestionData.json */; };
 		964F575724ABD0F00097CE25 /* NewWyreSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F575624ABD0F00097CE25 /* NewWyreSheet.swift */; };
 		966A203624AB90690074256A /* Me_DarkPurpleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A203524AB90690074256A /* Me_DarkPurpleRow.swift */; };
 		966A203824AB91300074256A /* Me_PurpleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A203724AB91300074256A /* Me_PurpleBar.swift */; };
@@ -44,6 +45,7 @@
 		964C14DF24AD1F8900FC770E /* NewWyre_Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_Header.swift; sourceTree = "<group>"; };
 		964C14E124AD1FE500FC770E /* NewWyre_UsernameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_UsernameField.swift; sourceTree = "<group>"; };
 		964C14E324AD205900FC770E /* NewWyre_SuggestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_SuggestionList.swift; sourceTree = "<group>"; };
+		964C14E524AD214000FC770E /* suggestionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = suggestionData.json; sourceTree = "<group>"; };
 		964F575624ABD0F00097CE25 /* NewWyreSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyreSheet.swift; sourceTree = "<group>"; };
 		966A203524AB90690074256A /* Me_DarkPurpleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Me_DarkPurpleRow.swift; sourceTree = "<group>"; };
 		966A203724AB91300074256A /* Me_PurpleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Me_PurpleBar.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				964C14DF24AD1F8900FC770E /* NewWyre_Header.swift */,
 				964C14E124AD1FE500FC770E /* NewWyre_UsernameField.swift */,
 				964C14E324AD205900FC770E /* NewWyre_SuggestionList.swift */,
+				964C14E524AD214000FC770E /* suggestionData.json */,
 			);
 			path = "SwiftUI Compoments";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				96C84B7F24A7D065003279C1 /* Gotham-Book.otf in Resources */,
 				96C84B7E24A7D065003279C1 /* Gotham-Bold.otf in Resources */,
+				964C14E624AD214000FC770E /* suggestionData.json in Resources */,
 				96C84B5E24A7C2D3003279C1 /* LaunchScreen.storyboard in Resources */,
 				96C84B8024A7D065003279C1 /* Gotham-Medium.otf in Resources */,
 				96C84B7D24A7D065003279C1 /* Gotham-Black.otf in Resources */,
