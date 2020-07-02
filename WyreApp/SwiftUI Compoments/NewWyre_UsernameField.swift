@@ -17,11 +17,10 @@ struct NewWyre_UsernameField: View {
             TextField("Type a name, username, or email address.", text: $username)
                 .padding(.vertical)
                 .font(.custom("Gotham-Book", size: 16))
-                .textFieldStyle(PlainTextFieldStyle()).frame(height: 60)
             Button(action: {print("hello")}){
                 Image(systemName: "qrcode.viewfinder").foregroundColor(Color.gray).font(.system(size: 22, weight: .semibold))
             }.padding()
-            }.border(Color.gray, width: 0.5)
+            }
     }
 }
 

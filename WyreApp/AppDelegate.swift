@@ -15,17 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        //style navigation bar for mac
+        //style navigation bar
+        
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColorManager.wyrePurple
+        
+        
         let attrs: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
+            .backgroundColor: UIColorManager.wyrePurple as Any,
             .font: UIFont(name: "Gotham-Black", size: 30) as Any
         ]
 
-        appearance.largeTitleTextAttributes = attrs
 
+        appearance.largeTitleTextAttributes = attrs
+        
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         
         
