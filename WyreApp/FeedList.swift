@@ -7,70 +7,100 @@
 //
 
 import SwiftUI
+import Foundation
+import Combine
 
-struct PostContent{
-    var title: String
-    var caption: String
-    var time: String
-    var likeCount: Int
-    var profileLeft: String
-    var profileRight: String
+struct Post: Codable, Identifiable{
+    public var id: Int
+    public var title: String
+    public var caption: String
+    public var time: String
+    public var likeCount: Int
+    public var profileLeft: String
+    public var profileRight: String
+    
+    enum CodingKeys: String, CodingKey {
+           case id = "id"
+           case title = "title"
+           case caption = "caption"
+        case time = "time"
+        case likeCount = "likeCount"
+        case profileLeft = "profileLeft"
+        case profileRight = "profileRight"
+        }
+    
 }
 
-struct FeedList: View {
-    //each feed post that goes in the list
-    var postList = [
-        PostContent(title: "You paid Gari", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "sai", profileRight: "002"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "003", profileRight: "004"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "005", profileRight: "006"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "007", profileRight: "008"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "009", profileRight: "010"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "011", profileRight: "012"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "013", profileRight: "014"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "015", profileRight: "016"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "017", profileRight: "018"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "019", profileRight: "020"),
-        PostContent(title: "You paid Dalia", caption: "now this is epic", time: "2m", likeCount: 1, profileLeft: "021", profileRight: "022"),
-
-    ]
+public class PostFetcher: ObservableObject {
+    @Published var posts = [Post]()
     
+    init(){
+        loadData()
+        }
+    
+    func loadData(){
+        let url = URL(string: "https://saikannekanti.com/wyreAppData/feedListHome.json")!
+        
+        URLSession.shared.dataTask(with: url) {(data, response, error) in
+            do {
+                if let d = data {
+                    let decodedLists = try JSONDecoder().decode([Post].self, from: d)
+                    DispatchQueue.main.async {
+                        self.posts = decodedLists
+                    }
+                } else {
+                    print("No Data")
+                }
+            } catch {
+                print("Error")
+            }
+            
+            
+        }.resume()
+    }
+    }
+    
+
+struct FeedList: View {
+@ObservedObject var fetcher = PostFetcher()
     var body: some View {
-        List(postList, id: \.title) { PostContent in
+        List(fetcher.posts){ post in
             HStack(alignment: .center){
                 VStack(alignment: .center){
                         Image(systemName: "globe").font(.system(size: 16.0))
-                        Text("\(PostContent.time)").font(.custom("Gotham-Book", size: 14))
+                    Text(post.time).font(.custom("Gotham-Book", size: 14))
                     }
                     
                     Spacer().frame(width: 50)
                     
                 VStack(alignment: .center){
-                        Text("\(PostContent.title)")
+                    Text(post.title)
                             .font(.custom("Gotham-Medium", size: 14))
                             .multilineTextAlignment(.center)
                         
                     HStack(alignment: .center){
-                            Image("\(PostContent.profileLeft)").resizable()
+                        Image(post.profileLeft).resizable()
                                 .frame(width: 40, height: 40)
                             .clipShape(Circle())
                             Rectangle()
                                 .foregroundColor(ColorManager.wyrePurple)
                                 .frame(height: 2)
-                            Image("\(PostContent.profileRight)").resizable()
+                        Image(post.profileRight).resizable()
                                 .frame(width: 40, height: 40)
                             .clipShape(Circle())
                         }
                         
-                        Text("\(PostContent.caption)")
+                    Text(post.caption)
                             .font(.custom("Gotham-Book", size: 14))
                             .multilineTextAlignment(.center)
-                    }
+                }
+                .lineSpacing(3.0)
                     
                     Spacer().frame(width: 50)
                     
                 HStack(alignment: .center){
                             Image(systemName: "heart").font(.system(size: 16.0))
-                        Text("\(PostContent.likeCount)").font(.custom("Gotham-Book", size: 14))
+                    Text("\(post.likeCount)").font(.custom("Gotham-Book", size: 14))
                     }
                     
                 }

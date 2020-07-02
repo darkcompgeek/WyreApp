@@ -23,19 +23,19 @@ struct NewWyre_SuggestionList: View {
                         Image(suggestion.imageNumber)
                         .resizable()
                             .clipShape(Circle())
-                            .frame(width: 40, height: 40)
+                            .frame(width: 35, height: 35)
                         VStack(alignment: .leading, spacing: 3.5){
                             Text(suggestion.fullName)
-                            .font(.custom("Gotham-Medium", size: 16))
+                            .font(.custom("Gotham-Medium", size: 14))
                             Text(suggestion.userName)
-                            .font(.custom("Gotham-Book", size: 16))
+                            .font(.custom("Gotham-Book", size: 14))
                         }
                         Spacer()
                         Image(systemName: "info.circle")
                             .font(.system(size: 22, weight: .semibold)).foregroundColor(Color.gray)
                     }
                     
-                }.frame(height: 60)
+                }.frame(height: 45)
                 
             }
         }
