@@ -30,7 +30,7 @@ struct SettingsSheet: View {
                             Text("My Profile").font(.custom("Gotham-Medium", size: 20))
                         }
                     }.padding()
-                }
+                }.listStyle(GroupedListStyle())
             }.navigationBarTitle(Text("Settings"))
         }
         
