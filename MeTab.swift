@@ -19,7 +19,7 @@ struct MeTab: View {
             }.frame(height: 248)
             HStack{
                 Text("Your Activity").font(.custom("Gotham-Medium", size: 14))
-                    .padding([.top, .leading])
+                    .padding()
                 Spacer()
             }
             FeedList()

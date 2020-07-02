@@ -15,30 +15,66 @@ struct NewWyre_SuggestionList: View {
     @ObservedObject var fetcher = SuggestionFetcher()
     
     var body: some View {
-        
-        VStack {
-            List(fetcher.suggestions){ suggestion in
-                VStack{
-                    HStack{
-                        Image(suggestion.imageNumber)
-                        .resizable()
-                            .clipShape(Circle())
-                            .frame(width: 35, height: 35)
-                        VStack(alignment: .leading, spacing: 3.5){
-                            Text(suggestion.fullName)
-                            .font(.custom("Gotham-Medium", size: 14))
-                            Text(suggestion.userName)
-                            .font(.custom("Gotham-Book", size: 14))
+        VStack(alignment: .leading, spacing: 0.0) {
+            Group{
+                HStack{            Text("Recent").font(.custom("Gotham-Bold", size: 14)).padding()
+                    Spacer()
+                }.background(Color.white)
+                List(fetcher.suggestions){ suggestion in
+                    VStack{
+                        HStack{
+                            Image(suggestion.imageNumber)
+                            .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 35, height: 35)
+                            VStack(alignment: .leading, spacing: 3.5){
+                                Text(suggestion.fullName)
+                                .font(.custom("Gotham-Medium", size: 14))
+                                Text(suggestion.userName)
+                                .font(.custom("Gotham-Book", size: 14))
+                            }
+                            Spacer()
+                            Image(systemName: "info.circle")
+                                .font(.system(size: 22, weight: .semibold)).foregroundColor(Color.gray)
                         }
-                        Spacer()
-                        Image(systemName: "info.circle")
-                            .font(.system(size: 22, weight: .semibold)).foregroundColor(Color.gray)
-                    }
+                        
+                    }.frame(height: 45)
                     
-                }.frame(height: 45)
-                
+                }
             }
-        }
+            Spacer()
+            
+            Group{
+                HStack{
+                   Text("All").font(.custom("Gotham-Bold", size: 14)).padding()
+                    Spacer()
+                }.background(Color.white)
+
+                
+                List(fetcher.suggestions){ suggestion in
+                    VStack{
+                        HStack{
+                            Image(suggestion.imageNumber)
+                            .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 35, height: 35)
+                            VStack(alignment: .leading, spacing: 3.5){
+                                Text(suggestion.fullName)
+                                .font(.custom("Gotham-Medium", size: 14))
+                                Text(suggestion.userName)
+                                .font(.custom("Gotham-Book", size: 14))
+                            }
+                            Spacer()
+                            Image(systemName: "info.circle")
+                                .font(.system(size: 22, weight: .semibold)).foregroundColor(Color.gray)
+                        }
+                        
+                    }.frame(height: 45)
+                    
+                }
+            }
+
+        }.background(ColorManager.wyreGray)
     }
 }
 
