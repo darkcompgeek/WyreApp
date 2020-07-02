@@ -9,21 +9,23 @@
 import SwiftUI
 
 struct Me_PurpleBar: View {
+    
+@State private var showingSheet = false
     var body: some View {
         
         VStack(spacing: 0.0){
             HStack{
                                 Spacer()
                                 Button(action: {
-                                    print("Hello button tapped!")
+                                    self.showingSheet.toggle()
                                 }) {
                                     Image("settings")
                                         .foregroundColor(Color.white)
                                         .padding(20)
                                 }
-            }.background(
-                                ColorManager.wyrePurple
-                            )
+            }.background(ColorManager.wyrePurple)              .sheet(isPresented: $showingSheet) {
+                      SettingsSheet()
+                  }
                             VStack{
                                 Image("sai")
                                 .resizable()
