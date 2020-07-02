@@ -31,7 +31,7 @@ struct SettingsSheet: View {
                         }
                     }.padding()
                 }.listStyle(GroupedListStyle())
-            }.navigationBarTitle(Text("Settings"))
+            }.navigationBarTitle(Text("Settings"), displayMode: .inline)
         }
         
     }

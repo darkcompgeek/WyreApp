@@ -13,17 +13,17 @@ struct NewWyreAmountField: View {
     
     var body: some View {
         VStack{
-           Text("Amount").font(.custom("Gotham-Bold", size:  16))
+           Text("Amount").font(.custom("Gotham-Bold", size:  14))
              
         TextField("$0", text: $text)
                 .padding()
-                .font(.custom("Gotham-Black", size:  80))
+                .font(.custom("Gotham-Black", size:  75))
                 .textFieldStyle(PlainTextFieldStyle())
                 .multilineTextAlignment(.center)
         Divider()
             TextField("Enter a caption", text: $text)
                     .padding()
-                    .font(.custom("Gotham-Medium", size:  16))
+                    .font(.custom("Gotham-Medium", size:  14))
                     .textFieldStyle(PlainTextFieldStyle())
                     .multilineTextAlignment(.center)
         }.padding(.top)

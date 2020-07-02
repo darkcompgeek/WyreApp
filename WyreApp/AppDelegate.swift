@@ -21,19 +21,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColorManager.wyrePurple
         
-        
         let attrs: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.white,
             .backgroundColor: UIColorManager.wyrePurple as Any,
             .font: UIFont(name: "Gotham-Black", size: 30) as Any
         ]
 
-
+        let attrsSmall: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white,
+            .backgroundColor: UIColorManager.wyrePurple as Any,
+            .font: UIFont(name: "Gotham-Black", size: 20) as Any
+        ]
+        
         appearance.largeTitleTextAttributes = attrs
-        
+        appearance.titleTextAttributes = attrsSmall
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        
-        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
         return true
     }
 

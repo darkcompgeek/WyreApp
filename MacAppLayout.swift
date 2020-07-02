@@ -29,7 +29,7 @@ struct MacAppLayout: View {
                     }
                 }
             }
-            .navigationBarTitle(Text("$25.00"))
+            .navigationBarTitle(Text("$25.00"), displayMode: .inline)
             }
             
         }

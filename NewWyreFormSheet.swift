@@ -24,11 +24,11 @@ struct NewWyreFormSheet: View {
                         HStack{
                             Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
                             VStack(alignment: .leading, spacing: 4.0){
-                                Text("Payment Method").font(.custom("Gotham-Bold" ,size: 16))
-                                 Text("Wyre Balance").font(.custom("Gotham-Book" ,size: 16))
+                                Text("Payment Method").font(.custom("Gotham-Bold" ,size: 14))
+                                Text("Wyre Balance").font(.custom("Gotham-Book" ,size: 14))
                             }
                         }
-                        }.frame(height: 100)
+                        }.frame(height: 75)
                     
                     
                     
@@ -36,16 +36,16 @@ struct NewWyreFormSheet: View {
                             HStack{
                                 Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
                                 VStack(alignment: .leading, spacing: 4.0){
-                                    Text("Privacy Options").font(.custom("Gotham-Bold" ,size: 16))
-                                    Text("Private").font(.custom("Gotham-Book" ,size: 16))
+                                    Text("Privacy Options").font(.custom("Gotham-Bold" ,size: 14))
+                                    Text("Private").font(.custom("Gotham-Book" ,size: 14))
                                 }
                             }
-                            }.frame(height: 100)
+                            }.frame(height: 75)
                 }
                 Button(action: {print("hello")}) {
-                    Text("Next").font(.custom("Gotham-Bold" ,size: 20)).multilineTextAlignment(.center).padding().foregroundColor(ColorManager.wyrePurple)
+                    Text("Next").font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).padding().foregroundColor(ColorManager.wyrePurple)
                 }
-            }.navigationBarTitle("New Wyre")
+                }.navigationBarTitle("New Wyre", displayMode: .inline)
             .navigationBarItems(leading:
             Button(action: {
                 self.showingSheet.toggle()
@@ -53,7 +53,6 @@ struct NewWyreFormSheet: View {
                     Image(systemName: "xmark").font(.system(size: 22, weight: .semibold)).foregroundColor(Color.white)
                 }
             )
-
         }
         
 
