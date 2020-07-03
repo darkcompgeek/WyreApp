@@ -10,8 +10,8 @@ import SwiftUI
 
 struct NewWyre_UsernameInput: View {
     var body: some View {
-        VStack{
-            NewWyre_UsernameField()
+        VStack(spacing: 0.0){
+            NewWyre_UsernameField().background(Color.white)
             NewWyre_SuggestionList()
         }
 
