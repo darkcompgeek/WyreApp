@@ -32,13 +32,6 @@ struct SettingsSheet: View {
                             Text("Payment Methods").font(.custom("Gotham-Medium", size: 20))
                         }
                     }.padding()
-                    NavigationLink(destination:
-                    MeTab(viewRouter: ViewRouter())) {
-                        HStack{
-                            Image("person")
-                            Text("My Profile").font(.custom("Gotham-Medium", size: 20))
-                        }
-                    }.padding()
                 }.listStyle(GroupedListStyle())
             }.navigationBarTitle(Text("Settings"), displayMode: .inline).navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
