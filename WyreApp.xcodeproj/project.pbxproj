@@ -12,7 +12,7 @@
 		960C661524A8ED0200977A93 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C661424A8ED0200977A93 /* ColorManager.swift */; };
 		9626E53624AE88BC005C5EAB /* NewWyreFormSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9626E53524AE88BC005C5EAB /* NewWyreFormSheet.swift */; };
 		9626E53824AE92D1005C5EAB /* NewWyreAmountField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9626E53724AE92D1005C5EAB /* NewWyreAmountField.swift */; };
-		964C14E024AD1F8900FC770E /* NewWyre_Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14DF24AD1F8900FC770E /* NewWyre_Header.swift */; };
+		964C14E024AD1F8900FC770E /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14DF24AD1F8900FC770E /* CustomNavigation.swift */; };
 		964C14E224AD1FE500FC770E /* NewWyre_UsernameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14E124AD1FE500FC770E /* NewWyre_UsernameField.swift */; };
 		964C14E424AD205900FC770E /* NewWyre_SuggestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14E324AD205900FC770E /* NewWyre_SuggestionList.swift */; };
 		964C14E624AD214000FC770E /* suggestionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 964C14E524AD214000FC770E /* suggestionData.json */; };
@@ -48,7 +48,7 @@
 		9626E53524AE88BC005C5EAB /* NewWyreFormSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyreFormSheet.swift; sourceTree = "<group>"; };
 		9626E53724AE92D1005C5EAB /* NewWyreAmountField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyreAmountField.swift; sourceTree = "<group>"; };
 		962D6F1024AA73EF00EC2A30 /* Wyre.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wyre.entitlements; sourceTree = "<group>"; };
-		964C14DF24AD1F8900FC770E /* NewWyre_Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_Header.swift; sourceTree = "<group>"; };
+		964C14DF24AD1F8900FC770E /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		964C14E124AD1FE500FC770E /* NewWyre_UsernameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_UsernameField.swift; sourceTree = "<group>"; };
 		964C14E324AD205900FC770E /* NewWyre_SuggestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_SuggestionList.swift; sourceTree = "<group>"; };
 		964C14E524AD214000FC770E /* suggestionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = suggestionData.json; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 				96E8C34924A96D2B000444BA /* Home_PurpleBar.swift */,
 				96E8C34524A9683C000444BA /* NavigationBar.swift */,
 				966A203724AB91300074256A /* Me_PurpleBar.swift */,
-				964C14DF24AD1F8900FC770E /* NewWyre_Header.swift */,
+				964C14DF24AD1F8900FC770E /* CustomNavigation.swift */,
 				96C5211524AE415C001E1FC2 /* Settings_Header.swift */,
 				964C14E124AD1FE500FC770E /* NewWyre_UsernameField.swift */,
 				964C14E324AD205900FC770E /* NewWyre_SuggestionList.swift */,
@@ -268,7 +268,7 @@
 				96E8C35124A96FF9000444BA /* Home_DarkPurpleRow.swift in Sources */,
 				96051F7824ABB6F0003BC10D /* MacAppLayout.swift in Sources */,
 				968D617724AAB5BF00574746 /* HomeTab.swift in Sources */,
-				964C14E024AD1F8900FC770E /* NewWyre_Header.swift in Sources */,
+				964C14E024AD1F8900FC770E /* CustomNavigation.swift in Sources */,
 				964C14E224AD1FE500FC770E /* NewWyre_UsernameField.swift in Sources */,
 				969A98F024A7D9B600E5692F /* ViewRouter.swift in Sources */,
 			);
