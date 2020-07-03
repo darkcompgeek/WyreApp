@@ -12,11 +12,12 @@ import Combine
 
         
 struct NewWyre_SuggestionList: View {
+    @Binding var showSuggestionsThree: Bool
     @ObservedObject var fetcher = SuggestionFetcher()
-    
     var body: some View {
+        
                 List(fetcher.suggestions){ suggestion in
-                    Button(action: {print("Hello")}){
+                    Button(action: {self.showSuggestionsThree.toggle()}){
                         VStack{
                                 HStack{
                                     Image(suggestion.imageNumber).renderingMode(.original)
@@ -24,6 +25,7 @@ struct NewWyre_SuggestionList: View {
                                         .clipShape(Circle())
                                         .frame(width: 35, height: 35)
                                     VStack(alignment: .leading, spacing: 3.5){
+                                        
                                         Text(suggestion.fullName)
                                         .font(.custom("Gotham-Medium", size: 14))
                                             .foregroundColor(Color.black)
@@ -40,6 +42,9 @@ struct NewWyre_SuggestionList: View {
                 }.listStyle(GroupedListStyle())
     }
 }
+
+
+
 
 public class SuggestionFetcher: ObservableObject {
     @Published var suggestions = [SuggestionData]()
@@ -67,7 +72,6 @@ public class SuggestionFetcher: ObservableObject {
         }.resume()
     }
 }
-
 struct SuggestionData: Codable, Identifiable {
     public var id: Int
     public var fullName: String
@@ -84,6 +88,6 @@ struct SuggestionData: Codable, Identifiable {
 
 struct NewWyre_SuggestionList_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyre_SuggestionList()
+        NewWyre_SuggestionList(showSuggestionsThree: .constant(true))
     }
 }

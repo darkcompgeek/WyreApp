@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct NewWyreFormSheet: View {
-
+    
+    @State var showSuggestions = true
     @Environment(\.presentationMode) var mode
     
     var body: some View {
@@ -32,7 +33,8 @@ struct NewWyreFormSheet: View {
 
                 ZStack{
                    NewWyreForm()
-                    NewWyre_UsernameInput()
+                    NewWyre_UsernameInput(showSuggestionsTwo: $showSuggestions)
+
                 }
             }
 
@@ -41,6 +43,7 @@ struct NewWyreFormSheet: View {
 
     }
 }
+
 
 struct NewWyreFormSheet_Previews: PreviewProvider {
     static var previews: some View {

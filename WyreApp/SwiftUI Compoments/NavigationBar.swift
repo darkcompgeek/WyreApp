@@ -21,7 +21,7 @@ struct NavigationBar: View {
                        HStack(alignment: .center, spacing: 0.0){
                            Spacer()
         //Home Tab
-                        Button(action: {                                self.viewRouter.currentView = "home"}) {
+                        Button(action: {self.viewRouter.currentView = "home"}) {
             if viewRouter.currentView == "home"{
                 Image("home")
                     .foregroundColor(Color.black)
