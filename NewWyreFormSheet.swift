@@ -16,6 +16,8 @@ struct NewWyreFormSheet: View {
         NavigationView{
             //header
             VStack(spacing:0.0) {
+                
+                //NavigationBar
                 HStack{
                     Button(action: {
                         self.mode.wrappedValue.dismiss()
