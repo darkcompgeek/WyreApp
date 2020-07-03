@@ -22,36 +22,8 @@ struct NewWyre_Header: View {
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
         }
-        
-        
-        
-        
-//        HStack{
-//            Button(action: {
-//                self.showingSheet.toggle()
-//                }) {
-//                    Image(systemName: "xmark").font(.system(size: 22, weight: .semibold))
-//                }
-//            .foregroundColor(Color.white).padding()
-//            Spacer()
-//            HStack{
-//                Button(action: {
-//                    print("pressed")
-//                    }) {
-//                Text("Pay").foregroundColor(Color.white).font(.custom("Gotham-Bold", size: 20))
-//                    }.padding()
-//                Button(action: {
-//                    print("pressed")
-//                    }) {
-//                Text("Request").foregroundColor(Color.white).font(.custom("Gotham-Bold", size: 20))
-//                }.padding().opacity(0.5)
-//            }.padding(.leading, -30)
-//
-//            Spacer()
-//        }.padding().frame(height: 70).background(ColorManager.wyrePurple)
     }
 }
-
 
 struct NavigationTest: View {
     

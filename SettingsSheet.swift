@@ -12,15 +12,23 @@ struct SettingsSheet: View {
         @Environment(\.presentationMode) var mode
     var body: some View {
         NavigationView{
-            VStack{
+            VStack(spacing: 0.0){
+                HStack{
+                    Button(action: {
+                        self.mode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "xmark").font(.system(size: 22, weight: .semibold)).foregroundColor(Color.white)
+                        }
+                    Spacer()
+                    Text("Settings").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white)
+                    Spacer()
+                }.padding().frame(height:70).background(ColorManager.wyrePurple)
                 List{
                       NavigationLink(destination: HomeTab(viewRouter: ViewRouter())) {
                         HStack{
                             Image("home")
                             Text("Home").font(.custom("Gotham-Medium", size: 20))
                         }
-                        
-                        
                     }.padding()
                     
                     NavigationLink(destination:
@@ -31,14 +39,8 @@ struct SettingsSheet: View {
                         }
                     }.padding()
                 }.listStyle(GroupedListStyle())
-            }.navigationBarTitle(Text("Settings"), displayMode: .inline)
-            .navigationBarItems(leading:
-            Button(action: {
-                self.mode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "xmark").font(.system(size: 22, weight: .semibold)).foregroundColor(Color.white)
-                }
-            )
+            }.navigationBarTitle(Text("Settings"), displayMode: .inline).navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
         
     }
