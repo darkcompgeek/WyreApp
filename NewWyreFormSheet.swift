@@ -14,7 +14,7 @@ struct NewWyreFormSheet: View {
     
     var body: some View {
         NavigationView{
-            
+            //header
             VStack(spacing:0.0) {
                 HStack{
                     Button(action: {
@@ -27,6 +27,9 @@ struct NewWyreFormSheet: View {
                     Text("Request").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white).opacity(0.5).padding()
                     Spacer()
                 }.padding().frame(height:70).background(ColorManager.wyrePurple)
+                
+                
+                
                 
                 Form{
                     NewWyre_UsernameField().padding(0)

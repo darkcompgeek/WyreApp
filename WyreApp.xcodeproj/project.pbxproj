@@ -13,6 +13,8 @@
 		9626E53624AE88BC005C5EAB /* NewWyreFormSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9626E53524AE88BC005C5EAB /* NewWyreFormSheet.swift */; };
 		9626E53824AE92D1005C5EAB /* NewWyreAmountField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9626E53724AE92D1005C5EAB /* NewWyreAmountField.swift */; };
 		9638491224AF772800482658 /* Settings_PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491124AF772800482658 /* Settings_PaymentMethods.swift */; };
+		9638491424AF833200482658 /* NewWyre_PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */; };
+		9638491624AF84C700482658 /* NewWyre_PrivacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */; };
 		964C14E024AD1F8900FC770E /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14DF24AD1F8900FC770E /* CustomNavigation.swift */; };
 		964C14E224AD1FE500FC770E /* NewWyre_UsernameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14E124AD1FE500FC770E /* NewWyre_UsernameField.swift */; };
 		964C14E424AD205900FC770E /* NewWyre_SuggestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14E324AD205900FC770E /* NewWyre_SuggestionList.swift */; };
@@ -49,6 +51,8 @@
 		9626E53724AE92D1005C5EAB /* NewWyreAmountField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyreAmountField.swift; sourceTree = "<group>"; };
 		962D6F1024AA73EF00EC2A30 /* Wyre.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wyre.entitlements; sourceTree = "<group>"; };
 		9638491124AF772800482658 /* Settings_PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_PaymentMethods.swift; sourceTree = "<group>"; };
+		9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_PaymentMethods.swift; sourceTree = "<group>"; };
+		9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_PrivacySettings.swift; sourceTree = "<group>"; };
 		964C14DF24AD1F8900FC770E /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		964C14E124AD1FE500FC770E /* NewWyre_UsernameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_UsernameField.swift; sourceTree = "<group>"; };
 		964C14E324AD205900FC770E /* NewWyre_SuggestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_SuggestionList.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 			children = (
 				9638491124AF772800482658 /* Settings_PaymentMethods.swift */,
 				9626E53524AE88BC005C5EAB /* NewWyreFormSheet.swift */,
+				9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */,
 				96C5211724AE4261001E1FC2 /* SettingsSheet.swift */,
 				964F575624ABD0F00097CE25 /* NewWyreSheet.swift */,
 				96051F7724ABB6F0003BC10D /* MacAppLayout.swift */,
@@ -167,6 +172,7 @@
 				964C14E324AD205900FC770E /* NewWyre_SuggestionList.swift */,
 				964C14E524AD214000FC770E /* suggestionData.json */,
 				9626E53724AE92D1005C5EAB /* NewWyreAmountField.swift */,
+				9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */,
 			);
 			path = "SwiftUI Compoments";
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				964C14E424AD205900FC770E /* NewWyre_SuggestionList.swift in Sources */,
+				9638491424AF833200482658 /* NewWyre_PaymentMethods.swift in Sources */,
 				96C84B5224A7C2D1003279C1 /* AppDelegate.swift in Sources */,
 				9638491224AF772800482658 /* Settings_PaymentMethods.swift in Sources */,
 				9626E53824AE92D1005C5EAB /* NewWyreAmountField.swift in Sources */,
@@ -262,6 +269,7 @@
 				96E8C34A24A96D2B000444BA /* Home_PurpleBar.swift in Sources */,
 				966A203624AB90690074256A /* Me_DarkPurpleRow.swift in Sources */,
 				96C5211824AE4261001E1FC2 /* SettingsSheet.swift in Sources */,
+				9638491624AF84C700482658 /* NewWyre_PrivacySettings.swift in Sources */,
 				968D617924AAB6EF00574746 /* MeTab.swift in Sources */,
 				96E8C34624A9683C000444BA /* NavigationBar.swift in Sources */,
 				9626E53624AE88BC005C5EAB /* NewWyreFormSheet.swift in Sources */,
