@@ -23,14 +23,15 @@ struct SettingsSheet: View {
                     Text("Settings").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white)
                     Spacer()
                 }.padding().frame(height:70).background(ColorManager.wyrePurple)
+                
+                
                 List{
-                      NavigationLink(destination: HomeTab(viewRouter: ViewRouter())) {
+                      NavigationLink(destination: Settings_PaymentMethods()) {
                         HStack{
                             Image("home")
-                            Text("Home").font(.custom("Gotham-Medium", size: 20))
+                            Text("Payment Methods").font(.custom("Gotham-Medium", size: 20))
                         }
                     }.padding()
-                    
                     NavigationLink(destination:
                     MeTab(viewRouter: ViewRouter())) {
                         HStack{
