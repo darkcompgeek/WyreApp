@@ -29,44 +29,11 @@ struct NewWyreFormSheet: View {
                     Text("Request").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white).opacity(0.5).padding()
                     Spacer()
                 }.padding().frame(height:70).background(ColorManager.wyrePurple)
-                
-                
-                
-                
-                Form{
-                    NewWyre_UsernameField().padding(0).listRowInsets(EdgeInsets())
-                
-                    Section{
-                        NewWyreAmountField()
-                    }
-                    Section{
-                        NavigationLink(destination: NewWyre_PaymentMethods()) {
-                            HStack{
-                                Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
-                                VStack(alignment: .leading, spacing: 4.0){
-                                    Text("Payment Method").font(.custom("Gotham-Bold" ,size: 14))
-                                    Text("Wyre Balance").font(.custom("Gotham-Book" ,size: 14))
-                                }
-                            }
-                            }.frame(height: 75)
-                        
-                        
-                        
-                            NavigationLink(destination: NewWyre_PrivacySettings()) {
-                                HStack{
-                                    Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
-                                    VStack(alignment: .leading, spacing: 4.0){
-                                        Text("Privacy Options").font(.custom("Gotham-Bold" ,size: 14))
-                                        Text("Private").font(.custom("Gotham-Book" ,size: 14))
-                                    }
-                                }
-                                }.frame(height: 75)
-                    }
-                    Button(action: {print("hello")}) {
-                        Text("Next").font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).padding().foregroundColor(ColorManager.wyrePurple)
-                    }
-                    }.navigationBarTitle("New Wyre", displayMode: .inline)            .navigationBarHidden(true)
-                    .navigationBarBackButtonHidden(true)
+
+                ZStack{
+                   NewWyreForm()
+                    
+                }
             }
 
         }
@@ -78,5 +45,42 @@ struct NewWyreFormSheet: View {
 struct NewWyreFormSheet_Previews: PreviewProvider {
     static var previews: some View {
         NewWyreFormSheet()
+    }
+}
+
+struct NewWyreForm: View {
+    var body: some View {
+        Form{
+            Section{
+                NewWyreAmountField()
+            }
+            Section{
+                NavigationLink(destination: NewWyre_PaymentMethods()) {
+                    HStack{
+                        Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
+                        VStack(alignment: .leading, spacing: 4.0){
+                            Text("Wyre Balance").font(.custom("Gotham-Bold" ,size: 14))
+                            Text("$25.00").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14))
+                        }
+                    }
+                }.frame(height: 75)
+                
+                
+                
+                NavigationLink(destination: NewWyre_PrivacySettings()) {
+                    HStack{
+                        Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
+                        VStack(alignment: .leading, spacing: 4.0){
+                            Text("Private").font(.custom("Gotham-Bold" ,size: 14))
+                            Text("This payment will only be visible to you and Amy.").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14))
+                        }
+                    }
+                }.frame(height: 75)
+            }
+            Button(action: {print("hello")}) {
+                Text("Next").font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).padding().foregroundColor(ColorManager.wyrePurple)
+            }
+        }.navigationBarTitle("New Wyre", displayMode: .inline)            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
     }
 }

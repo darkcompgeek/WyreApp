@@ -11,7 +11,6 @@ import SwiftUI
 struct Settings_PaymentMethods: View {
     
     @Environment(\.presentationMode) var presentationMode
-    
     var btnBack : some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
@@ -23,6 +22,8 @@ struct Settings_PaymentMethods: View {
     
     var body: some View {
         ZStack{
+            
+            //navbar
             VStack{
                 HStack{
                     btnBack.padding(.leading, 10)
@@ -31,10 +32,8 @@ struct Settings_PaymentMethods: View {
                     Spacer()
                 }.padding().frame(height:70).background(ColorManager.wyrePurple)
                 Spacer()
-                
-                Text("Test View")
+Text("hello")
                 Spacer()
-                
             }.navigationBarTitle(Text("Other Title"), displayMode: .inline)
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)

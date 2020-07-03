@@ -15,7 +15,6 @@ struct NewWyre_SuggestionList: View {
     @ObservedObject var fetcher = SuggestionFetcher()
     
     var body: some View {
-        
                 List(fetcher.suggestions){ suggestion in
                     VStack{
                             HStack{
@@ -33,15 +32,9 @@ struct NewWyre_SuggestionList: View {
                                 Image(systemName: "info.circle")
                                     .font(.system(size: 22, weight: .semibold)).foregroundColor(Color.gray)
                             }
-                            
-
                     }.frame(height: 45)
-
-                    
-                    
+    
                 }.listStyle(GroupedListStyle())
-        
-
     }
 }
 
