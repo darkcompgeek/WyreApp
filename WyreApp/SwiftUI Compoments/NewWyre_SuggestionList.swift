@@ -16,23 +16,26 @@ struct NewWyre_SuggestionList: View {
     
     var body: some View {
                 List(fetcher.suggestions){ suggestion in
-                    VStack{
-                            HStack{
-                                Image(suggestion.imageNumber)
-                                .resizable()
-                                    .clipShape(Circle())
-                                    .frame(width: 35, height: 35)
-                                VStack(alignment: .leading, spacing: 3.5){
-                                    Text(suggestion.fullName)
-                                    .font(.custom("Gotham-Medium", size: 14))
-                                    Text(suggestion.userName)
-                                    .font(.custom("Gotham-Book", size: 14))
+                    Button(action: {print("Hello")}){
+                        VStack{
+                                HStack{
+                                    Image(suggestion.imageNumber).renderingMode(.original)
+                                    .resizable()
+                                        .clipShape(Circle())
+                                        .frame(width: 35, height: 35)
+                                    VStack(alignment: .leading, spacing: 3.5){
+                                        Text(suggestion.fullName)
+                                        .font(.custom("Gotham-Medium", size: 14))
+                                            .foregroundColor(Color.black)
+                                        Text(suggestion.userName)
+                                            .font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
+                                    }
+                                    Spacer()
+                                    Image(systemName: "info.circle")
+                                        .font(.system(size: 22, weight: .semibold)).foregroundColor(Color.gray)
                                 }
-                                Spacer()
-                                Image(systemName: "info.circle")
-                                    .font(.system(size: 22, weight: .semibold)).foregroundColor(Color.gray)
-                            }
-                    }.frame(height: 45)
+                        }.frame(height: 45)
+                    }
     
                 }.listStyle(GroupedListStyle())
     }
