@@ -23,7 +23,6 @@
 		968D617724AAB5BF00574746 /* HomeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D617624AAB5BF00574746 /* HomeTab.swift */; };
 		968D617924AAB6EF00574746 /* MeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D617824AAB6EF00574746 /* MeTab.swift */; };
 		969A98F024A7D9B600E5692F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A98EF24A7D9B600E5692F /* ViewRouter.swift */; };
-		96C5211624AE415C001E1FC2 /* Settings_Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5211524AE415C001E1FC2 /* Settings_Header.swift */; };
 		96C5211824AE4261001E1FC2 /* SettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5211724AE4261001E1FC2 /* SettingsSheet.swift */; };
 		96C84B5224A7C2D1003279C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C84B5124A7C2D1003279C1 /* AppDelegate.swift */; };
 		96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C84B5324A7C2D1003279C1 /* SceneDelegate.swift */; };
@@ -60,7 +59,6 @@
 		968D617624AAB5BF00574746 /* HomeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTab.swift; sourceTree = "<group>"; };
 		968D617824AAB6EF00574746 /* MeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTab.swift; sourceTree = "<group>"; };
 		969A98EF24A7D9B600E5692F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
-		96C5211524AE415C001E1FC2 /* Settings_Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_Header.swift; sourceTree = "<group>"; };
 		96C5211724AE4261001E1FC2 /* SettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheet.swift; sourceTree = "<group>"; };
 		96C84B4E24A7C2D1003279C1 /* Wyre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wyre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C84B5124A7C2D1003279C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				96E8C34524A9683C000444BA /* NavigationBar.swift */,
 				966A203724AB91300074256A /* Me_PurpleBar.swift */,
 				964C14DF24AD1F8900FC770E /* CustomNavigation.swift */,
-				96C5211524AE415C001E1FC2 /* Settings_Header.swift */,
 				964C14E124AD1FE500FC770E /* NewWyre_UsernameField.swift */,
 				964C14E324AD205900FC770E /* NewWyre_SuggestionList.swift */,
 				964C14E524AD214000FC770E /* suggestionData.json */,
@@ -262,7 +259,6 @@
 				96E8C34C24A96E0E000444BA /* FeedList.swift in Sources */,
 				96E8C34E24A96E53000444BA /* FeedTabBar.swift in Sources */,
 				964F575724ABD0F00097CE25 /* NewWyreSheet.swift in Sources */,
-				96C5211624AE415C001E1FC2 /* Settings_Header.swift in Sources */,
 				96E8C34A24A96D2B000444BA /* Home_PurpleBar.swift in Sources */,
 				966A203624AB90690074256A /* Me_DarkPurpleRow.swift in Sources */,
 				96C5211824AE4261001E1FC2 /* SettingsSheet.swift in Sources */,

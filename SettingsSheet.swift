@@ -18,7 +18,7 @@ struct SettingsSheet: View {
                         self.mode.wrappedValue.dismiss()
                         }) {
                             Image(systemName: "xmark").font(.system(size: 22, weight: .semibold)).foregroundColor(Color.white)
-                        }
+                    }
                     Spacer()
                     Text("Settings").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white)
                     Spacer()
