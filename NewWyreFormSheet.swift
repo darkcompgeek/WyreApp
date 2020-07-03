@@ -38,7 +38,7 @@ struct NewWyreFormSheet: View {
                         NewWyreAmountField()
                     }
                     Section{
-                        NavigationLink(destination: Text("Payment Methods")) {
+                        NavigationLink(destination: NewWyre_PaymentMethods()) {
                             HStack{
                                 Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
                                 VStack(alignment: .leading, spacing: 4.0){
@@ -50,7 +50,7 @@ struct NewWyreFormSheet: View {
                         
                         
                         
-                            NavigationLink(destination: Text("Privacy Options")) {
+                            NavigationLink(destination: NewWyre_PrivacySettings()) {
                                 HStack{
                                     Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
                                     VStack(alignment: .leading, spacing: 4.0){
