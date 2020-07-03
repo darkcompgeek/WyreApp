@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SettingsSheet: View {
-            @State private var showingSheet = false
+        @Environment(\.presentationMode) var mode
     var body: some View {
         NavigationView{
             VStack{
@@ -32,6 +32,13 @@ struct SettingsSheet: View {
                     }.padding()
                 }.listStyle(GroupedListStyle())
             }.navigationBarTitle(Text("Settings"), displayMode: .inline)
+            .navigationBarItems(leading:
+            Button(action: {
+                self.mode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "xmark").font(.system(size: 22, weight: .semibold)).foregroundColor(Color.white)
+                }
+            )
         }
         
     }

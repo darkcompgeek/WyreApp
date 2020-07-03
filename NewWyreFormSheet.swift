@@ -10,7 +10,8 @@ import SwiftUI
 
 struct NewWyreFormSheet: View {
 
-        @State private var showingSheet = false
+    @Environment(\.presentationMode) var mode
+    
     var body: some View {
         NavigationView{
             Form{
@@ -48,7 +49,7 @@ struct NewWyreFormSheet: View {
                 }.navigationBarTitle("New Wyre", displayMode: .inline)
             .navigationBarItems(leading:
             Button(action: {
-                self.showingSheet.toggle()
+                self.mode.wrappedValue.dismiss()
                 }) {
                     Image(systemName: "xmark").font(.system(size: 22, weight: .semibold)).foregroundColor(Color.white)
                 }
