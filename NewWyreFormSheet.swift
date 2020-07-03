@@ -32,7 +32,7 @@ struct NewWyreFormSheet: View {
 
                 ZStack{
                    NewWyreForm()
-                NewWyre_UsernameInput()
+                    NewWyre_UsernameInput()
                 }
             }
 
