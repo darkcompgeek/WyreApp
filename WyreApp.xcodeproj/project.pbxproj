@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		9638491224AF772800482658 /* Settings_PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491124AF772800482658 /* Settings_PaymentMethods.swift */; };
 		9638491424AF833200482658 /* NewWyre_PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */; };
 		9638491624AF84C700482658 /* NewWyre_PrivacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */; };
+		9638491D24AFA66500482658 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 9638491C24AFA66500482658 /* Introspect */; };
 		964C14E024AD1F8900FC770E /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14DF24AD1F8900FC770E /* CustomNavigation.swift */; };
 		964C14E224AD1FE500FC770E /* NewWyre_UsernameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14E124AD1FE500FC770E /* NewWyre_UsernameField.swift */; };
 		964C14E424AD205900FC770E /* NewWyre_SuggestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14E324AD205900FC770E /* NewWyre_SuggestionList.swift */; };
@@ -88,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9638491D24AFA66500482658 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +195,9 @@
 			dependencies = (
 			);
 			name = WyreApp;
+			packageProductDependencies = (
+				9638491C24AFA66500482658 /* Introspect */,
+			);
 			productName = WyreApp;
 			productReference = 96C84B4E24A7C2D1003279C1 /* Wyre.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 96C84B4524A7C2D1003279C1;
+			packageReferences = (
+				9638491B24AFA66500482658 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
 			productRefGroup = 96C84B4F24A7C2D1003279C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -478,6 +486,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9638491B24AFA66500482658 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timbersoftware/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9638491C24AFA66500482658 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9638491B24AFA66500482658 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 96C84B4624A7C2D1003279C1 /* Project object */;
 }

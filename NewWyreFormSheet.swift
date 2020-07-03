@@ -34,7 +34,7 @@ struct NewWyreFormSheet: View {
                 
                 
                 Form{
-                    NewWyre_UsernameField().padding(0)
+                    NewWyre_UsernameField().padding(0).listRowInsets(EdgeInsets())
                 
                     Section{
                         NewWyreAmountField()

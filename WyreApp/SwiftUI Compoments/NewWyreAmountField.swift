@@ -9,17 +9,18 @@
 import SwiftUI
 
 struct NewWyreAmountField: View {
-        @State private var amount = ""
+        @State private var amount = "$" + ""
     @State private var caption = ""
     var body: some View {
         VStack{
-           Text("Amount").font(.custom("Gotham-Bold", size:  14))
+            Text("Amount").font(.custom("Gotham-Bold", size:  14))
              
         TextField("$0", text: $amount)
                 .padding()
                 .font(.custom("Gotham-Black", size:  75))
                 .textFieldStyle(PlainTextFieldStyle())
                 .multilineTextAlignment(.center)
+            .keyboardType(.numberPad)
         Divider()
             TextField("Enter a caption", text: $caption)
                     .padding()

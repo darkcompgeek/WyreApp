@@ -53,6 +53,7 @@ struct NavigationBar: View {
                             .padding(.horizontal, 25.0)
                             .sheet(isPresented: $showingSheet) {
                                 NewWyreFormSheet()
+
                             }
         //Me Tab
                         Button(action: {                           self.viewRouter.currentView = "settings"}) {
