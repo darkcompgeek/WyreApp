@@ -11,25 +11,26 @@ import SwiftUI
 struct NewWyreForm: View {
     var body: some View {
         VStack(spacing: 0.0) {
-            HStack{
+            HStack(alignment: .center){
                 Spacer()
-                HStack{
+                HStack(alignment: .center, spacing: 7.5){
                     Image("001")
                     .resizable()
                         .clipShape(Circle())
-                        .frame(width: 40, height: 40)
-                    Text("Allison Copeland").font(.custom("Gotham-Medium", size: 16))
+                        .frame(width: 30, height: 30)
+                    Text("Allison Copeland").font(.custom("Gotham-Medium", size: 14))
                         .foregroundColor(Color.black)
-                    }.padding(10).background(Color.white).cornerRadius(100)
-                
+                        .padding(.trailing, 5.0)
+                }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
+        
                 Button(action: {print("Hello")}) {
-                    Image(systemName: "plus").foregroundColor(Color.white).font(.system(size:25, weight: .semibold))
+                    Image(systemName: "plus").foregroundColor(Color.black).font(.system(size:15, weight: .semibold))
                     
-                }
+                    }.padding().background(Color.white).cornerRadius(100)
                 
                 
                 Spacer()
-            }.padding(.top, 0.0).padding(.bottom).background(ColorManager.wyrePurple)
+            }.padding(10).background(ColorManager.wyrePurple)
             Form{
                 Section{
                     NewWyreAmountField()
