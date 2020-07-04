@@ -24,15 +24,15 @@ struct NewWyreFormSheet: View {
                         self.mode.wrappedValue.dismiss()
                         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                         }) {
-                            Image(systemName: "xmark").font(.system(size: 22, weight: .semibold)).foregroundColor(Color.white)
+                            Image(systemName: "xmark").font(.system(size: 20, weight: .semibold)).foregroundColor(Color.white)
                     }
                     Spacer()
                     Button(action: {print("Pay Tab")}) {
-                        Text("Pay").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white)
+                        Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
                     }.padding()
                     
                     Button(action: {print("Request Tab")}) {
-                        Text("Request").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white)
+                        Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
                     }.padding().opacity(0.5)
                     Spacer()
                 }.padding().frame(height:70).background(ColorManager.wyrePurple)

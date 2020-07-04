@@ -17,7 +17,7 @@ struct NewWyre_PaymentMethods: View {
             self.presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: "chevron.left")
-                .font(.system(size: 22, weight: .semibold)).foregroundColor(Color.white)
+                .font(.system(size: 20, weight: .semibold)).foregroundColor(Color.white)
         }
     }
     
@@ -27,7 +27,7 @@ struct NewWyre_PaymentMethods: View {
                 HStack{
                     btnBack.padding(.leading, 10)
                     Spacer()
-                    Text("Payment Methods").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white)
+                    Text("Payment Methods").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
                     Spacer()
                 }.padding().frame(height:70).background(ColorManager.wyrePurple)
                 Spacer()

@@ -17,10 +17,10 @@ struct SettingsSheet: View {
                     Button(action: {
                         self.mode.wrappedValue.dismiss()
                         }) {
-                            Image(systemName: "xmark").font(.system(size: 22, weight: .semibold)).foregroundColor(Color.white)
+                            Image(systemName: "xmark").font(.system(size: 20, weight: .semibold)).foregroundColor(Color.white)
                     }
                     Spacer()
-                    Text("Settings").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white)
+                    Text("Settings").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
                     Spacer()
                 }.padding().frame(height:70).background(ColorManager.wyrePurple)
                 
@@ -29,7 +29,7 @@ struct SettingsSheet: View {
                       NavigationLink(destination: Settings_PaymentMethods()) {
                         HStack{
                             Image("home")
-                            Text("Payment Methods").font(.custom("Gotham-Medium", size: 20))
+                            Text("Payment Methods").font(.custom("Gotham-Medium", size: 16))
                         }
                     }.padding()
                 }.listStyle(GroupedListStyle())

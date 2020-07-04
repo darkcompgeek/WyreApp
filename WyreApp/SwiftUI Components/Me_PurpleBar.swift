@@ -26,7 +26,7 @@ struct Me_PurpleBar: View {
             }.background(ColorManager.wyrePurple)              .sheet(isPresented: $showingSheet) {
                       SettingsSheet()
                   }
-            VStack(spacing: 0.0){
+            VStack(spacing: 5.0){
                                 Image("sai")
                                 .resizable()
                                 .clipShape(Circle())
