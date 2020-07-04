@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct Settings_PaymentMethods: View {
-    
     @Environment(\.presentationMode) var presentationMode
     var btnBack : some View {
         Button(action: {

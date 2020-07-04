@@ -10,14 +10,15 @@ import SwiftUI
 
 struct NewWyre_UsernameInput: View {
     @State var username: String = ""
-    
+    @Binding var selectedName: String
+    @Binding var selectedImage: String
     @Binding var showSuggestionsTwo:Bool
     
     var body: some View {
             VStack(spacing: 0.0){
                 if showSuggestionsTwo {
                     NewWyre_UsernameField(username: $username).background(Color.white)
-                    NewWyre_SuggestionList(username: $username, showSuggestionsThree: $showSuggestionsTwo)
+                    NewWyre_SuggestionList(selectedImage: $selectedImage, selectedName: $selectedName, username: $username, showSuggestionsThree: $showSuggestionsTwo)
                 }
             }
     }
@@ -26,6 +27,6 @@ struct NewWyre_UsernameInput: View {
 struct NewWyre_UsernameInput_Previews: PreviewProvider {
     @Binding var showSuggestions: Bool
     static var previews: some View {
-        NewWyre_UsernameInput(showSuggestionsTwo: .constant(true))
+        NewWyre_UsernameInput(username: "sdfa", selectedName: .constant("asdf"), selectedImage: .constant("001"), showSuggestionsTwo: .constant(true))
     }
 }

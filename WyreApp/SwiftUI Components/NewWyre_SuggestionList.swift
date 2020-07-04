@@ -12,13 +12,20 @@ import Combine
 
         
 struct NewWyre_SuggestionList: View {
+    @Binding var selectedImage: String
+    @Binding var selectedName: String
     @Binding var username: String
     @Binding var showSuggestionsThree: Bool
     @ObservedObject var fetcher = SuggestionFetcher()
+    
     var body: some View {
         
         List(fetcher.suggestions.filter({ username.isEmpty ? true : $0.fullName.contains(username)})){ suggestion in
-                    Button(action: {self.showSuggestionsThree.toggle()}){
+                    Button(action: {
+                        self.showSuggestionsThree.toggle()
+                        self.selectedName = suggestion.fullName
+                        self.selectedImage = suggestion.imageNumber
+                    }){
                         VStack{
                                 HStack{
                                     Image(suggestion.imageNumber).renderingMode(.original)
@@ -87,8 +94,14 @@ struct SuggestionData: Codable, Identifiable {
     }
 }
 
+
+struct SelectedUser {
+    public var fullName: String
+    public var imageNumber: String
+}
+
 struct NewWyre_SuggestionList_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyre_SuggestionList(username: .constant("allison"), showSuggestionsThree: .constant(true))
+        NewWyre_SuggestionList(selectedImage: .constant("001"), selectedName: .constant("blah"), username: .constant("allison"), showSuggestionsThree: .constant(true))
     }
 }

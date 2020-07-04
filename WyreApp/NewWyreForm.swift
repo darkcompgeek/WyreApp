@@ -9,16 +9,20 @@
 import SwiftUI
 
 struct NewWyreForm: View {
+    let selected = SelectedUser(fullName: "Allison Copeland", imageNumber: "001")
+    @Binding var selectedName: String
+    @Binding var selectedImage: String
     var body: some View {
+        
         VStack(spacing: 0.0) {
             HStack(alignment: .center){
                 Spacer()
                 HStack(alignment: .center, spacing: 7.5){
-                    Image("001")
+                    Image(selectedImage)
                     .resizable()
                         .clipShape(Circle())
                         .frame(width: 30, height: 30)
-                    Text("Allison Copeland").font(.custom("Gotham-Medium", size: 14))
+                    Text(selectedName).font(.custom("Gotham-Medium", size: 14))
                         .foregroundColor(Color.black)
                         .padding(.trailing, 5.0)
                 }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
@@ -69,6 +73,6 @@ struct NewWyreForm: View {
 
 struct NewWyreForm_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyreForm()
+        NewWyreForm(selectedName: .constant("sdaf"), selectedImage: .constant("sdaf"))
     }
 }
