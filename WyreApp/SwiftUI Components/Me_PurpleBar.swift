@@ -15,18 +15,18 @@ struct Me_PurpleBar: View {
         
         VStack(spacing: 0.0){
             HStack{
-                                Spacer()
-                                Button(action: {
-                                    self.showingSheet.toggle()
-                                }) {
-                                    Image("settings")
-                                        .foregroundColor(Color.white)
-                                        .padding(20)
+                    Spacer()
+                    Button(action: {
+                        self.showingSheet.toggle()
+                    }) {
+                        Image("settings")
+                            .foregroundColor(Color.white)
+                            .padding(20)
                                 }
             }.background(ColorManager.wyrePurple)              .sheet(isPresented: $showingSheet) {
                       SettingsSheet()
                   }
-                            VStack{
+            VStack(spacing: 0.0){
                                 Image("sai")
                                 .resizable()
                                 .clipShape(Circle())
@@ -41,9 +41,21 @@ struct Me_PurpleBar: View {
                                         .foregroundColor(Color.white)
                                 }
 
-                            }.padding(.top, -40.0)
-            .padding()
-                            
+                                }.padding(.top, -40.0).padding(0)
+            HStack{
+                Spacer()
+                Button(action: {
+                    print("Edit Profile")
+                }) {
+                    HStack(spacing: 10.0){
+                        Image(systemName: "pencil").font(.system(size: 20, weight: .bold)).foregroundColor(Color.black)
+                        Text("Edit Profile")
+                            .font(.custom("Gotham-Medium", size: 14))
+                            .foregroundColor(Color.black)
+                    }
+                }.padding(.horizontal, 10.0).padding(12).background(Color.white).cornerRadius(100)
+                Spacer()
+            }.padding(10)
             }
         .background(ColorManager.wyrePurple)
         
