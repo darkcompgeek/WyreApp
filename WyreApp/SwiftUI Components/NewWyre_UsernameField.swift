@@ -10,7 +10,7 @@ import SwiftUI
 import Introspect
 
 struct NewWyre_UsernameField: View {
-    @State var username: String = ""
+    @Binding var username: String
     var body: some View {
         
         VStack {
@@ -32,6 +32,6 @@ struct NewWyre_UsernameField: View {
 
 struct NewWyre_UsernameField_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyre_UsernameField()
+        NewWyre_UsernameField(username: .constant(""))
     }
 }

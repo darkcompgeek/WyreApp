@@ -9,13 +9,15 @@
 import SwiftUI
 
 struct NewWyre_UsernameInput: View {
+    @State var username: String = ""
+    
     @Binding var showSuggestionsTwo:Bool
     
     var body: some View {
             VStack(spacing: 0.0){
                 if showSuggestionsTwo {
-                    NewWyre_UsernameField().background(Color.white)
-                    NewWyre_SuggestionList(showSuggestionsThree: $showSuggestionsTwo)
+                    NewWyre_UsernameField(username: $username).background(Color.white)
+                    NewWyre_SuggestionList(username: $username, showSuggestionsThree: $showSuggestionsTwo)
                 }
             }
     }

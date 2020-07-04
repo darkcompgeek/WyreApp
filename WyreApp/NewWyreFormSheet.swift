@@ -22,6 +22,7 @@ struct NewWyreFormSheet: View {
                 HStack{
                     Button(action: {
                         self.mode.wrappedValue.dismiss()
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                         }) {
                             Image(systemName: "xmark").font(.system(size: 22, weight: .semibold)).foregroundColor(Color.white)
                     }

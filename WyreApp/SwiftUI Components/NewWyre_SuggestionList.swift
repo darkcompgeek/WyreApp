@@ -12,11 +12,12 @@ import Combine
 
         
 struct NewWyre_SuggestionList: View {
+    @Binding var username: String
     @Binding var showSuggestionsThree: Bool
     @ObservedObject var fetcher = SuggestionFetcher()
     var body: some View {
         
-                List(fetcher.suggestions){ suggestion in
+        List(fetcher.suggestions.filter({ username.isEmpty ? true : $0.userName.contains(username)})){ suggestion in
                     Button(action: {self.showSuggestionsThree.toggle()}){
                         VStack{
                                 HStack{
@@ -88,6 +89,6 @@ struct SuggestionData: Codable, Identifiable {
 
 struct NewWyre_SuggestionList_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyre_SuggestionList(showSuggestionsThree: .constant(true))
+        NewWyre_SuggestionList(username: .constant("allison"), showSuggestionsThree: .constant(true))
     }
 }
