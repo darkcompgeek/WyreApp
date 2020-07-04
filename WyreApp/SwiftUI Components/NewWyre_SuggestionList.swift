@@ -17,7 +17,7 @@ struct NewWyre_SuggestionList: View {
     @ObservedObject var fetcher = SuggestionFetcher()
     var body: some View {
         
-        List(fetcher.suggestions.filter({ username.isEmpty ? true : $0.userName.contains(username)})){ suggestion in
+        List(fetcher.suggestions.filter({ username.isEmpty ? true : $0.fullName.contains(username)})){ suggestion in
                     Button(action: {self.showSuggestionsThree.toggle()}){
                         VStack{
                                 HStack{
