@@ -29,7 +29,7 @@ struct NewWyre_PaymentMethods: View {
                     Spacer()
                     Text("Payment Methods").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
                     Spacer()
-                }.padding().frame(height:70).background(ColorManager.wyrePurple)
+                }.padding().frame(height:60).background(ColorManager.wyrePurple)
                 Spacer()
                 
                 Text("Test View")

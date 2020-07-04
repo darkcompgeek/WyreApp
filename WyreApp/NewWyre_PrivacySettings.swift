@@ -30,7 +30,7 @@ struct NewWyre_PrivacySettings: View {
                     Spacer()
                     Text("Privacy Options").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
                     Spacer()
-                }.padding().frame(height:70).background(ColorManager.wyrePurple)
+                }.padding().frame(height:60).background(ColorManager.wyrePurple)
                 Spacer()
                 
                 Text("Test View")

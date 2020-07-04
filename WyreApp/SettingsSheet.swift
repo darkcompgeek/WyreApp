@@ -22,7 +22,7 @@ struct SettingsSheet: View {
                     Spacer()
                     Text("Settings").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
                     Spacer()
-                }.padding().frame(height:70).background(ColorManager.wyrePurple)
+                }.padding().frame(height:60).background(ColorManager.wyrePurple)
                 
                 
                 List{

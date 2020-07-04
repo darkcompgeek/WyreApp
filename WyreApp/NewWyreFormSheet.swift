@@ -35,7 +35,7 @@ struct NewWyreFormSheet: View {
                         Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
                     }.padding().opacity(0.5)
                     Spacer()
-                }.padding().frame(height:70).background(ColorManager.wyrePurple)
+                }.padding().frame(height:60).background(ColorManager.wyrePurple)
 
                 ZStack{
                    NewWyreForm()
