@@ -15,12 +15,11 @@ struct NewWyre_UsernameField: View {
         
         VStack {
             HStack{
-                Text("@").font(.custom("Gotham-Book", size: 25)).foregroundColor(Color.gray).padding()
                 TextField("Type a name, username, or email address.", text: $username)
                      .introspectTextField { textField in
                         textField.becomeFirstResponder()
                     }
-                    .padding(.vertical)
+                .padding([.top, .leading, .bottom])
                     .font(.custom("Gotham-Book", size: 16))
 
                 Button(action: {print("hello")}){
