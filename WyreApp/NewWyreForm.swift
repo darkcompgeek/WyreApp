@@ -15,26 +15,30 @@ struct NewWyreForm: View {
     var body: some View {
         
         VStack(spacing: 0.0) {
-            HStack(alignment: .center){
-                Spacer()
-                HStack(alignment: .center, spacing: 7.5){
-                    Image(selectedImage)
-                    .resizable()
-                        .clipShape(Circle())
-                        .frame(width: 30, height: 30)
-                    Text(selectedName).font(.custom("Gotham-Medium", size: 14))
-                        .foregroundColor(Color.black)
-                        .padding(.trailing, 5.0)
-                }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
-        
-                Button(action: {print("Hello")}) {
-                    Image(systemName: "plus").foregroundColor(Color.black).font(.system(size:15, weight: .semibold))
+
+                VStack(alignment: .center){
+                        HStack(alignment: .center){
+                            Spacer()
+                            HStack(alignment: .center, spacing: 0.0){
+                                Image(selectedImage)
+                                .resizable()
+                                    .clipShape(Circle())
+                                    .frame(width: 30, height: 30)
+                                Text(selectedName).font(.custom("Gotham-Medium", size: 14))
+                                    .foregroundColor(Color.black)
+                                    .padding(.horizontal, 5.0)
+                                Button(action: {print("Clear")}) {
+                                    Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
+                                    }
+                            }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
                     
-                    }.padding().background(Color.white).cornerRadius(100)
-                
-                
-                Spacer()
-            }.padding(10).background(ColorManager.wyrePurple)
+                            Button(action: {print("Hello")}) {
+                                Image(systemName: "plus").foregroundColor(Color.black).font(.system(size:15, weight: .semibold))
+                                
+                                }.padding().background(Color.white).cornerRadius(100)
+                            Spacer()
+                        }
+           }.padding(10).background(ColorManager.wyrePurple)
             Form{
                 Section{
                     NewWyreAmountField()
@@ -73,6 +77,6 @@ struct NewWyreForm: View {
 
 struct NewWyreForm_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyreForm(selectedName: .constant("sdaf"), selectedImage: .constant("sdaf"))
+        NewWyreForm(selectedName: .constant("Allison Copeland"), selectedImage: .constant("001"))
     }
 }
