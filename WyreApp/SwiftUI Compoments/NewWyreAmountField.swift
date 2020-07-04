@@ -20,7 +20,7 @@ struct NewWyreAmountField: View {
                 .font(.custom("Gotham-Black", size:  75))
                 .textFieldStyle(PlainTextFieldStyle())
                 .multilineTextAlignment(.center)
-            .keyboardType(.numberPad)
+            .keyboardType(.decimalPad)
         Divider()
             TextField("Enter a caption", text: $caption)
                     .padding()

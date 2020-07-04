@@ -18,7 +18,7 @@ struct NewWyreForm: View {
                     .resizable()
                         .clipShape(Circle())
                         .frame(width: 40, height: 40)
-                    Text("FirstName LastName").font(.custom("Gotham-Medium", size: 16))
+                    Text("Allison Copeland").font(.custom("Gotham-Medium", size: 16))
                         .foregroundColor(Color.black)
                     }.padding(10).background(Color.white).cornerRadius(100)
                 
