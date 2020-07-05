@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct NewWyreFormSheet: View {
-    @State private var selectedName = ""
-    @State private var selectedImage = ""
+    @State var selectedName = ""
+    @State var selectedImage = ""
     @State var showSuggestions = true
     @Environment(\.presentationMode) var mode
     
@@ -40,7 +40,11 @@ struct NewWyreFormSheet: View {
 
                 ZStack{
                     NewWyreForm(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestionList: $showSuggestions)
-                    NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestionsTwo: $showSuggestions)
+                    if selectedName == "" && selectedImage == "" {
+                        NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestionsTwo: $showSuggestions)
+                    } else {
+                        
+                    }
 
                 }
             }

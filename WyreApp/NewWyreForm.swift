@@ -11,7 +11,8 @@ import SwiftUI
 struct NewWyreForm: View {
     @Binding var selectedName: String
     @Binding var selectedImage: String
-    @Binding var showSuggestionList:Bool
+    @Binding var showSuggestionList: Bool
+    
     var body: some View {
         
         VStack(spacing: 0.0) {
@@ -22,24 +23,28 @@ struct NewWyreForm: View {
                             
                             if self.selectedName == "" && self.selectedImage == "" {
                                 
+                                
                             } else {
                                 HStack(alignment: .center, spacing: 0.0){
+                                    
                                     Image(selectedImage)
                                     .resizable()
                                         .clipShape(Circle())
                                         .frame(width: 30, height: 30)
+                                    
                                     Text(selectedName).font(.custom("Gotham-Medium", size: 14))
                                         .foregroundColor(Color.black)
                                         .padding(.horizontal, 5.0)
+                                    
                                     Button(action: {
                                         self.selectedImage = ""
                                         self.selectedName = ""
+                                        
                                     }) {
                                         Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
                                         }
                                 }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
                             }
-                            
 
                     
                             Button(action: {
