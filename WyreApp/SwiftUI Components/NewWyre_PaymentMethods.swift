@@ -27,7 +27,7 @@ struct NewWyre_PaymentMethods: View {
                 HStack{
                     btnBack.padding(.leading, 10)
                     Spacer()
-                    Text("Payment Methods").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
+                    Text("Payment Methods").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).padding(.leading, -10.0)
                     Spacer()
                 }.padding().frame(height:60).background(ColorManager.wyrePurple)
                 
@@ -42,12 +42,12 @@ struct NewWyre_PaymentMethods: View {
                                     Text("$25.00").font(.custom("Gotham-Medium", size: 14))
                                 }.padding()
                                 Spacer()
-                                Image(systemName: "checkmark").font(.system(size: 20, weight: .semibold))
+                                Image(systemName: "checkmark").font(.system(size: 20, weight: .semibold)).foregroundColor(ColorManager.wyrePurple)
                             }
 
                         }
                         
-                        Section{
+                        Section(header: Text("Payment Methods").font(.custom("Gotham-Medium", size: 12))){
                                 HStack{
                                     Image(systemName: "creditcard").frame(width: 40).font(.system(size: 30, weight: .semibold)).foregroundColor(Color.white).padding().background(Color.gray).cornerRadius(7)
                                     VStack(alignment: .leading, spacing: 5.0){
@@ -59,13 +59,13 @@ struct NewWyre_PaymentMethods: View {
                         
                         Section{
                             Button(action: {print("New Payment")}) {
-                                HStack(alignment: .center){
+                                HStack(alignment: .center, spacing: 20.0){
                                     Spacer()
                                     Image(systemName: "plus").font(.system(size: 20, weight: .semibold))
-                                    Text("Add A Payment Method").font(.custom("Gotham-Medium", size: 14))
+                                    Text("Add A Payment Method").font(.custom("Gotham-Medium", size: 16))
                                     Spacer()
                                 }.foregroundColor(Color.black)
-                            }
+                            }.padding(15)
                         }
                         
                         }.listStyle(GroupedListStyle())
