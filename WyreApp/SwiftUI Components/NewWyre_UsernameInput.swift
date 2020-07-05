@@ -7,30 +7,49 @@
 //
 
 import SwiftUI
-
+import Introspect
 struct NewWyre_UsernameInput: View {
     @State var username: String = ""
     @Binding var selectedName: String
     @Binding var selectedImage: String
-    @Binding var showSuggestionsTwo:Bool
+    @Binding var showSuggestions:Bool
     var body: some View {
             VStack(spacing: 0.0){
-                if showSuggestionsTwo {
+                if showSuggestions {
                     NewWyre_UsernameField(username: $username).background(Color.white)
-                    NewWyre_SuggestionList(selectedImage: $selectedImage, selectedName: $selectedName, username: $username, showSuggestionsThree: $showSuggestionsTwo)
+                    NewWyre_SuggestionList(selectedImage: $selectedImage, selectedName: $selectedName, username: $username, showSuggestions: $showSuggestions)
                 }
             }
     }
 }
 
+struct NewWyre_UsernameField: View {
+    @Binding var username: String
+    var body: some View {
+        
+        VStack {
+            HStack{
+                TextField("Type a name, username, or email address.", text: $username)
+                     .introspectTextField { textField in
+                        textField.becomeFirstResponder()
+                    }
+                .padding([.top, .leading, .bottom])
+                    .font(.custom("Gotham-Book", size: 16))
 
+                Button(action: {print("hello")}){
+                    Image(systemName: "qrcode.viewfinder").foregroundColor(Color.gray).font(.system(size: 22, weight: .semibold))
+                }.padding()
+            }
+        }
+    }
+}
 
 
 struct NewWyre_SuggestionList: View {
     @Binding var selectedImage: String
     @Binding var selectedName: String
     @Binding var username: String
-    @Binding var showSuggestionsThree: Bool
+    @Binding var showSuggestions: Bool
     @ObservedObject var selected = UserSelection()
     @ObservedObject var fetcher = SuggestionFetcher()
     var body: some View {
@@ -39,7 +58,7 @@ struct NewWyre_SuggestionList: View {
                     Button(action: {
                         self.selected.users.append(SelectedUser(fullName: suggestion.fullName, imageNumber: suggestion.imageNumber))
                         print(self.selected.users)
-                        self.showSuggestionsThree.toggle()
+                        self.showSuggestions.toggle()
                         
                     }){
                         VStack{
@@ -119,10 +138,13 @@ struct SelectedUser {
     public var imageNumber: String
 }
 
+
+
+
 struct NewWyre_UsernameInput_Previews: PreviewProvider {
     @Binding var showSuggestions: Bool
     static var previews: some View {
-        NewWyre_UsernameInput(username: "sdfa", selectedName: .constant("asdf"), selectedImage: .constant("001"), showSuggestionsTwo: .constant(true))
+        NewWyre_UsernameInput(username: "sdfa", selectedName: .constant("asdf"), selectedImage: .constant("001"), showSuggestions: .constant(true))
     }
 }
 

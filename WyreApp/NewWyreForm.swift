@@ -128,7 +128,7 @@ struct NewWyreForm: View {
                 }.navigationBarTitle("New Wyre", displayMode: .inline)            .navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
             }
-            NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestionsTwo: $showSuggestions)
+            NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestions: $showSuggestions)
         
         }
         
