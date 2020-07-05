@@ -12,48 +12,85 @@ struct NewWyreForm: View {
     @Binding var selectedName: String
     @Binding var selectedImage: String
     @Binding var showSuggestionList: Bool
-    
+    @ObservedObject var selected = UserSelection()
     var body: some View {
-        
         VStack(spacing: 0.0) {
 
                 VStack(alignment: .center){
                         HStack(alignment: .center){
                             Spacer()
                             
-                            if self.selectedName == "" && self.selectedImage == "" {
-                                
-                                
-                            } else {
-                                HStack(alignment: .center, spacing: 0.0){
-                                    
-                                    Image(selectedImage)
-                                    .resizable()
-                                        .clipShape(Circle())
-                                        .frame(width: 30, height: 30)
-                                    
-                                    Text(selectedName).font(.custom("Gotham-Medium", size: 14))
-                                        .foregroundColor(Color.black)
-                                        .padding(.horizontal, 5.0)
-                                    
-                                    Button(action: {
-                                        self.selectedImage = ""
-                                        self.selectedName = ""
-                                        
-                                    }) {
-                                        Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
-                                        }
-                                }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
-                            }
+                            if selected.users.count > 1 {
+                                ScrollView(.horizontal){
+                                    HStack{
+                                        ForEach(selected.users, id: \.imageNumber){ user in
+                                                HStack(alignment: .center, spacing: 0.0){
+                                                    
+                                                    Image(user.imageNumber)
+                                                    .resizable()
+                                                        .clipShape(Circle())
+                                                        .frame(width: 30, height: 30)
+                                                    
+                                                    Text(user.fullName).font(.custom("Gotham-Medium", size: 14))
+                                                        .foregroundColor(Color.black)
+                                                        .padding(.horizontal, 5.0)
+                                                    
+                                                    Button(action: {
+                                                        self.selectedImage = ""
+                                                        self.selectedName = ""
+                                                        
+                                                    }) {
+                                                        Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
+                                                        }
+                                                }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
+                                    }
+                                        Button(action: {
+                                            print("add user")
+                                            self.showSuggestionList.toggle()
+                                        }) {
+                                            Image(systemName: "plus").foregroundColor(Color.black).font(.system(size:15, weight: .semibold))
+                                            
+                                            }.padding().background(Color.white).cornerRadius(100)
 
-                    
-                            Button(action: {
-                                print("add user")
-                                self.showSuggestionList = true
-                            }) {
-                                Image(systemName: "plus").foregroundColor(Color.black).font(.system(size:15, weight: .semibold))
+                           }
+                                }
+
+                            } else {
+                                HStack{
+                                    ForEach(selected.users, id: \.imageNumber){ user in
+                                                     HStack(alignment: .center, spacing: 0.0){
+                                                         
+                                                         Image(user.imageNumber)
+                                                         .resizable()
+                                                             .clipShape(Circle())
+                                                             .frame(width: 30, height: 30)
+                                                         
+                                                         Text(user.fullName).font(.custom("Gotham-Medium", size: 14))
+                                                             .foregroundColor(Color.black)
+                                                             .padding(.horizontal, 5.0)
+                                                         
+                                                         Button(action: {
+                                                             self.selectedImage = ""
+                                                             self.selectedName = ""
+                                                             
+                                                         }) {
+                                                             Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
+                                                             }
+                                                     }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
+                                         }
+                                             Button(action: {
+                                                 print("add user")
+                                                 self.showSuggestionList.toggle()
+                                             }) {
+                                                 Image(systemName: "plus").foregroundColor(Color.black).font(.system(size:15, weight: .semibold))
+                                                 
+                                                 }.padding().background(Color.white).cornerRadius(100)
+
+                                }
+
                                 
-                                }.padding().background(Color.white).cornerRadius(100)
+                            }
+                    
                             
                             Spacer()
                         }

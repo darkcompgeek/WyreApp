@@ -16,15 +16,15 @@ struct NewWyre_SuggestionList: View {
     @Binding var selectedName: String
     @Binding var username: String
     @Binding var showSuggestionsThree: Bool
+    @ObservedObject var selected = UserSelection()
     @ObservedObject var fetcher = SuggestionFetcher()
-    
     var body: some View {
         
         List(fetcher.suggestions.filter({ username.isEmpty ? true : $0.fullName.contains(username)})){ suggestion in
                     Button(action: {
+                        self.selected.users.append(SelectedUser(fullName: suggestion.fullName, imageNumber: suggestion.imageNumber))
                         self.showSuggestionsThree.toggle()
-                        self.selectedName = suggestion.fullName
-                        self.selectedImage = suggestion.imageNumber
+
                     }){
                         VStack{
                                 HStack{
@@ -94,6 +94,9 @@ struct SuggestionData: Codable, Identifiable {
     }
 }
 
+public class UserSelection: ObservableObject {
+    @Published var users = [SelectedUser]()
+}
 
 struct SelectedUser {
     public var fullName: String

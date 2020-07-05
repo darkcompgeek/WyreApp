@@ -115,10 +115,10 @@
 		96C84B5024A7C2D1003279C1 /* WyreApp */ = {
 			isa = PBXGroup;
 			children = (
+				9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */,
 				9638491124AF772800482658 /* Settings_PaymentMethods.swift */,
 				9626E53524AE88BC005C5EAB /* NewWyreFormSheet.swift */,
 				96A910E524AFCFE0002E6B3A /* NewWyreForm.swift */,
-				9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */,
 				96C5211724AE4261001E1FC2 /* SettingsSheet.swift */,
 				96051F7724ABB6F0003BC10D /* MacAppLayout.swift */,
 				968D617624AAB5BF00574746 /* HomeTab.swift */,

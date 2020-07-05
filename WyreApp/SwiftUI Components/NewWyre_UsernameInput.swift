@@ -13,7 +13,6 @@ struct NewWyre_UsernameInput: View {
     @Binding var selectedName: String
     @Binding var selectedImage: String
     @Binding var showSuggestionsTwo:Bool
-    
     var body: some View {
             VStack(spacing: 0.0){
                 if showSuggestionsTwo {
@@ -30,3 +29,5 @@ struct NewWyre_UsernameInput_Previews: PreviewProvider {
         NewWyre_UsernameInput(username: "sdfa", selectedName: .constant("asdf"), selectedImage: .constant("001"), showSuggestionsTwo: .constant(true))
     }
 }
+
+
