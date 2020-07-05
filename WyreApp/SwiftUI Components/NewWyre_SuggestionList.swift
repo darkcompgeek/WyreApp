@@ -23,8 +23,9 @@ struct NewWyre_SuggestionList: View {
         List(fetcher.suggestions.filter({ username.isEmpty ? true : $0.fullName.contains(username)})){ suggestion in
                     Button(action: {
                         self.selected.users.append(SelectedUser(fullName: suggestion.fullName, imageNumber: suggestion.imageNumber))
+                        print(self.selected.users)
                         self.showSuggestionsThree.toggle()
-
+                        
                     }){
                         VStack{
                                 HStack{
