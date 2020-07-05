@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct NewWyreForm: View {
-    let selected = SelectedUser(fullName: "Allison Copeland", imageNumber: "001")
     @Binding var selectedName: String
     @Binding var selectedImage: String
+    @Binding var showSuggestionList:Bool
     var body: some View {
         
         VStack(spacing: 0.0) {
@@ -44,6 +44,7 @@ struct NewWyreForm: View {
                     
                             Button(action: {
                                 print("add user")
+                                self.showSuggestionList = true
                             }) {
                                 Image(systemName: "plus").foregroundColor(Color.black).font(.system(size:15, weight: .semibold))
                                 
@@ -74,7 +75,7 @@ struct NewWyreForm: View {
                             Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
                             VStack(alignment: .leading, spacing: 4.0){
                                 Text("Private").font(.custom("Gotham-Bold" ,size: 14))
-                                Text("This payment will only be visible to you and Amy.").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14))
+                                Text("This payment will only be visible to you and \(self.selectedName).").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14))
                             }
                         }
                     }.frame(height: 75)
@@ -90,6 +91,6 @@ struct NewWyreForm: View {
 
 struct NewWyreForm_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyreForm(selectedName: .constant("Allison Copeland"), selectedImage: .constant("001"))
+        NewWyreForm(selectedName: .constant("Allison Copeland"), selectedImage: .constant("001"), showSuggestionList: .constant(true))
     }
 }

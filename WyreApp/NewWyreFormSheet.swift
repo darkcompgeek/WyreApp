@@ -39,7 +39,7 @@ struct NewWyreFormSheet: View {
                 }.padding().frame(height:60).background(ColorManager.wyrePurple)
 
                 ZStack{
-                    NewWyreForm(selectedName: $selectedName, selectedImage: $selectedImage)
+                    NewWyreForm(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestionList: $showSuggestions)
                     NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestionsTwo: $showSuggestions)
 
                 }
