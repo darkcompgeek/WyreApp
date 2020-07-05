@@ -24,6 +24,8 @@ struct NewWyre_PaymentMethods: View {
     var body: some View {
          ZStack{
             VStack(spacing: 0.0){
+                
+                //navbar header
                 HStack{
                     btnBack.padding(.leading, 10)
                     Spacer()
@@ -34,27 +36,33 @@ struct NewWyre_PaymentMethods: View {
                 VStack(spacing: 0.0){
                     List{
                         Section{
-                            HStack{
-                                Image("Wyre Icon").resizable().aspectRatio(contentMode: .fit).frame(width: 40).padding().background(ColorManager.wyrePurple).cornerRadius(7)
-                                
-                                VStack(alignment: .leading, spacing: 5.0){
-                                    Text("Wyre Balance").font(.custom("Gotham-Bold", size: 16))
-                                    Text("$25.00").font(.custom("Gotham-Medium", size: 14))
-                                }.padding()
-                                Spacer()
-                                Image(systemName: "checkmark").font(.system(size: 20, weight: .semibold)).foregroundColor(ColorManager.wyrePurple)
+                            Button(action: {print("Wyre Balance")}) {
+                                HStack{
+                                    Image("Wyre Icon").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 40).padding().background(ColorManager.wyrePurple).cornerRadius(7)
+                                    
+                                    VStack(alignment: .leading, spacing: 5.0){
+                                        Text("Wyre Balance").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
+                                        Text("$25.00").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
+                                    }.padding()
+                                    Spacer()
+                                    Image(systemName: "checkmark").font(.system(size: 20, weight: .semibold)).foregroundColor(ColorManager.wyrePurple)
+                                }
                             }
 
                         }
                         
                         Section(header: Text("Payment Methods").font(.custom("Gotham-Medium", size: 12))){
+                            
+                            Button(action: {print("My Bank Account")}) {
                                 HStack{
                                     Image(systemName: "creditcard").frame(width: 40).font(.system(size: 30, weight: .semibold)).foregroundColor(Color.white).padding().background(Color.gray).cornerRadius(7)
                                     VStack(alignment: .leading, spacing: 5.0){
-                                        Text("My Bank Account").font(.custom("Gotham-Bold", size: 16))
+                                        Text("My Bank Account").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
                                         Text("XXXX-XXXX").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
                                     }.padding()
                                 }
+                            }
+
                         }
                         
                         Section{
