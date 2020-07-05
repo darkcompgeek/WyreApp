@@ -13,88 +13,51 @@ struct NewWyreForm: View {
     @State var selectedImage = ""
     @State var showSuggestions = true
     @ObservedObject var selected = UserSelection()
+    
+    
     var body: some View {
         ZStack{
             VStack(spacing: 0.0) {
-                    VStack(alignment: .center){
-                            HStack(alignment: .center){
-                                Spacer()
+                VStack(alignment: .center){
+                    HStack(alignment: .center){
+                        Spacer()
+                        if selectedImage == "" && selectedName == "" {
+                            
+                        } else {
+                            HStack(alignment: .center, spacing: 0.0){
+                                Image(selectedImage)
+                                    .resizable()
+                                    .clipShape(Circle())
+                                    .frame(width: 30, height: 30)
                                 
-                                if selected.users.count > 1 {
-                                    ScrollView(.horizontal){
-                                        HStack{
-                                            ForEach(selected.users, id: \.imageNumber){ user in
-                                                    HStack(alignment: .center, spacing: 0.0){
-                                                        
-                                                        Image(user.imageNumber)
-                                                        .resizable()
-                                                            .clipShape(Circle())
-                                                            .frame(width: 30, height: 30)
-                                                        
-                                                        Text(user.fullName).font(.custom("Gotham-Medium", size: 14))
-                                                            .foregroundColor(Color.black)
-                                                            .padding(.horizontal, 5.0)
-                                                        
-                                                        Button(action: {
-                                                            self.selectedImage = ""
-                                                            self.selectedName = ""
-                                                            
-                                                        }) {
-                                                            Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
-                                                            }
-                                                    }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
-                                        }
-                                            Button(action: {
-                                                print("add user")
-                                                self.showSuggestions.toggle()
-                                            }) {
-                                                Image(systemName: "plus").foregroundColor(Color.black).font(.system(size:15, weight: .semibold))
-                                                
-                                                }.padding().background(Color.white).cornerRadius(100)
-
-                               }
-                                    }
-
-                                } else {
-                                    HStack{
-                                        ForEach(selected.users, id: \.imageNumber){ user in
-                                                         HStack(alignment: .center, spacing: 0.0){
-                                                             
-                                                             Image(user.imageNumber)
-                                                             .resizable()
-                                                                 .clipShape(Circle())
-                                                                 .frame(width: 30, height: 30)
-                                                             
-                                                             Text(user.fullName).font(.custom("Gotham-Medium", size: 14))
-                                                                 .foregroundColor(Color.black)
-                                                                 .padding(.horizontal, 5.0)
-                                                             
-                                                             Button(action: {
-                                                                 self.selectedImage = ""
-                                                                 self.selectedName = ""
-                                                                 
-                                                             }) {
-                                                                 Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
-                                                                 }
-                                                         }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
-                                             }
-                                                 Button(action: {
-                                                     print("add user")
-                                                     self.showSuggestions.toggle()
-                                                 }) {
-                                                     Image(systemName: "plus").foregroundColor(Color.black).font(.system(size:15, weight: .semibold))
-                                                     
-                                                     }.padding().background(Color.white).cornerRadius(100)
-
-                                    }
-
+                                Text(selectedName).font(.custom("Gotham-Medium", size: 14))
+                                    .foregroundColor(Color.black)
+                                    .padding(.horizontal, 5.0)
+                                
+                                Button(action: {
+                                    self.selectedImage = ""
+                                    self.selectedName = ""
                                     
+                                }) {
+                                    Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
                                 }
+                            }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
+                        }
                         
-                                
-                                Spacer()
-                            }
-               }.padding(10).background(ColorManager.wyrePurple)
+                        
+                        Button(action: {
+                            print("add user")
+                            self.showSuggestions.toggle()
+                        }) {
+                            Image(systemName: "pencil").foregroundColor(Color.black).font(.system(size:15, weight: .bold))
+                            
+                        }.padding().background(Color.white).cornerRadius(100)
+                        Spacer()
+                    }
+                    
+        
+                }.padding(10).background(ColorManager.wyrePurple)
+                
                 Form{
                     Section{
                         NewWyreAmountField()
@@ -127,13 +90,18 @@ struct NewWyreForm: View {
                     }
                 }.navigationBarTitle("New Wyre", displayMode: .inline)            .navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
+                
+                
             }
+
+            
             NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestions: $showSuggestions)
-        
         }
+        
         
     }
 }
+    
 
 struct NewWyreForm_Previews: PreviewProvider {
     static var previews: some View {
