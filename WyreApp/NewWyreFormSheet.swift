@@ -40,11 +40,7 @@ struct NewWyreFormSheet: View {
 
                 ZStack{
                     NewWyreForm(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestionList: $showSuggestions)
-                    if selectedName == "" && selectedImage == "" {
                         NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestionsTwo: $showSuggestions)
-                    } else {
-                        
-                    }
 
                 }
             }
