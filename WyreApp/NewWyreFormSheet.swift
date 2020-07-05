@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct NewWyreFormSheet: View {
-    @State var selectedName = ""
-    @State var selectedImage = ""
-    @State var showSuggestions = true
+
     @Environment(\.presentationMode) var mode
     
     var body: some View {
@@ -39,9 +37,7 @@ struct NewWyreFormSheet: View {
                 }.padding().frame(height:60).background(ColorManager.wyrePurple)
 
                 ZStack{
-                    NewWyreForm(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestionList: $showSuggestions)
-                        NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestionsTwo: $showSuggestions)
-
+                    NewWyreForm()
                 }
             }
 
