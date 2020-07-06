@@ -85,9 +85,6 @@ struct NewWyreForm: View {
                             }
                         }.frame(height: 75)
                     }
-                    Button(action: {print("hello")}) {
-                        Text("Next").font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).padding().foregroundColor(ColorManager.wyrePurple)
-                    }
                 }.navigationBarTitle("New Wyre", displayMode: .inline)            .navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
                 
@@ -96,6 +93,17 @@ struct NewWyreForm: View {
 
             
             NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestions: $showSuggestions)
+            
+            
+            ZStack{
+                VStack {
+                    Spacer()
+                    Button(action: {print("hello")}) {
+                        Text("Next").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).background(ColorManager.wyrePurple).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.white)
+                    }
+                }
+            }.edgesIgnoringSafeArea(.bottom)
+
         }
         
         
