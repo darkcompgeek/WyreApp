@@ -11,7 +11,7 @@ import SwiftUI
 struct NewWyreFormSheet: View {
 
     @Environment(\.presentationMode) var mode
-    
+    @State private var selectedTab = "pay"
     var body: some View {
         NavigationView{
             //header
@@ -26,13 +26,26 @@ struct NewWyreFormSheet: View {
                             Image(systemName: "xmark").font(.system(size: 20, weight: .semibold)).foregroundColor(Color.white)
                     }
                     Spacer()
-                    Button(action: {print("Pay Tab")}) {
-                        Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
+                    
+                    
+                    Button(action: {self.selectedTab = "pay"}) {
+                        if self.selectedTab == "pay" {
+                           Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
+                        } else {
+                            Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(0.5)
+                        }
                     }.padding()
                     
-                    Button(action: {print("Request Tab")}) {
-                        Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
-                    }.padding().opacity(0.5)
+                    Button(action: {self.selectedTab = "request"}) {
+                        
+                        if self.selectedTab == "request" {
+                             Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
+                        } else {
+                           Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(0.5)
+                            
+                        }
+
+                    }.padding()
                     Spacer()
                 }.padding().frame(height:60).background(ColorManager.wyrePurple)
 
