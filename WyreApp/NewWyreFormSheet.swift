@@ -50,7 +50,7 @@ struct NewWyreFormSheet: View {
                 }.padding().frame(height:60).background(ColorManager.wyrePurple)
 
                 ZStack{
-                    NewWyreForm()
+                    NewWyreForm(selectedTab: $selectedTab)
                 }
             }
 

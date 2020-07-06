@@ -13,7 +13,7 @@ struct NewWyreForm: View {
     @State var selectedImage = ""
     @State var showSuggestions = true
     @ObservedObject var selected = UserSelection()
-    
+    @Binding var selectedTab: String
     
     var body: some View {
         ZStack{
@@ -62,17 +62,22 @@ struct NewWyreForm: View {
                     Section{
                         NewWyreAmountField()
                     }
+
                     Section{
-                        NavigationLink(destination: NewWyre_PaymentMethods()) {
-                            HStack{
-                                Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
-                                VStack(alignment: .leading, spacing: 4.0){
-                                    Text("Wyre Balance").font(.custom("Gotham-Bold" ,size: 14))
-                                    Text("$25.00").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14))
-                                }
-                            }
-                        }.frame(height: 75)
                         
+                        if selectedTab == "pay" {
+                            NavigationLink(destination: NewWyre_PaymentMethods()) {
+                                HStack{
+                                    Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
+                                    VStack(alignment: .leading, spacing: 4.0){
+                                        Text("Wyre Balance").font(.custom("Gotham-Bold" ,size: 14))
+                                        Text("$25.00").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14))
+                                    }
+                                }
+                            }.frame(height: 75)
+                        } else {
+                            
+                        }
                         
                         
                         NavigationLink(destination: NewWyre_PrivacySettings()) {
@@ -113,6 +118,6 @@ struct NewWyreForm: View {
 
 struct NewWyreForm_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyreForm()
+        NewWyreForm(selectedTab: .constant("pay"))
     }
 }
