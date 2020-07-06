@@ -52,6 +52,14 @@ struct NewWyreFormSheet: View {
 
                 ZStack{
                     NewWyreForm(selectedTab: $selectedTab)
+                    VStack {
+                        Spacer()
+                        NavigationLink(destination: NewWyre_Confirm()) {
+                                Text("Next").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).background(ColorManager.wyrePurple).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.white)
+                        }.navigationBarTitle(Text("Confirm"), displayMode: .inline).navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true)
+
+                    }.edgesIgnoringSafeArea(.bottom)
                 }
             }
 

@@ -78,7 +78,8 @@ struct NewWyre_Confirm: View {
                 
             }.background(ColorManager.wyrePurple).cornerRadius(25).padding()
             Spacer()
-        }.background(ColorManager.wyreDarkPurple)
+        }.navigationBarTitle(Text("Confirm"), displayMode: .inline).navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true).background(ColorManager.wyreDarkPurple).edgesIgnoringSafeArea(.bottom).edgesIgnoringSafeArea(.top)
     }
 }
 
