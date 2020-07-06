@@ -13,6 +13,7 @@ struct NewWyreFormSheet: View {
     @Environment(\.presentationMode) var mode
     @State private var selectedTab = "payment"
     var body: some View {
+        
         NavigationView{
             //header
             VStack(spacing:0.0) {
