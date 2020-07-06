@@ -9,14 +9,20 @@
 import SwiftUI
 
 struct NewWyreFormSheet: View {
-
+    @State private var selectedName = ""
+    @State private var selectedImage = ""
+    @State private var selectedPaymentMethod = "wyre"
+    @State private var selectedPrivacy = "private"
+    @State private var amount = "$" + ""
+    @State private var caption = ""
     @Environment(\.presentationMode) var mode
     @State private var selectedTab = "payment"
+    
     var body: some View {
         
         NavigationView{
             //header
-            VStack(spacing:0.0) {
+            VStack(spacing:0.0){
                 
                 //NavigationBar
                 HStack{
@@ -30,7 +36,7 @@ struct NewWyreFormSheet: View {
                     
                     
                     Button(action: {self.selectedTab = "payment"}) {
-                        if self.selectedTab == "payment" {
+                        if selectedTab == "payment" {
                            Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
                         } else {
                             Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(0.5)
@@ -39,7 +45,7 @@ struct NewWyreFormSheet: View {
                     
                     Button(action: {self.selectedTab = "request"}) {
                         
-                        if self.selectedTab == "request" {
+                        if selectedTab == "request" {
                              Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
                         } else {
                            Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(0.5)
@@ -51,10 +57,10 @@ struct NewWyreFormSheet: View {
                 }.padding().frame(height:60).background(ColorManager.wyrePurple)
 
                 ZStack{
-                    NewWyreForm(selectedTab: $selectedTab)
+                    NewWyreForm(selectedName: $selectedName, selectedImage: $selectedImage, selectedTab: $selectedTab, selectedPaymentMethod: $selectedPaymentMethod, selectedPrivacy: $selectedPrivacy, amount: $amount, caption: $caption)
                     VStack {
                         Spacer()
-                        NavigationLink(destination: NewWyre_Confirm()) {
+                        NavigationLink(destination: NewWyre_Confirm(selectedName: $selectedName, selectedImage: $selectedImage, selectedPaymentMethod: $selectedPaymentMethod, selectedPrivacy: $selectedPrivacy, selectedTab: $selectedTab, amount: $amount, caption: $caption)) {
                                 Text("Next").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).background(ColorManager.wyrePurple).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.white)
                         }.navigationBarTitle(Text("Confirm"), displayMode: .inline).navigationBarHidden(true)
                         .navigationBarBackButtonHidden(true)

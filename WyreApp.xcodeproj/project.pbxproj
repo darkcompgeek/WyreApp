@@ -11,7 +11,6 @@
 		960C661324A8E5EF00977A93 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960C661224A8E5EF00977A93 /* Colors.xcassets */; };
 		960C661524A8ED0200977A93 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C661424A8ED0200977A93 /* ColorManager.swift */; };
 		9626E53624AE88BC005C5EAB /* NewWyreFormSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9626E53524AE88BC005C5EAB /* NewWyreFormSheet.swift */; };
-		9626E53824AE92D1005C5EAB /* NewWyreAmountField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9626E53724AE92D1005C5EAB /* NewWyreAmountField.swift */; };
 		9638491224AF772800482658 /* Settings_PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491124AF772800482658 /* Settings_PaymentMethods.swift */; };
 		9638491424AF833200482658 /* NewWyre_PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */; };
 		9638491624AF84C700482658 /* NewWyre_PrivacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */; };
@@ -48,7 +47,6 @@
 		960C661224A8E5EF00977A93 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		960C661424A8ED0200977A93 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		9626E53524AE88BC005C5EAB /* NewWyreFormSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyreFormSheet.swift; sourceTree = "<group>"; };
-		9626E53724AE92D1005C5EAB /* NewWyreAmountField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyreAmountField.swift; sourceTree = "<group>"; };
 		962D6F1024AA73EF00EC2A30 /* Wyre.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wyre.entitlements; sourceTree = "<group>"; };
 		9638491124AF772800482658 /* Settings_PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_PaymentMethods.swift; sourceTree = "<group>"; };
 		9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_PaymentMethods.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 				96E8C34524A9683C000444BA /* NavigationBar.swift */,
 				966A203724AB91300074256A /* Me_PurpleBar.swift */,
 				964C14DF24AD1F8900FC770E /* CustomNavigation.swift */,
-				9626E53724AE92D1005C5EAB /* NewWyreAmountField.swift */,
 				9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */,
 			);
 			path = "SwiftUI Components";
@@ -262,7 +259,6 @@
 				96C84B5224A7C2D1003279C1 /* AppDelegate.swift in Sources */,
 				9638491224AF772800482658 /* Settings_PaymentMethods.swift in Sources */,
 				96A910E424AFCE72002E6B3A /* NewWyre_UsernameInput.swift in Sources */,
-				9626E53824AE92D1005C5EAB /* NewWyreAmountField.swift in Sources */,
 				960C661524A8ED0200977A93 /* ColorManager.swift in Sources */,
 				96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */,
 				966A203824AB91300074256A /* Me_PurpleBar.swift in Sources */,

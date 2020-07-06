@@ -9,13 +9,15 @@
 import SwiftUI
 
 struct NewWyreForm: View {
-    @State var selectedName = ""
-    @State var selectedImage = ""
+    @Binding var selectedName: String
+    @Binding var selectedImage: String
     @State var showSuggestions = true
     @ObservedObject var selected = UserSelection()
     @Binding var selectedTab: String
-    @State private var selectedPaymentMethod = "wyre"
-    @State private var selectedPrivacy = "private"
+    @Binding var selectedPaymentMethod: String
+    @Binding var selectedPrivacy: String
+    @Binding var amount: String
+    @Binding  var caption: String
     var body: some View {
         ZStack{
             VStack(spacing: 0.0) {
@@ -61,7 +63,7 @@ struct NewWyreForm: View {
                 
                 Form{
                     Section{
-                        NewWyreAmountField()
+                        NewWyreAmountField(amount: $amount, caption: $caption)
                     }
 
                     Section{
@@ -140,10 +142,33 @@ struct NewWyreForm: View {
         
     }
 }
-    
+
+struct NewWyreAmountField: View {
+    @Binding var amount: String
+    @Binding var caption: String
+        var body: some View {
+            VStack{
+                Text("Amount").font(.custom("Gotham-Bold", size:  14))
+                 
+            TextField("$0", text: $amount)
+                    .padding()
+                    .font(.custom("Gotham-Black", size:  75))
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .multilineTextAlignment(.center)
+                .keyboardType(.decimalPad)
+            Divider()
+                TextField("Enter a caption", text: $caption)
+                        .padding(15)
+                        .font(.custom("Gotham-Medium", size:  16))
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .multilineTextAlignment(.center)
+            }.padding(.top)
+            
+        }
+    }
 
 struct NewWyreForm_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyreForm(showSuggestions: false, selectedTab: .constant("payment"))
+        NewWyreForm(selectedName: .constant("Allison Copeland"), selectedImage: .constant("001"), showSuggestions: false, selectedTab: .constant("payment"), selectedPaymentMethod: .constant("wyre"), selectedPrivacy: .constant("private"), amount: .constant("$25"), caption: .constant("thank you"))
     }
 }
