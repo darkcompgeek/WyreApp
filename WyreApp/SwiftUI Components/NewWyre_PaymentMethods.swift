@@ -45,7 +45,7 @@ struct NewWyre_PaymentMethods: View {
                                         Text("$25.00").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
                                     }.padding()
                                     Spacer()
-                                    Image(systemName: "checkmark").font(.system(size: 20, weight: .semibold)).foregroundColor(ColorManager.wyrePurple)
+                                    Image(systemName: "checkmark").font(.system(size: 20, weight: .bold)).foregroundColor(ColorManager.wyrePurple)
                                 }
                             }
 

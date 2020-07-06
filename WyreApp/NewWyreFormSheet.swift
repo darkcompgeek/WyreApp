@@ -11,7 +11,7 @@ import SwiftUI
 struct NewWyreFormSheet: View {
 
     @Environment(\.presentationMode) var mode
-    @State private var selectedTab = "pay"
+    @State private var selectedTab = "payment"
     var body: some View {
         NavigationView{
             //header
@@ -28,8 +28,8 @@ struct NewWyreFormSheet: View {
                     Spacer()
                     
                     
-                    Button(action: {self.selectedTab = "pay"}) {
-                        if self.selectedTab == "pay" {
+                    Button(action: {self.selectedTab = "payment"}) {
+                        if self.selectedTab == "payment" {
                            Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
                         } else {
                             Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(0.5)

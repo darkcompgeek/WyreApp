@@ -65,7 +65,7 @@ struct NewWyreForm: View {
 
                     Section{
                         
-                        if selectedTab == "pay" {
+                        if selectedTab == "payment" {
                             NavigationLink(destination: NewWyre_PaymentMethods()) {
                                 HStack{
                                     Image("Wyre Icon").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 40).padding().background(ColorManager.wyrePurple).cornerRadius(7)
@@ -80,12 +80,12 @@ struct NewWyreForm: View {
                         }
                         
                         
-                        NavigationLink(destination: NewWyre_PrivacySettings()) {
+                        NavigationLink(destination: NewWyre_PrivacySettings(selectedTab: $selectedTab, selectedName: $selectedName)) {
                             HStack(alignment: .center){
                                 Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).frame(width: 40).padding().cornerRadius(7)
                                 VStack(alignment: .leading, spacing: 5.0){
                                     Text("Private").font(.custom("Gotham-Bold" ,size: 16))
-                                    Text("This payment will only be visible to you and \(self.selectedName).").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14)).lineLimit(3)
+                                    Text("This \(selectedTab) will only be visible to you and \(self.selectedName).").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14)).lineLimit(3)
                                 }.padding()
                             }
                         }.frame(height: 90)
@@ -118,6 +118,6 @@ struct NewWyreForm: View {
 
 struct NewWyreForm_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyreForm(showSuggestions: false, selectedTab: .constant("pay"))
+        NewWyreForm(showSuggestions: false, selectedTab: .constant("payment"))
     }
 }
