@@ -68,27 +68,27 @@ struct NewWyreForm: View {
                         if selectedTab == "pay" {
                             NavigationLink(destination: NewWyre_PaymentMethods()) {
                                 HStack{
-                                    Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
-                                    VStack(alignment: .leading, spacing: 4.0){
-                                        Text("Wyre Balance").font(.custom("Gotham-Bold" ,size: 14))
-                                        Text("$25.00").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14))
-                                    }
+                                    Image("Wyre Icon").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 40).padding().background(ColorManager.wyrePurple).cornerRadius(7)
+                                    VStack(alignment: .leading, spacing: 5.0){
+                                        Text("Wyre Balance").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
+                                        Text("$25.00").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
+                                    }.padding()
                                 }
-                            }.frame(height: 75)
+                            }.frame(height: 90)
                         } else {
                             
                         }
                         
                         
                         NavigationLink(destination: NewWyre_PrivacySettings()) {
-                            HStack{
-                                Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).padding()
-                                VStack(alignment: .leading, spacing: 4.0){
-                                    Text("Private").font(.custom("Gotham-Bold" ,size: 14))
-                                    Text("This payment will only be visible to you and \(self.selectedName).").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14))
-                                }
+                            HStack(alignment: .center){
+                                Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).frame(width: 40).padding().cornerRadius(7)
+                                VStack(alignment: .leading, spacing: 5.0){
+                                    Text("Private").font(.custom("Gotham-Bold" ,size: 16))
+                                    Text("This payment will only be visible to you and \(self.selectedName).").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14)).lineLimit(3)
+                                }.padding()
                             }
-                        }.frame(height: 75)
+                        }.frame(height: 90)
                     }
                 }.navigationBarTitle("New Wyre", displayMode: .inline)            .navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
@@ -118,6 +118,6 @@ struct NewWyreForm: View {
 
 struct NewWyreForm_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyreForm(selectedTab: .constant("pay"))
+        NewWyreForm(showSuggestions: false, selectedTab: .constant("pay"))
     }
 }
