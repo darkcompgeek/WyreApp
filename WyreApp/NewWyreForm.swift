@@ -14,7 +14,8 @@ struct NewWyreForm: View {
     @State var showSuggestions = true
     @ObservedObject var selected = UserSelection()
     @Binding var selectedTab: String
-    
+    @State private var selectedPaymentMethod = "wyre"
+    @State private var selectedPrivacy = "private"
     var body: some View {
         ZStack{
             VStack(spacing: 0.0) {
@@ -66,13 +67,21 @@ struct NewWyreForm: View {
                     Section{
                         
                         if selectedTab == "payment" {
-                            NavigationLink(destination: NewWyre_PaymentMethods()) {
+                            NavigationLink(destination: NewWyre_PaymentMethods(selectedPaymentMethod: $selectedPaymentMethod)) {
                                 HStack{
-                                    Image("Wyre Icon").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 40).padding().background(ColorManager.wyrePurple).cornerRadius(7)
-                                    VStack(alignment: .leading, spacing: 5.0){
-                                        Text("Wyre Balance").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
-                                        Text("$25.00").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
-                                    }.padding()
+                                    if selectedPaymentMethod == "wyre" {
+                                        Image("Wyre Icon").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 40).padding().background(ColorManager.wyrePurple).cornerRadius(7)
+                                        VStack(alignment: .leading, spacing: 5.0){
+                                            Text("Wyre Balance").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
+                                            Text("$25.00").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
+                                        }.padding()
+                                    } else if selectedPaymentMethod == "bank"{
+                                    Image(systemName: "creditcard").frame(width: 40).font(.system(size: 25, weight: .semibold)).foregroundColor(Color.white).padding().background(Color.gray).cornerRadius(7)
+                                        VStack(alignment: .leading, spacing: 5.0){
+                                            Text("My Bank Account").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
+                                            Text("XXXX-XXXX").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
+                                        }.padding()
+                                    }
                                 }
                             }.frame(height: 90)
                         } else {
@@ -80,13 +89,30 @@ struct NewWyreForm: View {
                         }
                         
                         
-                        NavigationLink(destination: NewWyre_PrivacySettings(selectedTab: $selectedTab, selectedName: $selectedName)) {
+                        NavigationLink(destination: NewWyre_PrivacySettings(selectedTab: $selectedTab, selectedName: $selectedName, selectedPrivacy: $selectedPrivacy)) {
                             HStack(alignment: .center){
-                                Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).frame(width: 40).padding().cornerRadius(7)
-                                VStack(alignment: .leading, spacing: 5.0){
-                                    Text("Private").font(.custom("Gotham-Bold" ,size: 16))
-                                    Text("This \(selectedTab) will only be visible to you and \(self.selectedName).").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14)).lineLimit(3)
-                                }.padding()
+                                if selectedPrivacy == "private" {
+                                    Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).frame(width: 40).padding().cornerRadius(7)
+                                    VStack(alignment: .leading, spacing: 5.0){
+                                        Text("Private").font(.custom("Gotham-Bold" ,size: 16))
+                                        Text("This \(selectedTab) will only be visible to you and \(self.selectedName).").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14)).lineLimit(3)
+                                    }.padding()
+                                } else if selectedPrivacy == "friends"{
+                                Image(systemName: "person").font(.system(size: 30, weight: .semibold)).frame(width: 40).padding().cornerRadius(7).foregroundColor(Color.black)
+                                    VStack(alignment: .leading, spacing: 5.0){
+                                        Text("Friends Only").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
+                                        Text("This \(selectedTab) will be visible to your friends.").font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
+                                        
+                                    }.padding()
+                                } else if selectedPrivacy == "public"{
+                                    Image(systemName: "globe").font(.system(size: 30)).frame(width: 40).padding().cornerRadius(7).foregroundColor(Color.black)
+                                    VStack(alignment: .leading, spacing: 5.0){
+                                        Text("Public").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
+                                        Text("This \(selectedTab) will be public and anyone on the Wyre app can see it.").font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
+                                        
+                                    }.padding()
+                                }
+
                             }
                         }.frame(height: 90)
                     }
