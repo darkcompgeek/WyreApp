@@ -74,32 +74,26 @@ struct FeedList: View {
 
     struct FeedTabBar: View {
     @Binding var selectedTab: String
+        @State private var publicIsSelected = true
     var body: some View {
         HStack{
             Spacer()
-            
-            if selectedTab == "public" {
-                Button(action: {
-                    self.selectedTab = "public"
-                }) {
-                    Text("Public").font(.custom("Gotham-Bold", size: 16)).padding().foregroundColor(Color.black)
+            VStack(spacing: 0.0) {
+                HStack{
+                    Button(action: {
+                        self.selectedTab = "public"
+                        self.publicIsSelected = true
+                    }) {
+                        Text("Public").font(.custom("Gotham-Bold", size: 16)).padding().foregroundColor(Color.black).opacity(self.publicIsSelected ? 1.0 : 0.5)
+                    }
+                    Button(action: {
+                        self.selectedTab = "friends"
+                        self.publicIsSelected = false
+                    }) {
+                        Text("Friends").font(.custom("Gotham-Bold", size: 16)).padding().foregroundColor(Color.black).opacity(self.publicIsSelected ? 0.5 : 1.0)
+                    }
                 }
-                Button(action: {
-                    self.selectedTab = "friends"
-                }) {
-                    Text("Friends").font(.custom("Gotham-Bold", size: 16)).padding().foregroundColor(Color.black).opacity(0.5)
-                }
-            } else if selectedTab == "friends" {
-                Button(action: {
-                    self.selectedTab = "public"
-                }) {
-                    Text("Public").font(.custom("Gotham-Bold", size: 16)).padding().foregroundColor(Color.black).opacity(0.5)
-                }
-                Button(action: {
-                    self.selectedTab = "friends"
-                }) {
-                    Text("Friends").font(.custom("Gotham-Bold", size: 16)).padding().foregroundColor(Color.black)
-                }
+                Rectangle().frame(width: 50, height: 3.5).cornerRadius(15).offset(x:self.publicIsSelected ? -51 : 45, y: -10).animation(.easeOut)
             }
 
             Spacer()
