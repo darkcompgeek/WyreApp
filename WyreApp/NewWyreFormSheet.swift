@@ -17,7 +17,7 @@ struct NewWyreFormSheet: View {
     @State private var caption = ""
     @Environment(\.presentationMode) var mode
     @State private var selectedTab = "payment"
-    
+    @State private var paymentIsSelected = true
     var body: some View {
         
         NavigationView{
@@ -33,26 +33,26 @@ struct NewWyreFormSheet: View {
                             Image(systemName: "xmark").font(.system(size: 20, weight: .semibold)).foregroundColor(Color.white)
                     }
                     Spacer()
-                    
-                    
-                    Button(action: {self.selectedTab = "payment"}) {
-                        if selectedTab == "payment" {
-                           Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
-                        } else {
-                            Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(0.5)
-                        }
-                    }.padding()
-                    
-                    Button(action: {self.selectedTab = "request"}) {
-                        
-                        if selectedTab == "request" {
-                             Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
-                        } else {
-                           Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(0.5)
+                    VStack(spacing: 0.0) {
+                        HStack{
+                            Button(action: {
+                                self.selectedTab = "payment"
+                                self.paymentIsSelected = true
+                            }) {
+                                Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 1.0 : 0.5)
+                            }.padding()
                             
-                        }
+                            Button(action: {
+                                self.selectedTab = "request"
+                                self.paymentIsSelected = false
+                            }) {
+                                
+                                Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 0.5 : 1.0)
 
-                    }.padding()
+                            }.padding()
+                        }
+                    }
+
                     Spacer()
                 }.padding().frame(height:60).background(ColorManager.wyrePurple)
 
