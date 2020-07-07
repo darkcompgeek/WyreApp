@@ -84,20 +84,20 @@ struct FeedList: View {
                         self.selectedTab = "public"
                         self.publicIsSelected = true
                     }) {
-                        Text("Public").font(.custom("Gotham-Bold", size: 16)).padding().foregroundColor(Color.black).opacity(self.publicIsSelected ? 1.0 : 0.5)
+                        Text("Public").font(.custom("Gotham-Bold", size: 16)).padding(.horizontal).padding(.vertical, 8.0).foregroundColor(Color.black).opacity(self.publicIsSelected ? 1.0 : 0.5)
                     }
                     Button(action: {
                         self.selectedTab = "friends"
                         self.publicIsSelected = false
                     }) {
-                        Text("Friends").font(.custom("Gotham-Bold", size: 16)).padding().foregroundColor(Color.black).opacity(self.publicIsSelected ? 0.5 : 1.0)
+                        Text("Friends").font(.custom("Gotham-Bold", size: 16)).padding(.horizontal).padding(.vertical, 8.0).foregroundColor(Color.black).opacity(self.publicIsSelected ? 0.5 : 1.0)
                     }
                 }
-                Rectangle().frame(width: 50, height: 3.5).cornerRadius(15).offset(x:self.publicIsSelected ? -51 : 45, y: -10).animation(.easeOut(duration: 0.20))
+                Rectangle().frame(width: self.publicIsSelected ? 50 : 60, height: 3.5).cornerRadius(15).offset(x:self.publicIsSelected ? -51 : 45).animation(.easeOut(duration: 0.20))
             }
 
             Spacer()
-        }.padding(5)
+        }.padding(10)
         }
     }
     
