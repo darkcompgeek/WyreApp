@@ -47,14 +47,24 @@ struct NewWyreForm: View {
                             }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(100)
                         }
                         
-                        
-                        Button(action: {
-                            print("add user")
-                            self.showSuggestions.toggle()
-                        }) {
-                            Image(systemName: "pencil").foregroundColor(Color.black).font(.system(size:15, weight: .bold))
-                            
-                        }.padding().background(Color.white).cornerRadius(100)
+                        if selectedName == "" && selectedImage == "" {
+                            Button(action: {
+                                print("add user")
+                                self.showSuggestions.toggle()
+                            }) {
+                                Image(systemName: "plus").foregroundColor(Color.black).font(.system(size:15, weight: .bold))
+                                
+                            }.padding().background(Color.white).cornerRadius(100)
+                        } else {
+                            Button(action: {
+                                print("add user")
+                                self.showSuggestions.toggle()
+                            }) {
+                                Image(systemName: "pencil").foregroundColor(Color.black).font(.system(size:15, weight: .bold))
+                                
+                            }.padding().background(Color.white).cornerRadius(100)
+                        }
+
                         Spacer()
                     }
                     
