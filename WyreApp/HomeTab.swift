@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct HomeTab: View {
+
         @ObservedObject var viewRouter: ViewRouter
     var body: some View {
         Group{
@@ -21,13 +22,11 @@ struct HomeTab: View {
                             Home_PurpleBar()
                             Home_DarkPurpleRow()
                         }.frame(height: 200)
-                    FeedTabBar()
-                    FeedList()
+                        Feed()
                 }
             } else {
                     VStack(spacing: 0.0){
-                    FeedTabBar()
-                    FeedList()
+                        Feed()
                 }
             }
         }

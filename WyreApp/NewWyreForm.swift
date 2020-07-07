@@ -80,7 +80,7 @@ struct NewWyreForm: View {
                                     } else if selectedPaymentMethod == "bank"{
                                     Image(systemName: "creditcard").frame(width: 40).font(.system(size: 25, weight: .semibold)).foregroundColor(Color.white).padding().background(Color.gray).cornerRadius(7)
                                         VStack(alignment: .leading, spacing: 5.0){
-                                            Text("My Bank Account").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
+                                            Text("My Credit Card").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
                                             Text("XXXX-XXXX").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
                                         }.padding()
                                     }

@@ -37,8 +37,7 @@
 		96C84B8024A7D065003279C1 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96C84B7A24A7CE4A003279C1 /* Gotham-Medium.otf */; };
 		96E8C34624A9683C000444BA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34524A9683C000444BA /* NavigationBar.swift */; };
 		96E8C34A24A96D2B000444BA /* Home_PurpleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34924A96D2B000444BA /* Home_PurpleBar.swift */; };
-		96E8C34C24A96E0E000444BA /* FeedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34B24A96E0E000444BA /* FeedList.swift */; };
-		96E8C34E24A96E53000444BA /* FeedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34D24A96E52000444BA /* FeedTabBar.swift */; };
+		96E8C34C24A96E0E000444BA /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34B24A96E0E000444BA /* Feed.swift */; };
 		96E8C35124A96FF9000444BA /* Home_DarkPurpleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C35024A96FF9000444BA /* Home_DarkPurpleRow.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,8 +74,7 @@
 		96C84B7B24A7CE4A003279C1 /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Black.otf"; path = "fonts/Gotham-Black.otf"; sourceTree = SOURCE_ROOT; };
 		96E8C34524A9683C000444BA /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		96E8C34924A96D2B000444BA /* Home_PurpleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_PurpleBar.swift; sourceTree = "<group>"; };
-		96E8C34B24A96E0E000444BA /* FeedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedList.swift; path = ../FeedList.swift; sourceTree = "<group>"; };
-		96E8C34D24A96E52000444BA /* FeedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTabBar.swift; sourceTree = "<group>"; };
+		96E8C34B24A96E0E000444BA /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Feed.swift; path = ../Feed.swift; sourceTree = "<group>"; };
 		96E8C35024A96FF9000444BA /* Home_DarkPurpleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_DarkPurpleRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,8 +160,7 @@
 				96A910E324AFCE72002E6B3A /* NewWyre_UsernameInput.swift */,
 				96E8C35024A96FF9000444BA /* Home_DarkPurpleRow.swift */,
 				966A203524AB90690074256A /* Me_DarkPurpleRow.swift */,
-				96E8C34D24A96E52000444BA /* FeedTabBar.swift */,
-				96E8C34B24A96E0E000444BA /* FeedList.swift */,
+				96E8C34B24A96E0E000444BA /* Feed.swift */,
 				96E8C34924A96D2B000444BA /* Home_PurpleBar.swift */,
 				96E8C34524A9683C000444BA /* NavigationBar.swift */,
 				966A203724AB91300074256A /* Me_PurpleBar.swift */,
@@ -263,8 +260,7 @@
 				96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */,
 				966A203824AB91300074256A /* Me_PurpleBar.swift in Sources */,
 				96C84B5624A7C2D1003279C1 /* ContentView.swift in Sources */,
-				96E8C34C24A96E0E000444BA /* FeedList.swift in Sources */,
-				96E8C34E24A96E53000444BA /* FeedTabBar.swift in Sources */,
+				96E8C34C24A96E0E000444BA /* Feed.swift in Sources */,
 				96E8C34A24A96D2B000444BA /* Home_PurpleBar.swift in Sources */,
 				96A910E624AFCFE0002E6B3A /* NewWyreForm.swift in Sources */,
 				966A203624AB90690074256A /* Me_DarkPurpleRow.swift in Sources */,
