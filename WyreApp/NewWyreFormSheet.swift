@@ -40,17 +40,17 @@ struct NewWyreFormSheet: View {
                                 self.paymentIsSelected = true
                             }) {
                                 Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 1.0 : 0.5)
-                            }.padding()
+                            }.padding(.horizontal).padding(.vertical, 8.0)
                             
                             Button(action: {
                                 self.selectedTab = "request"
                                 self.paymentIsSelected = false
                             }) {
-                                
                                 Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 0.5 : 1.0)
-
-                            }.padding()
+                            }.padding(.horizontal).padding(.vertical, 8.0)
                         }
+                        
+                        Rectangle().foregroundColor(Color.white).frame(width:self.paymentIsSelected ? 30 : 70, height: 3.5).cornerRadius(15).offset(x:self.paymentIsSelected ? -57 : 36).animation(.easeOut(duration: 0.20))
                     }
 
                     Spacer()

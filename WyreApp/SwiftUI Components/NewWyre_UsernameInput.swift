@@ -82,7 +82,7 @@ struct NewWyre_SuggestionList: View {
                         }.frame(height: 45)
                     }
     
-                }.listStyle(GroupedListStyle())
+        }.listStyle(GroupedListStyle())
     }
 }
 
