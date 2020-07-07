@@ -15,7 +15,6 @@
 		9638491424AF833200482658 /* NewWyre_PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */; };
 		9638491624AF84C700482658 /* NewWyre_PrivacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */; };
 		9638491D24AFA66500482658 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 9638491C24AFA66500482658 /* Introspect */; };
-		964C14E024AD1F8900FC770E /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964C14DF24AD1F8900FC770E /* CustomNavigation.swift */; };
 		966A203624AB90690074256A /* Me_DarkPurpleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A203524AB90690074256A /* Me_DarkPurpleRow.swift */; };
 		966A203824AB91300074256A /* Me_PurpleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A203724AB91300074256A /* Me_PurpleBar.swift */; };
 		966E941E24B295DA00C7A403 /* NewWyre_Confirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966E941D24B295DA00C7A403 /* NewWyre_Confirm.swift */; };
@@ -50,7 +49,6 @@
 		9638491124AF772800482658 /* Settings_PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_PaymentMethods.swift; sourceTree = "<group>"; };
 		9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_PaymentMethods.swift; sourceTree = "<group>"; };
 		9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_PrivacySettings.swift; sourceTree = "<group>"; };
-		964C14DF24AD1F8900FC770E /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		966A203524AB90690074256A /* Me_DarkPurpleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Me_DarkPurpleRow.swift; sourceTree = "<group>"; };
 		966A203724AB91300074256A /* Me_PurpleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Me_PurpleBar.swift; sourceTree = "<group>"; };
 		966E941D24B295DA00C7A403 /* NewWyre_Confirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_Confirm.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				96E8C34924A96D2B000444BA /* Home_PurpleBar.swift */,
 				96E8C34524A9683C000444BA /* NavigationBar.swift */,
 				966A203724AB91300074256A /* Me_PurpleBar.swift */,
-				964C14DF24AD1F8900FC770E /* CustomNavigation.swift */,
 				9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */,
 			);
 			path = "SwiftUI Components";
@@ -273,7 +270,6 @@
 				96E8C35124A96FF9000444BA /* Home_DarkPurpleRow.swift in Sources */,
 				96051F7824ABB6F0003BC10D /* MacAppLayout.swift in Sources */,
 				968D617724AAB5BF00574746 /* HomeTab.swift in Sources */,
-				964C14E024AD1F8900FC770E /* CustomNavigation.swift in Sources */,
 				969A98F024A7D9B600E5692F /* ViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
