@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct NewWyre_Confirm: View {
-@Binding var selectedName: String
-@Binding var selectedImage: String
-@Binding var selectedPaymentMethod: String
-@Binding var selectedPrivacy: String
-@Binding var selectedTab: String
-@Binding var amount: String
-@Binding  var caption: String
-@Environment(\.presentationMode) var mode
+    @Binding var selectedName: String
+    @Binding var selectedImage: String
+    @Binding var selectedPaymentMethod: String
+    @Binding var selectedPrivacy: String
+    @Binding var selectedTab: String
+    @Binding var amount: String
+    @Binding  var caption: String
+    @Environment(\.presentationMode) var mode
     var body: some View {
         
         VStack(spacing: 0.0){
@@ -44,32 +44,32 @@ struct NewWyre_Confirm: View {
                             Spacer()
                         }
                     }
-
                     
-                        HStack(alignment: .center, spacing: 0.0){
-                            Image(selectedImage)
-                                .resizable()
-                                .clipShape(Circle())
-                                .frame(width: 30, height: 30)
-                            Text(selectedName).font(.custom("Gotham-Medium", size: 14))
-                                .foregroundColor(Color.black)
-                                .padding(.horizontal, 5.0)
-                        }.padding(.vertical, 7.5).padding(.horizontal, 7.5).background(Color.white).cornerRadius(25)
+                    
+                    HStack(alignment: .center, spacing: 0.0){
+                        Image(selectedImage)
+                            .resizable()
+                            .clipShape(Circle())
+                            .frame(width: 30, height: 30)
+                        Text(selectedName).font(.custom("Gotham-Medium", size: 14))
+                            .foregroundColor(Color.black)
+                            .padding(.horizontal, 5.0)
+                    }.padding(.vertical, 7.5).padding(.horizontal, 7.5).background(Color.white).cornerRadius(25)
                 }.padding()
-
+                
                 
                 VStack{
                     HStack{
-                    Spacer()
-                      Text(amount).font(.custom("Gotham-Black", size: 50))
+                        Spacer()
+                        Text(amount).font(.custom("Gotham-Black", size: 50))
                         Spacer()
                     }.padding()
                     HStack{
-                    Spacer()
-                      Text(caption).font(.custom("Gotham-Medium", size: 16))
+                        Spacer()
+                        Text(caption).font(.custom("Gotham-Medium", size: 16))
                         Spacer()
                     }.padding()
-                    }.padding().background(Color.white)
+                }.padding().background(Color.white)
                 
                 VStack(alignment: .center, spacing: 10.0){
                     
@@ -78,14 +78,14 @@ struct NewWyre_Confirm: View {
                             HStack(alignment: .center, spacing: 20){
                                 Spacer()
                                 Image("Wyre Icon").resizable().aspectRatio(contentMode: .fit).frame(width: 40).padding(10).background(ColorManager.wyrePurple).cornerRadius(10)
-                               Text("Wyre Balance").font(.custom("Gotham-Medium", size: 16))
+                                Text("Wyre Balance").font(.custom("Gotham-Medium", size: 16))
                                 Spacer()
                             }
                         } else if selectedPaymentMethod == "bank" {
                             HStack(alignment: .center, spacing: 20){
                                 Spacer()
                                 Image(systemName: "creditcard").foregroundColor(Color.white).font(.system(size: 20, weight: .semibold)).frame(width: 40).padding(10).background(Color.gray).cornerRadius(10)
-                               Text("My Credit Card").font(.custom("Gotham-Medium", size: 16))
+                                Text("My Credit Card").font(.custom("Gotham-Medium", size: 16))
                                 Spacer()
                             }
                         }
@@ -98,45 +98,50 @@ struct NewWyre_Confirm: View {
                         HStack(alignment: .center, spacing: 0){
                             Spacer()
                             Image(systemName: "lock").font(.system(size:20, weight: .bold)).frame(width: 40).padding(10)
-                           Text("Private").font(.custom("Gotham-Medium", size: 16))
+                            Text("Private").font(.custom("Gotham-Medium", size: 16))
                             Spacer()
                         }
                     } else if selectedPrivacy == "friends" {
                         HStack(alignment: .center, spacing: 0){
                             Spacer()
                             Image(systemName: "person").font(.system(size:20, weight: .bold)).frame(width: 40).padding(10)
-                           Text("Friends Only").font(.custom("Gotham-Medium", size: 16))
+                            Text("Friends Only").font(.custom("Gotham-Medium", size: 16))
                             Spacer()
                         }
                     } else if selectedPrivacy == "public" {
                         HStack(alignment: .center, spacing: 0){
                             Spacer()
                             Image(systemName: "globe").font(.system(size:20)).frame(width: 40).padding(10)
-                           Text("Public").font(.custom("Gotham-Medium", size: 16))
+                            Text("Public").font(.custom("Gotham-Medium", size: 16))
                             Spacer()
                         }
                     }
-
-                    }.padding().background(ColorManager.wyreGray)
-                   
+                    
+                }.padding().background(ColorManager.wyreGray)
+                
                 Button(action: {            self.mode.wrappedValue.dismiss()}) {
                     HStack(alignment: .center, spacing: 5.0){
                         Image(systemName: "pencil").font(.system(size: 22, weight: .bold)).foregroundColor(Color.white)
-                       Text("Edit").background(ColorManager.wyrePurple).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.white)
+                        Text("Edit").background(ColorManager.wyrePurple).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.white)
                     }.padding().background(ColorManager.wyrePurple).frame(maxWidth: .infinity).frame(height: 60)
                 }
                 
-            
+                
                 
             }.background(ColorManager.wyrePurple).cornerRadius(25).padding(40)
             Spacer()
             VStack {
                 Button(action: {print("hello")}) {
-                    Text("Confirm and Pay").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).background(ColorManager.wyreGreen).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.black)
+                    if selectedTab == "payment" {
+                        Text("Confirm and Pay").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).background(ColorManager.wyreGreen).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.black)
+                    } else {
+                        Text("Confirm and Request").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).background(ColorManager.wyreGreen).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.black)
+                    }
+                    
                 }
             }
         }.navigationBarTitle(Text("Confirm"), displayMode: .inline).navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true).background(ColorManager.wyreDarkPurple).edgesIgnoringSafeArea(.bottom).edgesIgnoringSafeArea(.top)
+            .navigationBarBackButtonHidden(true).background(ColorManager.wyreDarkPurple).edgesIgnoringSafeArea(.bottom).edgesIgnoringSafeArea(.top)
     }
 }
 
