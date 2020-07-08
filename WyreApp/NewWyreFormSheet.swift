@@ -87,7 +87,7 @@ struct NewWyreFormSheet: View {
                                 Text(self.isConfirmed ? "Edit" : "Next").frame(maxWidth: .infinity).padding(20).padding(.bottom, self.isConfirmed ? 0 : 25.0).background(ColorManager.wyrePurple).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.white)
                             }
                         }
-
+                        
                     }.cornerRadius(self.isConfirmed ? 25 : 0).background(ColorManager.wyreDarkPurple).padding(self.isConfirmed ? 40: 0).offset(x: self.isFinal ? 500 : 0)
                     if isConfirmed == true {
                         Spacer()
@@ -100,7 +100,7 @@ struct NewWyreFormSheet: View {
                 VStack{
                     Spacer()
                     Button(action: {
-                        withAnimation{
+                        withAnimation(.easeInOut(duration: 0.5)){
                             self.isFinal = true
                         }
                         
@@ -110,7 +110,7 @@ struct NewWyreFormSheet: View {
                         } else {
                             Text("Confirm and Request").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.black).background(ColorManager.wyreGreen)
                         }
-                    }
+                    }.offset(y:self.isFinal ? 90 : 0)
                 }.edgesIgnoringSafeArea(.bottom)
             }
         }
@@ -133,41 +133,41 @@ struct NewWyreForm: View {
     var body: some View {
         ZStack{
             VStack(spacing: 0.0) {
-                    HStack(alignment: .center){
-                        Spacer()
-                        if selectedImage == "" && selectedName == "" {
+                HStack(alignment: .center){
+                    Spacer()
+                    if selectedImage == "" && selectedName == "" {
+                        
+                    } else {
+                        HStack(alignment: .center, spacing: 0.0){
+                            Image(selectedImage)
+                                .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 30, height: 30)
                             
-                        } else {
-                            HStack(alignment: .center, spacing: 0.0){
-                                Image(selectedImage)
-                                    .resizable()
-                                    .clipShape(Circle())
-                                    .frame(width: 30, height: 30)
-                                
-                                Text(selectedName).font(.custom("Gotham-Medium", size: 14))
-                                    .foregroundColor(Color.black)
-                                    .padding(.horizontal, 5.0)
-                                if self.isConfirmed == false {
-                                    Button(action: {
-                                        self.selectedImage = ""
-                                        self.selectedName = ""
-                                        self.isEmpty = true
-                                    }) {
-                                        Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
-                                    }
+                            Text(selectedName).font(.custom("Gotham-Medium", size: 14))
+                                .foregroundColor(Color.black)
+                                .padding(.horizontal, 5.0)
+                            if self.isConfirmed == false {
+                                Button(action: {
+                                    self.selectedImage = ""
+                                    self.selectedName = ""
+                                    self.isEmpty = true
+                                }) {
+                                    Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
                                 }
-                            }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(25)
-                        }
-                        if isConfirmed == false {
-                            Button(action: {
-                                print("add user")
-                                self.showSuggestions.toggle()
-                            }) {
-                                Image(systemName: self.isEmpty ? "plus" : "pencil").foregroundColor(Color.black).font(.system(size:15, weight: .bold))
-                            }.padding().background(Color.white).cornerRadius(100)
-                        }
-                        Spacer()
-                    }.padding(10).background(ColorManager.wyrePurple)
+                            }
+                        }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(25)
+                    }
+                    if isConfirmed == false {
+                        Button(action: {
+                            print("add user")
+                            self.showSuggestions.toggle()
+                        }) {
+                            Image(systemName: self.isEmpty ? "plus" : "pencil").foregroundColor(Color.black).font(.system(size:15, weight: .bold))
+                        }.padding().background(Color.white).cornerRadius(100)
+                    }
+                    Spacer()
+                }.padding(10).background(ColorManager.wyrePurple)
                 
                 if isConfirmed == false {
                     Form{
@@ -176,7 +176,7 @@ struct NewWyreForm: View {
                         }
                         
                         Section{
-    
+                            
                             if selectedTab == "payment" {
                                 NavigationLink(destination: NewWyre_PaymentMethods(selectedPaymentMethod: $selectedPaymentMethod)) {
                                     HStack{
@@ -282,24 +282,26 @@ struct NewWyreAmountField: View {
     @Binding var caption: String
     @Binding var isConfirmed: Bool
     var body: some View {
-
-                VStack{
-                    if isConfirmed == false {
-                        Text("Amount").font(.custom("Gotham-Bold", size:  14))
-                    }
-                        TextField("$0", text: $amount)
-                            .padding()
-                            .font(.custom("Gotham-Black", size:  75))
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .multilineTextAlignment(.center)
-                            .keyboardType(.decimalPad).disabled(self.isConfirmed ? true : false)
-                    Divider().opacity(self.isConfirmed ? 0.0 : 1.0)
-                    TextField(self.isConfirmed ? "" : "Enter a caption", text: $caption)
-                            .padding(15)
-                            .font(.custom("Gotham-Medium", size:  16))
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .multilineTextAlignment(.center).disabled(self.isConfirmed ? true : false)
-                }.padding(.top).background(Color.white)
+        
+        VStack{
+            if isConfirmed == false {
+                Text("Amount").font(.custom("Gotham-Bold", size:  14))
+            }
+            TextField("$0", text: $amount)
+                .padding()
+                .font(.custom("Gotham-Black", size: self.isConfirmed ? 50 : 75))
+                .textFieldStyle(PlainTextFieldStyle())
+                .multilineTextAlignment(.center)
+                .keyboardType(.decimalPad).disabled(self.isConfirmed ? true : false)
+            if isConfirmed == false {
+                Divider()
+            }
+            TextField(self.isConfirmed ? "" : "Enter a caption", text: $caption)
+                .padding(15)
+                .font(.custom("Gotham-Medium", size:  16))
+                .textFieldStyle(PlainTextFieldStyle())
+                .multilineTextAlignment(.center).disabled(self.isConfirmed ? true : false)
+        }.padding(.top).background(Color.white)
         
     }
 }
