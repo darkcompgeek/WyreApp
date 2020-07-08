@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+import Lottie
 
 struct NewWyreFormSheet: View {
     @State private var selectedName = ""
