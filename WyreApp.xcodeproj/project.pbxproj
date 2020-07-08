@@ -22,7 +22,6 @@
 		968D617924AAB6EF00574746 /* MeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D617824AAB6EF00574746 /* MeTab.swift */; };
 		969A98F024A7D9B600E5692F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A98EF24A7D9B600E5692F /* ViewRouter.swift */; };
 		96A910E424AFCE72002E6B3A /* NewWyre_UsernameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A910E324AFCE72002E6B3A /* NewWyre_UsernameInput.swift */; };
-		96A910E624AFCFE0002E6B3A /* NewWyreForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A910E524AFCFE0002E6B3A /* NewWyreForm.swift */; };
 		96C5211824AE4261001E1FC2 /* SettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5211724AE4261001E1FC2 /* SettingsSheet.swift */; };
 		96C84B5224A7C2D1003279C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C84B5124A7C2D1003279C1 /* AppDelegate.swift */; };
 		96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C84B5324A7C2D1003279C1 /* SceneDelegate.swift */; };
@@ -56,7 +55,6 @@
 		968D617824AAB6EF00574746 /* MeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTab.swift; sourceTree = "<group>"; };
 		969A98EF24A7D9B600E5692F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		96A910E324AFCE72002E6B3A /* NewWyre_UsernameInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_UsernameInput.swift; sourceTree = "<group>"; };
-		96A910E524AFCFE0002E6B3A /* NewWyreForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyreForm.swift; sourceTree = "<group>"; };
 		96C5211724AE4261001E1FC2 /* SettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheet.swift; sourceTree = "<group>"; };
 		96C84B4E24A7C2D1003279C1 /* Wyre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wyre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C84B5124A7C2D1003279C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */,
 				9638491124AF772800482658 /* Settings_PaymentMethods.swift */,
 				9626E53524AE88BC005C5EAB /* NewWyreFormSheet.swift */,
-				96A910E524AFCFE0002E6B3A /* NewWyreForm.swift */,
 				96C5211724AE4261001E1FC2 /* SettingsSheet.swift */,
 				96051F7724ABB6F0003BC10D /* MacAppLayout.swift */,
 				968D617624AAB5BF00574746 /* HomeTab.swift */,
@@ -259,7 +256,6 @@
 				96C84B5624A7C2D1003279C1 /* ContentView.swift in Sources */,
 				96E8C34C24A96E0E000444BA /* Feed.swift in Sources */,
 				96E8C34A24A96D2B000444BA /* Home_PurpleBar.swift in Sources */,
-				96A910E624AFCFE0002E6B3A /* NewWyreForm.swift in Sources */,
 				966A203624AB90690074256A /* Me_DarkPurpleRow.swift in Sources */,
 				96C5211824AE4261001E1FC2 /* SettingsSheet.swift in Sources */,
 				966E941E24B295DA00C7A403 /* NewWyre_Confirm.swift in Sources */,
