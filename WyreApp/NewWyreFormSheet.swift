@@ -202,7 +202,7 @@ struct NewWyreForm: View {
                                     Spacer()
                                 }
                                 if selectedPrivacy == "private" {
-                                    Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).frame(width: 40).padding().cornerRadius(7).foregroundColor(Color.black)
+                                    Image(systemName: "lock").font(.system(size: self.isConfirmed ? 25 : 30, weight: .semibold)).frame(width: self.isConfirmed ? 20 : 40).padding().cornerRadius(7).foregroundColor(Color.black)
                                     VStack(alignment: .leading, spacing: 5.0){
                                         Text("Private").font(.custom("Gotham-Bold" ,size: 16)).foregroundColor(Color.black)
                                         if isConfirmed == false {
@@ -210,7 +210,7 @@ struct NewWyreForm: View {
                                         }
                                     }.padding(self.isConfirmed ? 5 : 20)
                                 } else if selectedPrivacy == "friends"{
-                                    Image(systemName: "person").font(.system(size: 30, weight: .semibold)).frame(width: 40).padding().cornerRadius(7).foregroundColor(Color.black)
+                                    Image(systemName: "person").font(.system(size:self.isConfirmed ? 25 : 30, weight: .semibold)).frame(width: self.isConfirmed ? 20 : 40).padding().cornerRadius(7).foregroundColor(Color.black)
                                     VStack(alignment: .leading, spacing: 5.0){
                                         Text("Friends Only").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
                                         if isConfirmed == false {
@@ -220,7 +220,7 @@ struct NewWyreForm: View {
                                         
                                     }.padding(self.isConfirmed ? 5 : 20)
                                 } else if selectedPrivacy == "public"{
-                                    Image(systemName: "globe").font(.system(size: 30)).frame(width: 40).padding().cornerRadius(7).foregroundColor(Color.black)
+                                    Image(systemName: "globe").font(.system(size: self.isConfirmed ? 25 : 30)).frame(width: self.isConfirmed ? 20 : 40).padding().cornerRadius(7).foregroundColor(Color.black)
                                     VStack(alignment: .leading, spacing: 5.0){
                                         Text("Public").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
                                         if isConfirmed == false {
