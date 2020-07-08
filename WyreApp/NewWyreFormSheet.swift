@@ -169,14 +169,11 @@ struct NewWyreForm: View {
                     Spacer()
                 }.padding(10).background(ColorManager.wyrePurple)
                 
-                if isConfirmed == false {
-                    Form{
+                VStack(spacing: 0.0){
                         Section{
                             NewWyreAmountField(amount: $amount, caption: $caption, isConfirmed: $isConfirmed)
                         }
-                        
                         Section{
-                            
                             if selectedTab == "payment" {
                                 NavigationLink(destination: NewWyre_PaymentMethods(selectedPaymentMethod: $selectedPaymentMethod)) {
                                     HStack{
@@ -193,16 +190,19 @@ struct NewWyreForm: View {
                                                 Text("XXXX-XXXX").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
                                             }.padding()
                                         }
-                                    }
-                                }.frame(height: 90)
+                                        Spacer()
+                                    }.padding().background(self.isConfirmed ? ColorManager.wyreGray : Color.white)
+                                }.frame(height: 90).background(Color.white)
                             }
+                            
+                            Divider().padding(.horizontal).background(Color.white)
                             
                             NavigationLink(destination: NewWyre_PrivacySettings(selectedTab: $selectedTab, selectedName: $selectedName, selectedPrivacy: $selectedPrivacy)) {
                                 HStack(alignment: .center){
                                     if selectedPrivacy == "private" {
-                                        Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).frame(width: 40).padding().cornerRadius(7)
+                                        Image(systemName: "lock").font(.system(size: 30, weight: .semibold)).frame(width: 40).padding().cornerRadius(7).foregroundColor(Color.black)
                                         VStack(alignment: .leading, spacing: 5.0){
-                                            Text("Private").font(.custom("Gotham-Bold" ,size: 16))
+                                            Text("Private").font(.custom("Gotham-Bold" ,size: 16)).foregroundColor(Color.black)
                                             Text("This \(selectedTab) will only be visible to you and \(self.selectedName).").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14)).lineLimit(3)
                                         }.padding()
                                     } else if selectedPrivacy == "friends"{
@@ -220,54 +220,15 @@ struct NewWyreForm: View {
                                             
                                         }.padding()
                                     }
-                                }
-                            }.frame(height: 90)
+                                    Spacer()
+                                }.padding()
+                            }.frame(height: 90).background(self.isConfirmed ? ColorManager.wyreGray : Color.white)
+                        }
+                        if isConfirmed == false {
+                            Spacer()
                         }
                     }.navigationBarTitle("New Wyre", displayMode: .inline)            .navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true)
-                } else {
-                    VStack(spacing: 0.0){
-                        NewWyreAmountField(amount: $amount, caption: $caption, isConfirmed: $isConfirmed)
-                        if selectedPaymentMethod == "wyre" {
-                            HStack(alignment: .center, spacing: 20){
-                                Spacer()
-                                Image("Wyre Icon").resizable().aspectRatio(contentMode: .fit).frame(width: 40).padding(10).background(ColorManager.wyrePurple).cornerRadius(10)
-                                Text("Wyre Balance").font(.custom("Gotham-Medium", size: 16))
-                                Spacer()
-                            }.padding()
-                        } else if selectedPaymentMethod == "bank" {
-                            HStack(alignment: .center, spacing: 20){
-                                Spacer()
-                                Image(systemName: "creditcard").foregroundColor(Color.white).font(.system(size: 20, weight: .semibold)).frame(width: 40).padding(10).background(Color.gray).cornerRadius(10)
-                                Text("My Credit Card").font(.custom("Gotham-Medium", size: 16))
-                                Spacer()
-                            }.padding()
-                        }
-                        if selectedPrivacy == "public" {
-                            HStack(alignment: .center, spacing: 0){
-                                Spacer()
-                                Image(systemName: "globe").font(.system(size:20)).frame(width: 40).padding(10)
-                                Text("Public").font(.custom("Gotham-Medium", size: 16))
-                                Spacer()
-                            }.padding()
-                        } else if selectedPrivacy == "friends" {
-                            HStack(alignment: .center, spacing: 0){
-                                Spacer()
-                                Image(systemName: "person").font(.system(size:20, weight: .bold)).frame(width: 40).padding(10)
-                                Text("Friends Only").font(.custom("Gotham-Medium", size: 16))
-                                Spacer()
-                            }.padding()
-                        } else if selectedPrivacy == "private"{
-                            HStack(alignment: .center, spacing: 0){
-                                Spacer()
-                                Image(systemName: "lock").font(.system(size:20, weight: .bold)).frame(width: 40).padding(10)
-                                Text("Private").font(.custom("Gotham-Medium", size: 16))
-                                Spacer()
-                            }.padding()
-                        }
-                    }.background(ColorManager.wyreGray).navigationBarTitle("New Wyre", displayMode: .inline).navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true)
-                }
+                    .navigationBarBackButtonHidden(true).background(ColorManager.wyreGray)
             }
             NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestions: $showSuggestions)
             
@@ -289,7 +250,7 @@ struct NewWyreAmountField: View {
             }
             TextField("$0", text: $amount)
                 .padding()
-                .font(.custom("Gotham-Black", size: self.isConfirmed ? 50 : 75))
+                .font(.custom("Gotham-Black", size: self.isConfirmed ? 60 : 75))
                 .textFieldStyle(PlainTextFieldStyle())
                 .multilineTextAlignment(.center)
                 .keyboardType(.decimalPad).disabled(self.isConfirmed ? true : false)
