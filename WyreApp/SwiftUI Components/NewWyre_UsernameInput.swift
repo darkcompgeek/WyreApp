@@ -40,6 +40,7 @@ struct NewWyre_UsernameField: View {
                     Image(systemName: "qrcode.viewfinder").foregroundColor(Color.gray).font(.system(size: 22, weight: .semibold))
                 }.padding()
             }
+            Rectangle().frame(height: 0.5).foregroundColor(Color.gray)
         }
     }
 }
@@ -144,7 +145,7 @@ struct SelectedUser {
 struct NewWyre_UsernameInput_Previews: PreviewProvider {
     @Binding var showSuggestions: Bool
     static var previews: some View {
-        NewWyre_UsernameInput(username: "sdfa", selectedName: .constant("asdf"), selectedImage: .constant("001"), showSuggestions: .constant(true))
+        NewWyre_UsernameInput(username: "", selectedName: .constant(""), selectedImage: .constant("001"), showSuggestions: .constant(true))
     }
 }
 
