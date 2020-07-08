@@ -87,11 +87,11 @@ struct NewWyreFormSheet: View {
                             }
                         }
 
-                    }.cornerRadius(self.isConfirmed ? 25 : 0).edgesIgnoringSafeArea(.bottom).padding(self.isConfirmed ? 50: 0).background(ColorManager.wyreDarkPurple)
+                    }.cornerRadius(self.isConfirmed ? 25 : 0).background(ColorManager.wyreDarkPurple).padding(self.isConfirmed ? 50: 0)
                     if isConfirmed == true {
                         Spacer()
                     }
-                }.background(ColorManager.wyreDarkPurple)
+                }.background(ColorManager.wyreDarkPurple).edgesIgnoringSafeArea(.bottom)
             }.navigationBarTitle("New Wyre", displayMode: .inline)            .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
             
@@ -100,11 +100,10 @@ struct NewWyreFormSheet: View {
                     Spacer()
                     Button(action: {print("hello")}) {
                         if selectedTab == "payment" {
-                            Text("Confirm and Pay").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).background(ColorManager.wyreGreen).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.black)
+                            Text("Confirm and Pay").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.black).background(ColorManager.wyreGreen)
                         } else {
-                            Text("Confirm and Request").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).background(ColorManager.wyreGreen).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.black)
+                            Text("Confirm and Request").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.black).background(ColorManager.wyreGreen)
                         }
-                        
                     }
                 }.edgesIgnoringSafeArea(.bottom)
             }
