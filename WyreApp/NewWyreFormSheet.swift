@@ -21,6 +21,7 @@ struct NewWyreFormSheet: View {
     @State private var paymentIsSelected = true
     @State var showSuggestions = true
     @State var isConfirmed = false
+    @State var isFinal = false
     var body: some View {
         
         ZStack{
@@ -31,7 +32,7 @@ struct NewWyreFormSheet: View {
                         Spacer()
                         HStack{
                             Spacer().background(ColorManager.wyreDarkPurple)
-                            Text("Is everything correct?").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white)
+                            Text("Is everything correct?").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white).opacity(self.isFinal ? 0.0 : 1.0)
                             Spacer().background(ColorManager.wyreDarkPurple)
                         }.background(ColorManager.wyreDarkPurple)
                     }
@@ -87,7 +88,7 @@ struct NewWyreFormSheet: View {
                             }
                         }
 
-                    }.cornerRadius(self.isConfirmed ? 25 : 0).background(ColorManager.wyreDarkPurple).padding(self.isConfirmed ? 50: 0)
+                    }.cornerRadius(self.isConfirmed ? 25 : 0).background(ColorManager.wyreDarkPurple).padding(self.isConfirmed ? 50: 0).offset(x: self.isFinal ? 500 : 0)
                     if isConfirmed == true {
                         Spacer()
                     }
@@ -98,7 +99,12 @@ struct NewWyreFormSheet: View {
             if isConfirmed == true {
                 VStack{
                     Spacer()
-                    Button(action: {print("hello")}) {
+                    Button(action: {
+                        withAnimation{
+                            self.isFinal = true
+                        }
+                        
+                    }) {
                         if selectedTab == "payment" {
                             Text("Confirm and Pay").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.black).background(ColorManager.wyreGreen)
                         } else {
