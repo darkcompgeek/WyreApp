@@ -17,6 +17,8 @@
 		9638491D24AFA66500482658 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 9638491C24AFA66500482658 /* Introspect */; };
 		966A203624AB90690074256A /* Me_DarkPurpleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A203524AB90690074256A /* Me_DarkPurpleRow.swift */; };
 		966A203824AB91300074256A /* Me_PurpleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A203724AB91300074256A /* Me_PurpleBar.swift */; };
+		967F810E24B68505004C7688 /* load.json in Resources */ = {isa = PBXBuildFile; fileRef = 967F810D24B68505004C7688 /* load.json */; };
+		967F811024B68545004C7688 /* loadSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 967F810F24B68545004C7688 /* loadSuccess.json */; };
 		96870F3E24B6743C0034EE4E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 96870F3D24B6743C0034EE4E /* Lottie */; };
 		968D617724AAB5BF00574746 /* HomeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D617624AAB5BF00574746 /* HomeTab.swift */; };
 		968D617924AAB6EF00574746 /* MeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D617824AAB6EF00574746 /* MeTab.swift */; };
@@ -34,7 +36,6 @@
 		96C84B7F24A7D065003279C1 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96C84B7824A7CE4A003279C1 /* Gotham-Book.otf */; };
 		96C84B8024A7D065003279C1 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96C84B7A24A7CE4A003279C1 /* Gotham-Medium.otf */; };
 		96E1026824B67B4D00579C9C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1026724B67B4D00579C9C /* LottieView.swift */; };
-		96E1026A24B67B7B00579C9C /* loadSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 96E1026924B67B7B00579C9C /* loadSuccess.json */; };
 		96E8C34624A9683C000444BA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34524A9683C000444BA /* NavigationBar.swift */; };
 		96E8C34A24A96D2B000444BA /* Home_PurpleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34924A96D2B000444BA /* Home_PurpleBar.swift */; };
 		96E8C34C24A96E0E000444BA /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34B24A96E0E000444BA /* Feed.swift */; };
@@ -52,6 +53,8 @@
 		9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_PrivacySettings.swift; sourceTree = "<group>"; };
 		966A203524AB90690074256A /* Me_DarkPurpleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Me_DarkPurpleRow.swift; sourceTree = "<group>"; };
 		966A203724AB91300074256A /* Me_PurpleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Me_PurpleBar.swift; sourceTree = "<group>"; };
+		967F810D24B68505004C7688 /* load.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = load.json; path = assets/lottieAnimations/load.json; sourceTree = SOURCE_ROOT; };
+		967F810F24B68545004C7688 /* loadSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loadSuccess.json; path = assets/lottieAnimations/loadSuccess.json; sourceTree = SOURCE_ROOT; };
 		968D617624AAB5BF00574746 /* HomeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTab.swift; sourceTree = "<group>"; };
 		968D617824AAB6EF00574746 /* MeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeTab.swift; sourceTree = "<group>"; };
 		969A98EF24A7D9B600E5692F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
@@ -70,7 +73,6 @@
 		96C84B7A24A7CE4A003279C1 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Medium.otf"; path = "fonts/Gotham-Medium.otf"; sourceTree = SOURCE_ROOT; };
 		96C84B7B24A7CE4A003279C1 /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Black.otf"; path = "fonts/Gotham-Black.otf"; sourceTree = SOURCE_ROOT; };
 		96E1026724B67B4D00579C9C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		96E1026924B67B7B00579C9C /* loadSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loadSuccess.json; path = assets/lottieAnimations/loadSuccess.json; sourceTree = SOURCE_ROOT; };
 		96E8C34524A9683C000444BA /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		96E8C34924A96D2B000444BA /* Home_PurpleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_PurpleBar.swift; sourceTree = "<group>"; };
 		96E8C34B24A96E0E000444BA /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Feed.swift; path = ../Feed.swift; sourceTree = "<group>"; };
@@ -130,7 +132,8 @@
 				960C661224A8E5EF00977A93 /* Colors.xcassets */,
 				960C661424A8ED0200977A93 /* ColorManager.swift */,
 				96E1026724B67B4D00579C9C /* LottieView.swift */,
-				96E1026924B67B7B00579C9C /* loadSuccess.json */,
+				967F810D24B68505004C7688 /* load.json */,
+				967F810F24B68545004C7688 /* loadSuccess.json */,
 			);
 			path = WyreApp;
 			sourceTree = "<group>";
@@ -236,13 +239,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				96C84B7F24A7D065003279C1 /* Gotham-Book.otf in Resources */,
+				967F811024B68545004C7688 /* loadSuccess.json in Resources */,
 				96C84B7E24A7D065003279C1 /* Gotham-Bold.otf in Resources */,
 				96C84B5E24A7C2D3003279C1 /* LaunchScreen.storyboard in Resources */,
 				96C84B8024A7D065003279C1 /* Gotham-Medium.otf in Resources */,
 				96C84B7D24A7D065003279C1 /* Gotham-Black.otf in Resources */,
 				960C661324A8E5EF00977A93 /* Colors.xcassets in Resources */,
 				96C84B5B24A7C2D3003279C1 /* Preview Assets.xcassets in Resources */,
-				96E1026A24B67B7B00579C9C /* loadSuccess.json in Resources */,
+				967F810E24B68505004C7688 /* load.json in Resources */,
 				96C84B5824A7C2D3003279C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

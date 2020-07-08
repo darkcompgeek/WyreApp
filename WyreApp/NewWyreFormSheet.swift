@@ -22,6 +22,7 @@ struct NewWyreFormSheet: View {
     @State var showSuggestions = true
     @State var isConfirmed = false
     @State var isFinal = false
+    @State var isComplete = false
     var body: some View {
         
         ZStack{
@@ -37,7 +38,11 @@ struct NewWyreFormSheet: View {
                     }
                     ZStack {
                         if isFinal == true {
-                            LottieView(filename: "loadSuccess")
+                            VStack{
+                                LottieView(filename: "load").frame(width: 100, height: 100)
+                                Text("Just a moment!").font(.custom("Gotham-Bold", size: 30)).foregroundColor(Color.white).padding(10)
+                                Text("We're processing your \(selectedTab)...").font(.custom("Gotham-Book", size: 20)).foregroundColor(Color.white)
+                            }
                         }
                         VStack(spacing: 0.0) {
                             //NavigationBar
@@ -286,6 +291,6 @@ struct NewWyreAmountField: View {
 
 struct NewWyreFormSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyreFormSheet(showSuggestions: false)
+        NewWyreFormSheet(showSuggestions: false, isFinal: true)
     }
 }
