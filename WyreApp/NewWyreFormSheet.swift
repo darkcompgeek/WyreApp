@@ -18,6 +18,7 @@ struct NewWyreFormSheet: View {
     @Environment(\.presentationMode) var mode
     @State private var selectedTab = "payment"
     @State private var paymentIsSelected = true
+    @State var showSuggestions = true
     var body: some View {
         
         NavigationView{
@@ -57,13 +58,15 @@ struct NewWyreFormSheet: View {
                 }.padding().frame(height:60).background(ColorManager.wyrePurple)
 
                 ZStack{
-                    NewWyreForm(selectedName: $selectedName, selectedImage: $selectedImage, selectedTab: $selectedTab, selectedPaymentMethod: $selectedPaymentMethod, selectedPrivacy: $selectedPrivacy, amount: $amount, caption: $caption)
+                    NewWyreForm(selectedName: $selectedName, selectedImage: $selectedImage, selectedTab: $selectedTab, selectedPaymentMethod: $selectedPaymentMethod, selectedPrivacy: $selectedPrivacy, amount: $amount, caption: $caption, showSuggestions: $showSuggestions)
                     VStack {
                         Spacer()
+                        
+                        
                         NavigationLink(destination: NewWyre_Confirm(selectedName: $selectedName, selectedImage: $selectedImage, selectedPaymentMethod: $selectedPaymentMethod, selectedPrivacy: $selectedPrivacy, selectedTab: $selectedTab, amount: $amount, caption: $caption)) {
                                 Text("Next").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).background(ColorManager.wyrePurple).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.white)
                         }.navigationBarTitle(Text("Confirm"), displayMode: .inline).navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true)
+                            .navigationBarBackButtonHidden(true).opacity(showSuggestions ? 0.0 : 1.0)
 
                     }.edgesIgnoringSafeArea(.bottom)
                 }

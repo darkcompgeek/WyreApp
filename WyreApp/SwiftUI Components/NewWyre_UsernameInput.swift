@@ -39,7 +39,7 @@ struct NewWyre_UsernameField: View {
                 Button(action: {print("hello")}){
                     Image(systemName: "qrcode.viewfinder").foregroundColor(Color.gray).font(.system(size: 22, weight: .semibold))
                 }.padding()
-            }
+            }.frame(height: 60)
             Rectangle().frame(height: 0.5).foregroundColor(Color.gray)
         }
     }

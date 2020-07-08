@@ -11,13 +11,13 @@ import SwiftUI
 struct NewWyreForm: View {
     @Binding var selectedName: String
     @Binding var selectedImage: String
-    @State var showSuggestions = true
     @ObservedObject var selected = UserSelection()
     @Binding var selectedTab: String
     @Binding var selectedPaymentMethod: String
     @Binding var selectedPrivacy: String
     @Binding var amount: String
     @Binding  var caption: String
+    @Binding var showSuggestions: Bool
     var body: some View {
         ZStack{
             VStack(spacing: 0.0) {
@@ -136,16 +136,6 @@ struct NewWyreForm: View {
 
             
             NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestions: $showSuggestions)
-            
-            
-            ZStack{
-                VStack {
-                    Spacer()
-                    Button(action: {print("hello")}) {
-                        Text("Next").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).background(ColorManager.wyrePurple).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.white)
-                    }
-                }
-            }.edgesIgnoringSafeArea(.bottom)
 
         }
         
@@ -179,6 +169,6 @@ struct NewWyreAmountField: View {
 
 struct NewWyreForm_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyreForm(selectedName: .constant("Allison Copeland"), selectedImage: .constant("001"), showSuggestions: false, selectedTab: .constant("payment"), selectedPaymentMethod: .constant("wyre"), selectedPrivacy: .constant("private"), amount: .constant("$25"), caption: .constant("thank you"))
+        NewWyreForm(selectedName: .constant("Allison Copeland"), selectedImage: .constant("001"), selectedTab: .constant("payment"), selectedPaymentMethod: .constant("wyre"), selectedPrivacy: .constant("private"), amount: .constant("$25"), caption: .constant("thank you"), showSuggestions: .constant(true))
     }
 }
