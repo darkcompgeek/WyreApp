@@ -174,23 +174,23 @@ struct NewWyreForm: View {
                                         Spacer()
                                     }
                                     if selectedPaymentMethod == "wyre" {
-                                        Image("Wyre Icon").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width:self.isConfirmed ? 30 : 40).padding(self.isConfirmed ? 10 : 20).background(ColorManager.wyrePurple).cornerRadius(7)
+                                        Image("Wyre Icon").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width:self.isConfirmed ? 30 : 40).padding(self.isConfirmed ? 10 : 15).background(ColorManager.wyrePurple).cornerRadius(7)
                                         VStack(alignment: .leading, spacing: 5.0){
                                             Text("Wyre Balance").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
                                             Text("$25.00").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
-                                        }.padding(self.isConfirmed ? 5 : 20)
+                                        }.padding(.horizontal)
                                     } else if selectedPaymentMethod == "bank"{
                                         Image(systemName: "creditcard").frame(width: 40).font(.system(size: 25, weight: .semibold)).foregroundColor(Color.white).padding(self.isConfirmed ? 10 : 20).background(Color.gray).cornerRadius(7)
                                         VStack(alignment: .leading, spacing: 5.0){
                                             Text("My Credit Card").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
                                             Text("XXXX-XXXX").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
-                                        }.padding(self.isConfirmed ? 5 : 20)
+                                        }.padding(.horizontal)
                                     }
                                     Spacer()
                                     if isConfirmed == false {
                                         Image(systemName: "chevron.right").foregroundColor(Color.gray)
                                     }
-                                }.padding().background(self.isConfirmed ? ColorManager.wyreGray : Color.white)
+                                }.padding(20).background(self.isConfirmed ? ColorManager.wyreGray : Color.white)
                             }.frame(height: self.isConfirmed ? 70: 90).background(Color.white)
                         }
                         
@@ -208,7 +208,7 @@ struct NewWyreForm: View {
                                         if isConfirmed == false {
                                             Text("This \(selectedTab) will only be visible to you and \(self.selectedName).").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14)).lineLimit(3)
                                         }
-                                    }.padding(self.isConfirmed ? 5 : 20)
+                                    }.padding(self.isConfirmed ? 5 : 15)
                                 } else if selectedPrivacy == "friends"{
                                     Image(systemName: "person").font(.system(size:self.isConfirmed ? 25 : 30, weight: .semibold)).frame(width: self.isConfirmed ? 20 : 40).padding().cornerRadius(7).foregroundColor(Color.black)
                                     VStack(alignment: .leading, spacing: 5.0){
@@ -218,7 +218,7 @@ struct NewWyreForm: View {
                                         }
 
                                         
-                                    }.padding(self.isConfirmed ? 5 : 20)
+                                    }.padding(self.isConfirmed ? 5 : 15)
                                 } else if selectedPrivacy == "public"{
                                     Image(systemName: "globe").font(.system(size: self.isConfirmed ? 25 : 30)).frame(width: self.isConfirmed ? 20 : 40).padding().cornerRadius(7).foregroundColor(Color.black)
                                     VStack(alignment: .leading, spacing: 5.0){
@@ -226,7 +226,7 @@ struct NewWyreForm: View {
                                         if isConfirmed == false {
                                                                                     Text("This \(selectedTab) will be public and anyone on the Wyre app can see it.").font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
                                         }
-                                    }
+                                    }.padding(self.isConfirmed ? 5 : 15)
                                 }
                                 Spacer()
                                 if isConfirmed == false {
@@ -261,7 +261,7 @@ struct NewWyreAmountField: View {
             }
             TextField("$0", text: $amount)
                 .padding()
-                .font(.custom("Gotham-Black", size: self.isConfirmed ? 60 : 75))
+                .font(.custom("Gotham-Black", size: self.isConfirmed ? 60 : 60))
                 .textFieldStyle(PlainTextFieldStyle())
                 .multilineTextAlignment(.center)
                 .keyboardType(.decimalPad).disabled(self.isConfirmed ? true : false)
