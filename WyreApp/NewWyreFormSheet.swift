@@ -74,13 +74,13 @@ struct NewWyreFormSheet: View {
                                 }
                             }
                             Spacer()
-                        }.padding().frame(height:60).background(ColorManager.wyrePurple)
+                        }.padding(self.isConfirmed ? 0 : 20).frame(height:60).background(ColorManager.wyrePurple)
                         
                         NewWyreForm(selectedName: $selectedName, selectedImage: $selectedImage, selectedTab: $selectedTab, selectedPaymentMethod: $selectedPaymentMethod, selectedPrivacy: $selectedPrivacy, amount: $amount, caption: $caption, showSuggestions: $showSuggestions, isConfirmed: $isConfirmed)
                         
                         if showSuggestions == false {
                             Button(action: {
-                                withAnimation {
+                                withAnimation(.easeOut(duration: 0.3)) {
                                     self.isConfirmed.toggle()
                                 }
                             }){
@@ -88,7 +88,7 @@ struct NewWyreFormSheet: View {
                             }
                         }
 
-                    }.cornerRadius(self.isConfirmed ? 25 : 0).background(ColorManager.wyreDarkPurple).padding(self.isConfirmed ? 50: 0).offset(x: self.isFinal ? 500 : 0)
+                    }.cornerRadius(self.isConfirmed ? 25 : 0).background(ColorManager.wyreDarkPurple).padding(self.isConfirmed ? 40: 0).offset(x: self.isFinal ? 500 : 0)
                     if isConfirmed == true {
                         Spacer()
                     }
@@ -133,7 +133,6 @@ struct NewWyreForm: View {
     var body: some View {
         ZStack{
             VStack(spacing: 0.0) {
-                VStack(alignment: .center){
                     HStack(alignment: .center){
                         Spacer()
                         if selectedImage == "" && selectedName == "" {
@@ -156,8 +155,6 @@ struct NewWyreForm: View {
                                     }) {
                                         Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
                                     }
-                                } else {
-                                    
                                 }
                             }.padding(.vertical, 7.5).padding(.horizontal, 7.0).background(Color.white).cornerRadius(25)
                         }
@@ -168,15 +165,9 @@ struct NewWyreForm: View {
                             }) {
                                 Image(systemName: self.isEmpty ? "plus" : "pencil").foregroundColor(Color.black).font(.system(size:15, weight: .bold))
                             }.padding().background(Color.white).cornerRadius(100)
-                        } else {
-                            
                         }
-                        
                         Spacer()
-                    }
-                    
-                    
-                }.padding(10).background(ColorManager.wyrePurple)
+                    }.padding(10).background(ColorManager.wyrePurple)
                 
                 if isConfirmed == false {
                     Form{
@@ -185,7 +176,7 @@ struct NewWyreForm: View {
                         }
                         
                         Section{
-                            
+    
                             if selectedTab == "payment" {
                                 NavigationLink(destination: NewWyre_PaymentMethods(selectedPaymentMethod: $selectedPaymentMethod)) {
                                     HStack{
@@ -204,8 +195,6 @@ struct NewWyreForm: View {
                                         }
                                     }
                                 }.frame(height: 90)
-                            } else {
-                                
                             }
                             
                             NavigationLink(destination: NewWyre_PrivacySettings(selectedTab: $selectedTab, selectedName: $selectedName, selectedPrivacy: $selectedPrivacy)) {
@@ -231,7 +220,6 @@ struct NewWyreForm: View {
                                             
                                         }.padding()
                                     }
-                                    
                                 }
                             }.frame(height: 90)
                         }
@@ -277,13 +265,9 @@ struct NewWyreForm: View {
                                 Spacer()
                             }.padding()
                         }
-                        
                     }.background(ColorManager.wyreGray).navigationBarTitle("New Wyre", displayMode: .inline).navigationBarHidden(true)
                         .navigationBarBackButtonHidden(true)
-                    
                 }
-                
-                
             }
             NewWyre_UsernameInput(selectedName: $selectedName, selectedImage: $selectedImage, showSuggestions: $showSuggestions)
             
@@ -298,48 +282,24 @@ struct NewWyreAmountField: View {
     @Binding var caption: String
     @Binding var isConfirmed: Bool
     var body: some View {
-        Group{
-            if isConfirmed == false {
+
                 VStack{
-                    Text("Amount").font(.custom("Gotham-Bold", size:  14))
-                    TextField("$0", text: $amount)
-                        .padding()
-                        .font(.custom("Gotham-Black", size:  75))
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .multilineTextAlignment(.center)
-                        .keyboardType(.decimalPad)
-                    Divider()
-                    
-                    TextField("Enter a caption", text: $caption)
-                        .padding(15)
-                        .font(.custom("Gotham-Medium", size:  16))
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .multilineTextAlignment(.center)
-                }.padding(.top)
-                
-            } else {
-                VStack{
-                    HStack {
-                        Spacer()
-                        Text(amount)
-                            .padding()
-                            .font(.custom("Gotham-Black", size:  50))
-                            .multilineTextAlignment(.center)
-                        Spacer()
+                    if isConfirmed == false {
+                        Text("Amount").font(.custom("Gotham-Bold", size:  14))
                     }
-                    HStack {
-                        Spacer()
-                        Text(caption)
+                        TextField("$0", text: $amount)
+                            .padding()
+                            .font(.custom("Gotham-Black", size:  75))
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .multilineTextAlignment(.center)
+                            .keyboardType(.decimalPad).disabled(self.isConfirmed ? true : false)
+                    Divider().opacity(self.isConfirmed ? 0.0 : 1.0)
+                    TextField(self.isConfirmed ? "" : "Enter a caption", text: $caption)
                             .padding(15)
                             .font(.custom("Gotham-Medium", size:  16))
-                            .multilineTextAlignment(.center)
-                        Spacer()
-                    }
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .multilineTextAlignment(.center).disabled(self.isConfirmed ? true : false)
                 }.padding(.top).background(Color.white)
-                
-            }
-        }
-        
         
     }
 }
