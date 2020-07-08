@@ -56,14 +56,14 @@ struct NewWyreFormSheet: View {
                                             self.paymentIsSelected = true
                                         }) {
                                             Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 1.0 : 0.5)
-                                        }.padding(.horizontal).padding(.vertical, 8.0)
+                                        }.padding(.horizontal).padding(.vertical, self.isConfirmed ? 0.0 : 8.0)
                                         
                                         Button(action: {
                                             self.selectedTab = "request"
                                             self.paymentIsSelected = false
                                         }) {
                                             Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 0.5 : 1.0)
-                                        }.padding(.horizontal).padding(.vertical, 8.0)
+                                        }.padding(.horizontal).padding(.vertical, self.isConfirmed ? 0.0 : 8.0)
                                     }
                                 } else {
                                     Text(paymentIsSelected ? "Pay" : "Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
@@ -160,7 +160,7 @@ struct NewWyreForm: View {
                         }.padding().background(Color.white).cornerRadius(100)
                     }
                     Spacer()
-                }.padding(10).background(ColorManager.wyrePurple)
+                }.padding(.top, self.isConfirmed ? 0 : 10).padding([.leading, .bottom, .trailing], 10).background(ColorManager.wyrePurple)
                 
                 VStack(spacing: 0.0){
                     Section{
