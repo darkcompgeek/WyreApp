@@ -27,7 +27,7 @@ struct NewWyre_UsernameField: View {
     @Binding var username: String
     var body: some View {
         
-        VStack {
+        VStack(spacing: 0.0) {
             HStack{
                 TextField("Type a name, username, or email address.", text: $username)
                      .introspectTextField { textField in
