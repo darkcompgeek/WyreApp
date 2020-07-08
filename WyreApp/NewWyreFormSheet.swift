@@ -34,76 +34,67 @@ struct NewWyreFormSheet: View {
                             Text("Is everything correct?").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white)
                             Spacer().background(ColorManager.wyreDarkPurple)
                         }.background(ColorManager.wyreDarkPurple)
-                    } else {
-                        
                     }
-                    
-                    VStack(spacing:0.0){
-                        ZStack{
-                            VStack(spacing: 0.0) {
-                                //NavigationBar
-                                HStack{
-                                    if isConfirmed == false {
-                                        Button(action: {
-                                            self.mode.wrappedValue.dismiss()
-                                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                                        }) {
-                                            Image(systemName: "xmark").font(.system(size: 20, weight: .semibold)).foregroundColor(Color.white)
-                                        }
-                                    } else {
-                                        
-                                    }
-                                    Spacer()
-                                    VStack(spacing: 0.0) {
-                                        if isConfirmed == false {
-                                            HStack{
-                                                Button(action: {
-                                                    self.selectedTab = "payment"
-                                                    self.paymentIsSelected = true
-                                                }) {
-                                                    Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 1.0 : 0.5)
-                                                }.padding(.horizontal).padding(.vertical, 8.0)
-                                                
-                                                Button(action: {
-                                                    self.selectedTab = "request"
-                                                    self.paymentIsSelected = false
-                                                }) {
-                                                    Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 0.5 : 1.0)
-                                                }.padding(.horizontal).padding(.vertical, 8.0)
-                                            }
-                                        } else {
-                                            Text(paymentIsSelected ? "Pay" : "Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
-                                        }
-                                        
-                                        if isConfirmed == false {
-                                            Rectangle().foregroundColor(Color.white).frame(width:self.paymentIsSelected ? 30 : 70, height: 3.5).cornerRadius(2).offset(x:self.paymentIsSelected ? -57 : 36).animation(.easeOut(duration: 0.20))
-                                        } else {
-                                            
-                                        }
-                                    }
-                                    Spacer()
-                                }.padding().frame(height:60).background(ColorManager.wyrePurple)
-                                
-                                
-                                NewWyreForm(selectedName: $selectedName, selectedImage: $selectedImage, selectedTab: $selectedTab, selectedPaymentMethod: $selectedPaymentMethod, selectedPrivacy: $selectedPrivacy, amount: $amount, caption: $caption, showSuggestions: $showSuggestions, isConfirmed: $isConfirmed)
+                    VStack(spacing: 0.0) {
+                        //NavigationBar
+                        HStack{
+                            if isConfirmed == false {
                                 Button(action: {
-                                    withAnimation {
-                                        self.isConfirmed.toggle()
-                                    }
-                                }){
-                                    Text(self.isConfirmed ? "Edit" : "Next").frame(maxWidth: .infinity).padding(20).padding(.bottom, self.isConfirmed ? 0 : 25.0).background(ColorManager.wyrePurple).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.white)
-                                }.opacity(showSuggestions ? 0.0 : 1.0)
-                                
-                            }.cornerRadius(self.isConfirmed ? 25 : 0).edgesIgnoringSafeArea(.bottom).padding(self.isConfirmed ? 50: 0)
+                                    self.mode.wrappedValue.dismiss()
+                                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                                }) {
+                                    Image(systemName: "xmark").font(.system(size: 20, weight: .semibold)).foregroundColor(Color.white)
+                                }
+                            }
                             Spacer()
+                            VStack(spacing: 0.0) {
+                                if isConfirmed == false {
+                                    HStack{
+                                        Button(action: {
+                                            self.selectedTab = "payment"
+                                            self.paymentIsSelected = true
+                                        }) {
+                                            Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 1.0 : 0.5)
+                                        }.padding(.horizontal).padding(.vertical, 8.0)
+                                        
+                                        Button(action: {
+                                            self.selectedTab = "request"
+                                            self.paymentIsSelected = false
+                                        }) {
+                                            Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 0.5 : 1.0)
+                                        }.padding(.horizontal).padding(.vertical, 8.0)
+                                    }
+                                } else {
+                                    Text(paymentIsSelected ? "Pay" : "Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white)
+                                }
+                                
+                                if isConfirmed == false {
+                                    Rectangle().foregroundColor(Color.white).frame(width:self.paymentIsSelected ? 30 : 70, height: 3.5).cornerRadius(2).offset(x:self.paymentIsSelected ? -57 : 36).animation(.easeOut(duration: 0.20))
+                                }
+                            }
+                            Spacer()
+                        }.padding().frame(height:60).background(ColorManager.wyrePurple)
+                        
+                        NewWyreForm(selectedName: $selectedName, selectedImage: $selectedImage, selectedTab: $selectedTab, selectedPaymentMethod: $selectedPaymentMethod, selectedPrivacy: $selectedPrivacy, amount: $amount, caption: $caption, showSuggestions: $showSuggestions, isConfirmed: $isConfirmed)
+                        
+                        if showSuggestions == false {
+                            Button(action: {
+                                withAnimation {
+                                    self.isConfirmed.toggle()
+                                }
+                            }){
+                                Text(self.isConfirmed ? "Edit" : "Next").frame(maxWidth: .infinity).padding(20).padding(.bottom, self.isConfirmed ? 0 : 25.0).background(ColorManager.wyrePurple).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.white)
+                            }
                         }
-                    }.background(ColorManager.wyreDarkPurple)
+
+                    }.cornerRadius(self.isConfirmed ? 25 : 0).edgesIgnoringSafeArea(.bottom).padding(self.isConfirmed ? 50: 0).background(ColorManager.wyreDarkPurple)
                     if isConfirmed == true {
                         Spacer()
                     }
                 }.background(ColorManager.wyreDarkPurple)
             }.navigationBarTitle("New Wyre", displayMode: .inline)            .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
+            
             if isConfirmed == true {
                 VStack{
                     Spacer()
@@ -117,7 +108,6 @@ struct NewWyreFormSheet: View {
                     }
                 }.edgesIgnoringSafeArea(.bottom)
             }
-            
         }
         
     }
