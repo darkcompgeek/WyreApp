@@ -33,6 +33,8 @@
 		96C84B7E24A7D065003279C1 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96C84B7924A7CE4A003279C1 /* Gotham-Bold.otf */; };
 		96C84B7F24A7D065003279C1 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96C84B7824A7CE4A003279C1 /* Gotham-Book.otf */; };
 		96C84B8024A7D065003279C1 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96C84B7A24A7CE4A003279C1 /* Gotham-Medium.otf */; };
+		96E1026824B67B4D00579C9C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1026724B67B4D00579C9C /* LottieView.swift */; };
+		96E1026A24B67B7B00579C9C /* loadSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 96E1026924B67B7B00579C9C /* loadSuccess.json */; };
 		96E8C34624A9683C000444BA /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34524A9683C000444BA /* NavigationBar.swift */; };
 		96E8C34A24A96D2B000444BA /* Home_PurpleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34924A96D2B000444BA /* Home_PurpleBar.swift */; };
 		96E8C34C24A96E0E000444BA /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E8C34B24A96E0E000444BA /* Feed.swift */; };
@@ -67,6 +69,8 @@
 		96C84B7924A7CE4A003279C1 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Bold.otf"; path = "fonts/Gotham-Bold.otf"; sourceTree = SOURCE_ROOT; };
 		96C84B7A24A7CE4A003279C1 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Medium.otf"; path = "fonts/Gotham-Medium.otf"; sourceTree = SOURCE_ROOT; };
 		96C84B7B24A7CE4A003279C1 /* Gotham-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gotham-Black.otf"; path = "fonts/Gotham-Black.otf"; sourceTree = SOURCE_ROOT; };
+		96E1026724B67B4D00579C9C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		96E1026924B67B7B00579C9C /* loadSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loadSuccess.json; path = assets/lottieAnimations/loadSuccess.json; sourceTree = SOURCE_ROOT; };
 		96E8C34524A9683C000444BA /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		96E8C34924A96D2B000444BA /* Home_PurpleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_PurpleBar.swift; sourceTree = "<group>"; };
 		96E8C34B24A96E0E000444BA /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Feed.swift; path = ../Feed.swift; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				96C84B5924A7C2D3003279C1 /* Preview Content */,
 				960C661224A8E5EF00977A93 /* Colors.xcassets */,
 				960C661424A8ED0200977A93 /* ColorManager.swift */,
+				96E1026724B67B4D00579C9C /* LottieView.swift */,
+				96E1026924B67B7B00579C9C /* loadSuccess.json */,
 			);
 			path = WyreApp;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 				96C84B7D24A7D065003279C1 /* Gotham-Black.otf in Resources */,
 				960C661324A8E5EF00977A93 /* Colors.xcassets in Resources */,
 				96C84B5B24A7C2D3003279C1 /* Preview Assets.xcassets in Resources */,
+				96E1026A24B67B7B00579C9C /* loadSuccess.json in Resources */,
 				96C84B5824A7C2D3003279C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +259,7 @@
 				9638491224AF772800482658 /* Settings_PaymentMethods.swift in Sources */,
 				96A910E424AFCE72002E6B3A /* NewWyre_UsernameInput.swift in Sources */,
 				960C661524A8ED0200977A93 /* ColorManager.swift in Sources */,
+				96E1026824B67B4D00579C9C /* LottieView.swift in Sources */,
 				96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */,
 				966A203824AB91300074256A /* Me_PurpleBar.swift in Sources */,
 				96C84B5624A7C2D1003279C1 /* ContentView.swift in Sources */,
