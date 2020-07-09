@@ -44,10 +44,10 @@ struct NewWyreFormSheet: View {
                                         LottieView(filename: "load").frame(width: 100, height: 100)
                                     }
                                     if isComplete == true {
-                                    LottieView(filename: "loadSuccess").frame(width: 100, height: 100)
+                                        LottieView(filename: "loadSuccess").frame(width: 100, height: 100)
                                     }
                                 }
-
+                                
                                 Text(self.isComplete ? "Success!" : "Just a moment!").font(.custom("Gotham-Bold", size: 30)).foregroundColor(Color.white).padding(10)
                                 Text(self.isComplete ? "Your \(selectedTab) is on it's way." : "We're processing your \(selectedTab)...").font(.custom("Gotham-Book", size: 20)).foregroundColor(Color.white)
                             }
@@ -114,14 +114,14 @@ struct NewWyreFormSheet: View {
                             withAnimation(.easeInOut(duration: 0.3)){
                                 self.isFinal = true
                             }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                                    withAnimation(.easeOut(duration: 0.3)) {
-                                        self.isComplete = true
-                                    }
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsTwo) {
-                                    self.mode.wrappedValue.dismiss()
-                                    }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                withAnimation(.easeOut(duration: 0.3)) {
+                                    self.isComplete = true
                                 }
+                                DispatchQueue.main.asyncAfter(deadline: .now() + secondsTwo) {
+                                    self.mode.wrappedValue.dismiss()
+                                }
+                            }
                         }) {
                             if selectedTab == "payment" {
                                 Text("Confirm and Pay").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.black).background(ColorManager.wyreGreen)
@@ -172,6 +172,7 @@ struct NewWyreForm: View {
                                     self.selectedImage = ""
                                     self.selectedName = ""
                                     self.isEmpty = true
+                                    self.showSuggestions = true
                                 }) {
                                     Image(systemName: "xmark.circle.fill").foregroundColor(Color.gray).font(.system(size:15, weight: .semibold)).padding(.horizontal, 1.0)
                                 }
@@ -241,9 +242,9 @@ struct NewWyreForm: View {
                                     VStack(alignment: .leading, spacing: 5.0){
                                         Text("Friends Only").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
                                         if isConfirmed == false {
-                                                                                   Text("This \(selectedTab) will be visible to your friends.").font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
+                                            Text("This \(selectedTab) will be visible to your friends.").font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
                                         }
-
+                                        
                                         
                                     }.padding(self.isConfirmed ? 5 : 15)
                                 } else if selectedPrivacy == "public"{
@@ -251,7 +252,7 @@ struct NewWyreForm: View {
                                     VStack(alignment: .leading, spacing: 5.0){
                                         Text("Public").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
                                         if isConfirmed == false {
-                                                                                    Text("This \(selectedTab) will be public and anyone on the Wyre app can see it.").font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
+                                            Text("This \(selectedTab) will be public and anyone on the Wyre app can see it.").font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
                                         }
                                     }.padding(self.isConfirmed ? 5 : 15)
                                 }
@@ -295,12 +296,12 @@ struct NewWyreAmountField: View {
             if isConfirmed == false {
                 Divider()
             }
-                TextField(self.isConfirmed ? "" : "Enter a caption", text: $caption)
-                    .padding(15)
-                    .font(.custom("Gotham-Medium", size:  16))
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .multilineTextAlignment(.center).disabled(self.isConfirmed ? true : false)
-
+            TextField(self.isConfirmed ? "" : "Enter a caption", text: $caption)
+                .padding(15)
+                .font(.custom("Gotham-Medium", size:  16))
+                .textFieldStyle(PlainTextFieldStyle())
+                .multilineTextAlignment(.center).disabled(self.isConfirmed ? true : false)
+            
         }.padding(.top).background(Color.white)
         
     }

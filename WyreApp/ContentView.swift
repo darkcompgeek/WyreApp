@@ -26,7 +26,7 @@ struct ContentView: View {
                 }.edgesIgnoringSafeArea(.bottom)
             } else {
                 //ipad and mac UI
-MacAppLayout()
+                Text("iPad and Mac support coming soon :)").font(.custom("Gotham-Bold", size: 20))
             }
 
         }
