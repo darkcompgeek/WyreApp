@@ -32,7 +32,6 @@ extension SplashScreen {
     func handleAnimations() {
         fadeOutLogo()
         slideUpPurpleBar()
-
     }
     
     func fadeOutLogo(){
@@ -42,7 +41,7 @@ extension SplashScreen {
     }
     
     func slideUpPurpleBar(){
-        let seconds = 0.5
+        let seconds = 0.25
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
             withAnimation(.easeInOut(duration: 0.5)){
@@ -51,7 +50,6 @@ extension SplashScreen {
         }
 
     }
-    
     func restartAnimation(){
         self.handleAnimations()
     }
