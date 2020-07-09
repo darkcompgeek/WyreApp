@@ -45,18 +45,19 @@ struct NewWyre_PrivacySettings: View {
                                 Image(systemName: "globe").foregroundColor(Color.black).font(.system(size: 30)).frame(width: 40).padding().cornerRadius(7)
                                 VStack(alignment: .leading, spacing: 5.0){
                                     Text("Public").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
-                                    Text("This \(selectedTab) will be public and anyone on the Wyre app can see it.").font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
+                                    Text("This \(selectedTab) will be public.").font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
                                     
                                 }.padding()
                                 if self.selectedPrivacy == "public" {
                                     Spacer()
                                         Image(systemName: "checkmark").font(.system(size: 20, weight: .bold)).foregroundColor(ColorManager.wyrePurple)
                                 } else {
-                                    
+                                    Spacer()
+                                    Image(systemName: "checkmark").font(.system(size: 20, weight: .bold)).foregroundColor(ColorManager.wyrePurple).opacity(0.0)
                                 }
                                     
                             }
-                        }
+                        }.frame(height: 90)
                         
 
                         Button(action:{
@@ -73,10 +74,11 @@ struct NewWyre_PrivacySettings: View {
                                     Spacer()
                                         Image(systemName: "checkmark").font(.system(size: 20, weight: .bold)).foregroundColor(ColorManager.wyrePurple)
                                 } else {
-                                    
+                                    Spacer()
+                                    Image(systemName: "checkmark").font(.system(size: 20, weight: .bold)).foregroundColor(ColorManager.wyrePurple).opacity(0.0)
                                 }
                             }
-                        }
+                        }.frame(height: 90)
                         Button(action:{
                             self.selectedPrivacy = "private"
                         }) {
@@ -91,13 +93,14 @@ struct NewWyre_PrivacySettings: View {
                                     Spacer()
                                         Image(systemName: "checkmark").font(.system(size: 20, weight: .bold)).foregroundColor(ColorManager.wyrePurple)
                                 } else {
-                                    
+                                    Spacer()
+                                    Image(systemName: "checkmark").font(.system(size: 20, weight: .bold)).foregroundColor(ColorManager.wyrePurple).opacity(0.0)
                                 }
 
                             }
-                        }
+                        }.frame(height: 90)
                     }
-                }.listStyle(GroupedListStyle())
+                }.listStyle(GroupedListStyle()).animation(.easeOut(duration:0.10))
                 
             }.navigationBarTitle(Text("Other Title"), displayMode: .inline)
                 .navigationBarHidden(true)

@@ -51,7 +51,7 @@ struct NewWyre_PaymentMethods: View {
                                         
                                     }
                                 }
-                            }
+                            }.frame(height: 80)
 
                         }
                         
@@ -72,7 +72,7 @@ struct NewWyre_PaymentMethods: View {
                                         
                                     }
                                 }
-                            }
+                            }.frame(height: 80)
 
                         }
                         
@@ -87,7 +87,7 @@ struct NewWyre_PaymentMethods: View {
                             }.padding(15)
                         }
                         
-                        }.listStyle(GroupedListStyle())
+                    }.listStyle(GroupedListStyle()).animation(.easeOut(duration: 0.1))
                 }
                 
             }.navigationBarTitle(Text("Other Title"), displayMode: .inline)
