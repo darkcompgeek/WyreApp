@@ -16,7 +16,7 @@ struct SplashScreen: View {
     var body: some View {
         ZStack {
             VStack{
-                Rectangle().foregroundColor(ColorManager.wyrePurple).edgesIgnoringSafeArea(.all).frame(maxHeight: slideUpBar ? 200 : .infinity)
+                Rectangle().foregroundColor(ColorManager.wyrePurple).edgesIgnoringSafeArea(.all).frame(maxHeight: slideUpBar ? 180 : .infinity)
                 Spacer()
             }
             Image("wyreSplashScreen").opacity(logoOpacity)
@@ -35,7 +35,7 @@ extension SplashScreen {
     }
     
     func fadeOutLogo(){
-        withAnimation(.easeOut(duration: 0.5)){
+        withAnimation(.timingCurve(0.90, 0.00, 0.10, 1.00, duration: 0.8)){
             logoOpacity = 0.0
         }
     }
@@ -44,7 +44,7 @@ extension SplashScreen {
         let seconds = 0.25
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             // Put your code which should be executed with a delay here
-            withAnimation(.easeInOut(duration: 0.5)){
+            withAnimation(.timingCurve(0.90, 0.00, 0.10, 1.00, duration: 0.8)){
                 self.slideUpBar = true
             }
         }

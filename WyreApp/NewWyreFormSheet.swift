@@ -96,7 +96,7 @@ struct NewWyreFormSheet: View {
                             
                             if showSuggestions == false {
                                 Button(action: {
-                                    withAnimation(.easeOut(duration: 0.25)) {
+                                    withAnimation(.timingCurve(0.14, 1.00, 0.34, 1.00, duration: 0.5)) {
                                         self.isConfirmed.toggle()
                                     }
                                 }){
@@ -111,7 +111,7 @@ struct NewWyreFormSheet: View {
                         Button(action: {
                             let seconds = 2.0
                             let secondsTwo = 1.0
-                            withAnimation(.easeInOut(duration: 0.3)){
+                            withAnimation(.timingCurve(0.90, 0.00, 0.10, 1.00, duration: 0.5)){
                                 self.isFinal = true
                             }
                             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
