@@ -33,15 +33,23 @@ struct NewWyreFormSheet: View {
                         HStack{
                             Spacer().background(ColorManager.wyreDarkPurple)
                             Text("Is everything correct?").font(.custom("Gotham-Bold", size: 20)).foregroundColor(Color.white).opacity(self.isFinal ? 0.0 : 1.0)
-                            Spacer().background(ColorManager.wyreDarkPurple)
-                        }.background(ColorManager.wyreDarkPurple)
+                            Spacer()
+                        }
                     }
                     ZStack {
                         if isFinal == true {
                             VStack{
-                                LottieView(filename: "load").frame(width: 100, height: 100)
-                                Text("Just a moment!").font(.custom("Gotham-Bold", size: 30)).foregroundColor(Color.white).padding(10)
-                                Text("We're processing your \(selectedTab)...").font(.custom("Gotham-Book", size: 20)).foregroundColor(Color.white)
+                                ZStack{
+                                    if isComplete == false {
+                                        LottieView(filename: "load").frame(width: 100, height: 100)
+                                    }
+                                    if isComplete == true {
+                                    LottieView(filename: "loadSuccess").frame(width: 100, height: 100)
+                                    }
+                                }
+
+                                Text(self.isComplete ? "Success!" : "Just a moment!").font(.custom("Gotham-Bold", size: 30)).foregroundColor(Color.white).padding(10)
+                                Text(self.isComplete ? "Your \(selectedTab) is on it's way." : "We're processing your \(selectedTab)...").font(.custom("Gotham-Book", size: 20)).foregroundColor(Color.white)
                             }
                         }
                         VStack(spacing: 0.0) {
@@ -88,7 +96,7 @@ struct NewWyreFormSheet: View {
                             
                             if showSuggestions == false {
                                 Button(action: {
-                                    withAnimation(.easeOut(duration: 0.3)) {
+                                    withAnimation(.easeOut(duration: 0.25)) {
                                         self.isConfirmed.toggle()
                                     }
                                 }){
@@ -96,14 +104,24 @@ struct NewWyreFormSheet: View {
                                 }
                             }
                             
-                        }.cornerRadius(self.isConfirmed ? 25 : 0).background(ColorManager.wyreDarkPurple).padding(self.isConfirmed ? 40: 0).offset(x: self.isFinal ? 500 : 0)
+                        }.cornerRadius(self.isConfirmed ? 25 : 0).background(ColorManager.wyreDarkPurple).padding(self.isConfirmed ? 40: 0).offset(x: self.isFinal ? 400 : 0)
                     }
                     if isConfirmed == true {
                         Spacer()
                         Button(action: {
-                            withAnimation(.easeInOut(duration: 0.5)){
+                            let seconds = 2.0
+                            let secondsTwo = 1.0
+                            withAnimation(.easeInOut(duration: 0.3)){
                                 self.isFinal = true
                             }
+                                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                    withAnimation(.easeOut(duration: 0.3)) {
+                                        self.isComplete = true
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + secondsTwo) {
+                                    self.mode.wrappedValue.dismiss()
+                                    }
+                                }
                         }) {
                             if selectedTab == "payment" {
                                 Text("Confirm and Pay").frame(maxWidth: .infinity).padding(20).padding(.bottom, 25.0).font(.custom("Gotham-Bold" ,size: 16)).multilineTextAlignment(.center).foregroundColor(Color.black).background(ColorManager.wyreGreen)
@@ -112,7 +130,7 @@ struct NewWyreFormSheet: View {
                             }
                         }.edgesIgnoringSafeArea(.bottom).offset(y:self.isFinal ? 90 : 0)
                     }
-                }.background(ColorManager.wyreDarkPurple).edgesIgnoringSafeArea(.bottom)
+                }.background(self.isComplete ? ColorManager.wyrePurple :ColorManager.wyreDarkPurple).edgesIgnoringSafeArea(.bottom)
             }.navigationBarTitle("New Wyre", displayMode: .inline)            .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
         }
@@ -291,6 +309,6 @@ struct NewWyreAmountField: View {
 
 struct NewWyreFormSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewWyreFormSheet(showSuggestions: false, isFinal: true)
+        NewWyreFormSheet(showSuggestions: false, isFinal: false)
     }
 }
