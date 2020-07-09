@@ -11,7 +11,7 @@ import SwiftUI
 struct SplashScreen: View {
     static var shouldAnimate = true
     @State var logoOpacity = 1.0
-    @State var slideUpBar = false
+    @Binding var slideUpBar: Bool
     
     var body: some View {
         ZStack {
@@ -57,6 +57,6 @@ extension SplashScreen {
 
 struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreen()
+        SplashScreen(slideUpBar: .constant(false))
     }
 }

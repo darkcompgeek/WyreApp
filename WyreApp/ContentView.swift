@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewRouter = ViewRouter()
     @State var showSplashScreen = true
+    @State var slideUpBar = false
     var body: some View {
         
         ZStack{
@@ -21,9 +22,9 @@ struct ContentView: View {
                     } else if viewRouter.currentView == "settings" {
                         MeTab(viewRouter: viewRouter)
                     }
-                        NavigationBar(viewRouter: viewRouter)
+                    NavigationBar(viewRouter: viewRouter).offset(y:slideUpBar ? 0 : 95)
                 }.edgesIgnoringSafeArea(.bottom)
-            SplashScreen().opacity(showSplashScreen ? 1 : 0)
+            SplashScreen(slideUpBar: $slideUpBar).opacity(showSplashScreen ? 1 : 0)
               .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.65) {
                   SplashScreen.shouldAnimate = false
