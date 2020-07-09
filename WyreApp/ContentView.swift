@@ -18,7 +18,7 @@ struct ContentView: View {
                 //iphone ui
                 VStack(spacing: 0.0){
                     if viewRouter.currentView == "home" {
-                        HomeTab(viewRouter: viewRouter)
+                        HomeTab(viewRouter: viewRouter).opacity(slideUpBar ? 1.0 : 0.0)
                     } else if viewRouter.currentView == "settings" {
                         MeTab(viewRouter: viewRouter)
                     }
