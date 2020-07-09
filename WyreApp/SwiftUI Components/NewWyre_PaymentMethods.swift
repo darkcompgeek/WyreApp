@@ -22,7 +22,7 @@ struct NewWyre_PaymentMethods: View {
     }
     
     var body: some View {
-         ZStack{
+        ZStack{
             VStack(spacing: 0.0){
                 
                 //navbar header
@@ -46,13 +46,13 @@ struct NewWyre_PaymentMethods: View {
                                     }.padding()
                                     Spacer()
                                     if self.selectedPaymentMethod == "wyre" {
-                                            Image(systemName: "checkmark").font(.system(size: 20, weight: .bold)).foregroundColor(ColorManager.wyrePurple)
+                                        Image(systemName: "checkmark").font(.system(size: 20, weight: .bold)).foregroundColor(ColorManager.wyrePurple)
                                     } else {
                                         
                                     }
                                 }
                             }.frame(height: 80)
-
+                            
                         }
                         
                         Section(header: Text("Payment Methods").font(.custom("Gotham-Medium", size: 12))){
@@ -63,7 +63,7 @@ struct NewWyre_PaymentMethods: View {
                                     VStack(alignment: .leading, spacing: 5.0){
                                         Text("My Credit Card").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
                                         Text("XXXX-XXXX").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
-                                    
+                                        
                                     }.padding()
                                     if self.selectedPaymentMethod == "bank" {
                                         Spacer()
@@ -73,7 +73,7 @@ struct NewWyre_PaymentMethods: View {
                                     }
                                 }
                             }.frame(height: 80)
-
+                            
                         }
                         
                         Section{
@@ -91,8 +91,8 @@ struct NewWyre_PaymentMethods: View {
                 }
                 
             }.navigationBarTitle(Text("Other Title"), displayMode: .inline)
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
         }
     }
 }

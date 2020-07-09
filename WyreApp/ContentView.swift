@@ -10,10 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewRouter = ViewRouter()
+    @State var showSplashScreen = true
     var body: some View {
         
-        Group{
-            if UIDevice.current.userInterfaceIdiom == .phone {
+        ZStack{
                 //iphone ui
                 VStack(spacing: 0.0){
                     if viewRouter.currentView == "home" {
@@ -22,13 +22,16 @@ struct ContentView: View {
                         MeTab(viewRouter: viewRouter)
                     }
                         NavigationBar(viewRouter: viewRouter)
-
                 }.edgesIgnoringSafeArea(.bottom)
-            } else {
-                //ipad and mac UI
-                Text("iPad and Mac support coming soon :)").font(.custom("Gotham-Bold", size: 20))
+            SplashScreen().opacity(showSplashScreen ? 1 : 0)
+              .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                  SplashScreen.shouldAnimate = false
+                  withAnimation() {
+                    self.showSplashScreen = false
+                  }
+                }
             }
-
         }
         
 
