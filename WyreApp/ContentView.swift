@@ -25,7 +25,7 @@ struct ContentView: View {
                 }.edgesIgnoringSafeArea(.bottom)
             SplashScreen().opacity(showSplashScreen ? 1 : 0)
               .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                   SplashScreen.shouldAnimate = false
                   withAnimation() {
                     self.showSplashScreen = false
