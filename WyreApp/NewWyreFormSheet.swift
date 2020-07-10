@@ -68,15 +68,19 @@ struct NewWyreFormSheet: View {
                                     if isConfirmed == false {
                                         HStack{
                                             Button(action: {
-                                                self.selectedTab = "payment"
-                                                self.paymentIsSelected = true
+                                                withAnimation(.timingCurve(0.90, 0.00, 0.10, 1.00, duration: 0.35)) {
+                                                    self.selectedTab = "payment"
+                                                    self.paymentIsSelected = true
+                                                    }
                                             }) {
                                                 Text("Pay").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 1.0 : 0.5)
                                             }.padding(.horizontal).padding(.vertical, self.isConfirmed ? 0.0 : 8.0)
                                             
                                             Button(action: {
-                                                self.selectedTab = "request"
-                                                self.paymentIsSelected = false
+                                                withAnimation(.timingCurve(0.90, 0.00, 0.10, 1.00, duration: 0.35)) {
+                                                    self.selectedTab = "request"
+                                                    self.paymentIsSelected = false
+                                                }
                                             }) {
                                                 Text("Request").font(.custom("Gotham-Bold", size: 18)).foregroundColor(Color.white).opacity(self.paymentIsSelected ? 0.5 : 1.0)
                                             }.padding(.horizontal).padding(.vertical, self.isConfirmed ? 0.0 : 8.0)
@@ -86,14 +90,12 @@ struct NewWyreFormSheet: View {
                                     }
                                     
                                     if isConfirmed == false {
-                                        
                                         Rectangle().foregroundColor(Color.white)
                                             .cornerRadius(2)
                                             .offset(x:self.paymentIsSelected ? -57 : 37)
                                             .frame(width: self.paymentIsSelected ? 30 : 70, height: 3.5)
-
                                     }
-                                }                                            .animation(.timingCurve(0.90, 0.00, 0.10, 1.00, duration: 0.35))
+                                }
                                 Spacer()
                             }.padding(self.isConfirmed ? 0 : 20).frame(height:60).background(ColorManager.wyrePurple)
                             
