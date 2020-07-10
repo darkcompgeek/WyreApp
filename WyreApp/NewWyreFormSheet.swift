@@ -122,7 +122,7 @@ struct NewWyreFormSheet: View {
                                 self.isFinal = true
                             }
                             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                                withAnimation(.easeOut(duration: 0.3)) {
+                                withAnimation(.timingCurve(0.14, 1.00, 0.34, 1.00, duration: 0.5)) {
                                     self.isComplete = true
                                 }
                                 DispatchQueue.main.asyncAfter(deadline: .now() + secondsTwo) {
