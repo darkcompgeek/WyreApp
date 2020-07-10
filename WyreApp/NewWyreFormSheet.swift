@@ -96,7 +96,7 @@ struct NewWyreFormSheet: View {
                             
                             if showSuggestions == false {
                                 Button(action: {
-                                    withAnimation(.timingCurve(0.14, 1.00, 0.34, 1.00, duration: 0.5)) {
+                                    withAnimation(.timingCurve(0.22, 1.00, 0.36, 1.00, duration: 0.5)) {
                                         self.isConfirmed.toggle()
                                     }
                                 }){
