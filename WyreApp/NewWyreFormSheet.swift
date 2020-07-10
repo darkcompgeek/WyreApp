@@ -290,12 +290,13 @@ struct NewWyreAmountField: View {
     @Binding var isConfirmed: Bool
     var body: some View {
         
-        VStack{
+        VStack(spacing: 0.0){
             if isConfirmed == false {
                 Text("Amount").font(.custom("Gotham-Bold", size:  14))
             }
             TextField("$0", text: $amount)
-                .padding()
+                .padding(.horizontal, 40)
+                .padding(.vertical, self.isConfirmed ? 20 : 40)
                 .font(.custom("Gotham-Black", size: self.isConfirmed ? 60 : 60))
                 .textFieldStyle(PlainTextFieldStyle())
                 .multilineTextAlignment(.center)
@@ -304,7 +305,8 @@ struct NewWyreAmountField: View {
                 Divider()
             }
             TextField(self.isConfirmed ? "" : "Enter a caption", text: $caption)
-                .padding(15)
+                .padding(.bottom, self.isConfirmed ? 30 : 20)
+                .padding(.top, self.isConfirmed ? 0 : 20)
                 .font(.custom("Gotham-Medium", size:  16))
                 .textFieldStyle(PlainTextFieldStyle())
                 .multilineTextAlignment(.center).disabled(self.isConfirmed ? true : false)
