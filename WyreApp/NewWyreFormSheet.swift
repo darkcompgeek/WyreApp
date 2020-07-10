@@ -203,33 +203,35 @@ struct NewWyreForm: View {
                     }.padding(.bottom, self.isConfirmed ? 0 : 35)
                     VStack(spacing: 0.0){
                         if selectedTab == "payment" {
-                            NavigationLink(destination: NewWyre_PaymentMethods(selectedPaymentMethod: $selectedPaymentMethod)) {
-                                HStack{
-                                    if isConfirmed == true {
+                            VStack (spacing: 0.0){
+                                NavigationLink(destination: NewWyre_PaymentMethods(selectedPaymentMethod: $selectedPaymentMethod)) {
+                                    HStack{
+                                        if isConfirmed == true {
+                                            Spacer()
+                                        }
+                                        if selectedPaymentMethod == "wyre" {
+                                            Image("Wyre Icon").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width:self.isConfirmed ? 30 : 40).padding(self.isConfirmed ? 10 : 15).background(ColorManager.wyrePurple).cornerRadius(7)
+                                            VStack(alignment: .leading, spacing: 5.0){
+                                                Text("Wyre Balance").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
+                                                Text("$25.00").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
+                                            }.padding(.horizontal)
+                                        } else if selectedPaymentMethod == "bank"{
+                                            Image(systemName: "creditcard").frame(width: 40).font(.system(size: 25, weight: .semibold)).foregroundColor(Color.white).padding(self.isConfirmed ? 10 : 20).background(Color.gray).cornerRadius(7)
+                                            VStack(alignment: .leading, spacing: 5.0){
+                                                Text("My Credit Card").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
+                                                Text("XXXX-XXXX").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
+                                            }.padding(.horizontal)
+                                        }
                                         Spacer()
-                                    }
-                                    if selectedPaymentMethod == "wyre" {
-                                        Image("Wyre Icon").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width:self.isConfirmed ? 30 : 40).padding(self.isConfirmed ? 10 : 15).background(ColorManager.wyrePurple).cornerRadius(7)
-                                        VStack(alignment: .leading, spacing: 5.0){
-                                            Text("Wyre Balance").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
-                                            Text("$25.00").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
-                                        }.padding(.horizontal)
-                                    } else if selectedPaymentMethod == "bank"{
-                                        Image(systemName: "creditcard").frame(width: 40).font(.system(size: 25, weight: .semibold)).foregroundColor(Color.white).padding(self.isConfirmed ? 10 : 20).background(Color.gray).cornerRadius(7)
-                                        VStack(alignment: .leading, spacing: 5.0){
-                                            Text("My Credit Card").font(.custom("Gotham-Bold", size: 16)).foregroundColor(Color.black)
-                                            Text("XXXX-XXXX").font(.custom("Gotham-Medium", size: 14)).foregroundColor(Color.gray)
-                                        }.padding(.horizontal)
-                                    }
-                                    Spacer()
-                                    if isConfirmed == false {
-                                        Image(systemName: "chevron.right").foregroundColor(Color.gray)
-                                    }
-                                }.padding(20).background(self.isConfirmed ? ColorManager.wyreGray : Color.white)
-                            }.frame(height: self.isConfirmed ? 70: 90).background(Color.white)
+                                        if isConfirmed == false {
+                                            Image(systemName: "chevron.right").foregroundColor(Color.gray)
+                                        }
+                                    }.padding(20).background(self.isConfirmed ? ColorManager.wyreGray : Color.white)
+                                }.frame(height: self.isConfirmed ? 70: 90).background(Color.white)
+                             Divider().padding(.horizontal).background(self.isConfirmed ? ColorManager.wyreGray : Color.white)
+                            }
                         }
-                        
-                        Divider().padding(.horizontal).background(self.isConfirmed ? ColorManager.wyreGray : Color.white)
+                    
                         
                         NavigationLink(destination: NewWyre_PrivacySettings(selectedTab: $selectedTab, selectedName: $selectedName, selectedPrivacy: $selectedPrivacy)) {
                             HStack(alignment: .center){
@@ -302,7 +304,7 @@ struct NewWyreAmountField: View {
                 .multilineTextAlignment(.center)
                 .keyboardType(.decimalPad).disabled(self.isConfirmed ? true : false)
             if isConfirmed == false {
-                Divider()
+                Divider().padding(.horizontal)
             }
             TextField(self.isConfirmed ? "" : "Enter a caption", text: $caption)
                 .padding(.bottom, self.isConfirmed ? 30 : 20)
