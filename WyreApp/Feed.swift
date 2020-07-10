@@ -93,7 +93,7 @@ struct FeedList: View {
                         Text("Friends").font(.custom("Gotham-Bold", size: 16)).padding(.horizontal).padding(.vertical, 8.0).foregroundColor(Color.black).opacity(self.publicIsSelected ? 0.5 : 1.0)
                     }
                 }
-                Rectangle().frame(width: self.publicIsSelected ? 50 : 60, height: 3.5).cornerRadius(15).offset(x:self.publicIsSelected ? -51 : 45).animation(.easeOut(duration: 0.20))
+                Rectangle().frame(width: self.publicIsSelected ? 50 : 60, height: 3.5).cornerRadius(15).offset(x:self.publicIsSelected ? -51 : 45).animation(.timingCurve(0.90, 0.00, 0.10, 1.00, duration: 0.35))
             }
 
             Spacer()

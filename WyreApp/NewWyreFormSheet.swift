@@ -86,9 +86,14 @@ struct NewWyreFormSheet: View {
                                     }
                                     
                                     if isConfirmed == false {
-                                        Rectangle().foregroundColor(Color.white).frame(width:self.paymentIsSelected ? 30 : 70, height: 3.5).cornerRadius(2).offset(x:self.paymentIsSelected ? -57 : 36).animation(.easeOut(duration: 0.20))
+                                        
+                                        Rectangle().foregroundColor(Color.white)
+                                            .cornerRadius(2)
+                                            .offset(x:self.paymentIsSelected ? -57 : 37)
+                                            .frame(width: self.paymentIsSelected ? 30 : 70, height: 3.5)
+
                                     }
-                                }
+                                }                                            .animation(.timingCurve(0.90, 0.00, 0.10, 1.00, duration: 0.35))
                                 Spacer()
                             }.padding(self.isConfirmed ? 0 : 20).frame(height:60).background(ColorManager.wyrePurple)
                             
