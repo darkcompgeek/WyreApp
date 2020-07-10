@@ -12,6 +12,7 @@ struct SplashScreen: View {
     static var shouldAnimate = true
     @State var logoOpacity = 1.0
     @Binding var slideUpBar: Bool
+    @Binding var fadeInFeed: Bool
     
     var body: some View {
         ZStack {
@@ -32,6 +33,7 @@ extension SplashScreen {
     func handleAnimations() {
         fadeOutLogo()
         slideUpPurpleBar()
+        fadeIn()
     }
     
     func fadeOutLogo(){
@@ -50,6 +52,16 @@ extension SplashScreen {
         }
 
     }
+    func fadeIn(){
+        let seconds = 0.35
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            // Put your code which should be executed with a delay here
+            withAnimation(.timingCurve(0.90, 0.00, 0.10, 1.00, duration: 0.8)){
+                self.fadeInFeed = true
+            }
+        }
+
+    }
     func restartAnimation(){
         self.handleAnimations()
     }
@@ -57,6 +69,6 @@ extension SplashScreen {
 
 struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreen(slideUpBar: .constant(false))
+        SplashScreen(slideUpBar: .constant(false), fadeInFeed: .constant(false))
     }
 }
