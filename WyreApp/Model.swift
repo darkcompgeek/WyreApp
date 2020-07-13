@@ -37,6 +37,27 @@ struct Post: Codable, Identifiable{
     
 }
 
+struct MePost: Codable, Identifiable{
+    public var id: Int
+    public var user2: String
+    public var caption: String
+    public var privacy: String
+    public var time: String
+    public var likeCount: Int
+    public var profileRight: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case user2 = "user2"
+        case caption = "caption"
+        case privacy = "privacy"
+        case time = "time"
+        case likeCount = "likeCount"
+        case profileRight = "profileRight"
+    }
+    
+}
+
 //PUBLIC FEED POSTS
 
 public class PostFetcher: ObservableObject {
@@ -84,6 +105,37 @@ public class FriendPostFetcher: ObservableObject {
             do {
                 if let d = data {
                     let decodedLists = try JSONDecoder().decode([Post].self, from: d)
+                    DispatchQueue.main.async {
+                        self.posts = decodedLists
+                    }
+                } else {
+                    print("No Data")
+                }
+            } catch {
+                print("Error")
+            }
+            
+            
+        }.resume()
+    }
+}
+
+//ME FEED POSTS
+
+public class MeFetcher: ObservableObject {
+    @Published var posts = [MePost]()
+    
+    init(){
+        loadData()
+    }
+    
+    func loadData(){
+        let url = URL(string: "https://saikannekanti.com/wyreAppData/myProfileData.json")!
+        
+        URLSession.shared.dataTask(with: url) {(data, response, error) in
+            do {
+                if let d = data {
+                    let decodedLists = try JSONDecoder().decode([MePost].self, from: d)
                     DispatchQueue.main.async {
                         self.posts = decodedLists
                     }

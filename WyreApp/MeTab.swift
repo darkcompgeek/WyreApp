@@ -22,6 +22,7 @@ struct MeTab: View {
                     .padding()
                 Spacer()
             }
+            MeFeedList()
         }
     }
 }

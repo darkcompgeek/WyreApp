@@ -63,7 +63,7 @@ struct NewWyre_SuggestionList: View {
                     ForEach(recentFetcher.recentSuggestions) { suggestion in
                         Button(action: {
                             self.selectedImage = suggestion.imageNumber
-                            self.selectedName = "\(suggestion.firstName) + \(suggestion.lastName)"
+                            self.selectedName = "\(suggestion.firstName) " + "\(suggestion.lastName)"
                             self.showSuggestions.toggle()
 
                         }){
@@ -93,11 +93,11 @@ struct NewWyre_SuggestionList: View {
 
             Section(header: Text("All").font(.custom("Gotham-Bold", size: 14))){
                 
-                ForEach(fetcher.suggestions.filter({ username.isEmpty ? true : $0.userName.contains(username)})) { suggestion in
+                ForEach(fetcher.suggestions.filter({ username.isEmpty ? true : $0.firstName.contains(username)})) { suggestion in
                     
                     Button(action: {
                         self.selectedImage = suggestion.imageNumber
-                        self.selectedName = "\(suggestion.firstName) + \(suggestion.lastName)"
+                        self.selectedName = "\(suggestion.firstName) " + "\(suggestion.lastName)"
                         self.showSuggestions.toggle()
 
                     }){

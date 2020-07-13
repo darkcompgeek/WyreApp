@@ -243,7 +243,7 @@ struct NewWyreForm: View {
                                     VStack(alignment: .leading, spacing: 5.0){
                                         Text("Private").font(.custom("Gotham-Bold" ,size: 16)).foregroundColor(Color.black)
                                         if isConfirmed == false {
-                                            Text("This \(selectedTab) will only be visible to you and \(self.selectedName).").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14)).lineLimit(3)
+                                            Text("This \(selectedTab) will only be visible to you and \(self.selectedName).").foregroundColor(Color.gray).font(.custom("Gotham-Book" ,size: 14))
                                         }
                                     }.padding(self.isConfirmed ? 5 : 15)
                                 } else if selectedPrivacy == "friends"{
