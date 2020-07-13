@@ -105,6 +105,7 @@
 		96C84B5024A7C2D1003279C1 /* WyreApp */ = {
 			isa = PBXGroup;
 			children = (
+				96A910E324AFCE72002E6B3A /* NewWyre_UsernameInput.swift */,
 				962F2BE124BCB7290047606A /* Model.swift */,
 				969A98EF24A7D9B600E5692F /* ViewRouter.swift */,
 				960C661424A8ED0200977A93 /* ColorManager.swift */,
@@ -155,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				96E1026724B67B4D00579C9C /* LottieView.swift */,
-				96A910E324AFCE72002E6B3A /* NewWyre_UsernameInput.swift */,
 				96E8C34B24A96E0E000444BA /* Feed.swift */,
 				96E8C34524A9683C000444BA /* NavigationBar.swift */,
 				9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */,
