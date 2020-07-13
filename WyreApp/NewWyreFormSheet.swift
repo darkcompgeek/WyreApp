@@ -263,7 +263,7 @@ struct NewWyreForm: View {
                                         if isConfirmed == false {
                                             Text("This \(selectedTab) will be public and anyone on the Wyre app can see it.").font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
                                         }
-                                    }.padding(self.isConfirmed ? 5 : 15)
+                                        }.padding(self.isConfirmed ? 5 : 15)
                                 }
                                 Spacer()
                                 if isConfirmed == false {

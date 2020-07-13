@@ -10,6 +10,7 @@
 		960C661324A8E5EF00977A93 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960C661224A8E5EF00977A93 /* Colors.xcassets */; };
 		960C661524A8ED0200977A93 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960C661424A8ED0200977A93 /* ColorManager.swift */; };
 		9626E53624AE88BC005C5EAB /* NewWyreFormSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9626E53524AE88BC005C5EAB /* NewWyreFormSheet.swift */; };
+		962F2BE224BCB7290047606A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962F2BE124BCB7290047606A /* Model.swift */; };
 		9638491224AF772800482658 /* Settings_PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491124AF772800482658 /* Settings_PaymentMethods.swift */; };
 		9638491424AF833200482658 /* NewWyre_PaymentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */; };
 		9638491624AF84C700482658 /* NewWyre_PrivacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */; };
@@ -43,6 +44,7 @@
 		960C661424A8ED0200977A93 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		9626E53524AE88BC005C5EAB /* NewWyreFormSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyreFormSheet.swift; sourceTree = "<group>"; };
 		962D6F1024AA73EF00EC2A30 /* Wyre.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wyre.entitlements; sourceTree = "<group>"; };
+		962F2BE124BCB7290047606A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9638491124AF772800482658 /* Settings_PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_PaymentMethods.swift; sourceTree = "<group>"; };
 		9638491324AF833200482658 /* NewWyre_PaymentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_PaymentMethods.swift; sourceTree = "<group>"; };
 		9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWyre_PrivacySettings.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		96C84B5024A7C2D1003279C1 /* WyreApp */ = {
 			isa = PBXGroup;
 			children = (
+				962F2BE124BCB7290047606A /* Model.swift */,
 				969A98EF24A7D9B600E5692F /* ViewRouter.swift */,
 				960C661424A8ED0200977A93 /* ColorManager.swift */,
 				9638491524AF84C700482658 /* NewWyre_PrivacySettings.swift */,
@@ -255,6 +258,7 @@
 				96C84B5424A7C2D1003279C1 /* SceneDelegate.swift in Sources */,
 				96C84B5624A7C2D1003279C1 /* ContentView.swift in Sources */,
 				96E8C34C24A96E0E000444BA /* Feed.swift in Sources */,
+				962F2BE224BCB7290047606A /* Model.swift in Sources */,
 				9661D5E424B7BD90007826F8 /* SplashScreen.swift in Sources */,
 				96C5211824AE4261001E1FC2 /* SettingsSheet.swift in Sources */,
 				9638491624AF84C700482658 /* NewWyre_PrivacySettings.swift in Sources */,

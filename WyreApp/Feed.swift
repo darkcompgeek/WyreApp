@@ -101,60 +101,6 @@ struct FeedList: View {
         }
     }
     
-
-
-    
-    struct Post: Codable, Identifiable{
-        public var id: Int
-        public var title: String
-        public var caption: String
-        public var time: String
-        public var likeCount: Int
-        public var profileLeft: String
-        public var profileRight: String
-        
-        enum CodingKeys: String, CodingKey {
-               case id = "id"
-               case title = "title"
-               case caption = "caption"
-            case time = "time"
-            case likeCount = "likeCount"
-            case profileLeft = "profileLeft"
-            case profileRight = "profileRight"
-            }
-        
-    }
-
-    public class PostFetcher: ObservableObject {
-        @Published var posts = [Post]()
-        
-        init(){
-            loadData()
-            }
-        
-        func loadData(){
-            let url = URL(string: "https://saikannekanti.com/wyreAppData/feedListHome.json")!
-            
-            URLSession.shared.dataTask(with: url) {(data, response, error) in
-                do {
-                    if let d = data {
-                        let decodedLists = try JSONDecoder().decode([Post].self, from: d)
-                        DispatchQueue.main.async {
-                            self.posts = decodedLists
-                        }
-                    } else {
-                        print("No Data")
-                    }
-                } catch {
-                    print("Error")
-                }
-                
-                
-            }.resume()
-        }
-        }
-    
-    
 struct Feed_Previews: PreviewProvider {
     static var previews: some View {
         Feed()
