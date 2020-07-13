@@ -55,35 +55,53 @@ struct NewWyre_SuggestionList: View {
     @ObservedObject var fetcher = SuggestionFetcher()
     var body: some View {
         
-        List(fetcher.suggestions.filter({ username.isEmpty ? true : $0.fullName.contains(username)})){ suggestion in
-            Button(action: {
-                self.selectedImage = suggestion.imageNumber
-                self.selectedName = suggestion.fullName
-                self.showSuggestions.toggle()
-                
-            }){
-                VStack{
-                    HStack{
-                        Image(suggestion.imageNumber).renderingMode(.original)
-                            .resizable()
-                            .clipShape(Circle())
-                            .frame(width: 35, height: 35)
-                        VStack(alignment: .leading, spacing: 3.5){
-                            
-                            Text(suggestion.fullName)
-                                .font(.custom("Gotham-Medium", size: 14))
-                                .foregroundColor(Color.black)
-                            Text(suggestion.userName)
-                                .font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
-                        }
-                        Spacer()
-                        Image(systemName: "info.circle")
-                            .font(.system(size: 22, weight: .semibold)).foregroundColor(Color.gray)
-                    }
-                }.frame(height: 45)
+        List{
+            if username == "" {
+                Section(header: Text("Recent").font(.custom("Gotham-Bold", size: 14))){
+                    Text("Recent User")
+                    Text("Recent User")
+                    Text("Recent User")
+                }
             }
-            
+            Section(header: Text("All").font(.custom("Gotham-Bold", size: 14))){
+                ForEach(fetcher.suggestions.filter({ username.isEmpty ? true : $0.fullName.contains(username)})) { suggestion in
+                    
+                    Button(action: {
+                        self.selectedImage = suggestion.imageNumber
+                        self.selectedName = suggestion.fullName
+                        self.showSuggestions.toggle()
+
+                    }){
+                        VStack{
+                            HStack{
+                                Image(suggestion.imageNumber).renderingMode(.original)
+                                    .resizable()
+                                    .clipShape(Circle())
+                                    .frame(width: 35, height: 35)
+                                VStack(alignment: .leading, spacing: 3.5){
+
+                                    Text(suggestion.fullName)
+                                        .font(.custom("Gotham-Medium", size: 14))
+                                        .foregroundColor(Color.black)
+                                    Text(suggestion.userName)
+                                        .font(.custom("Gotham-Book", size: 14)).foregroundColor(Color.gray)
+                                }
+                                Spacer()
+                                Image(systemName: "info.circle")
+                                    .font(.system(size: 22, weight: .semibold)).foregroundColor(Color.gray)
+                            }
+                        }.frame(height: 45)
+                    }
+                }
+            }
         }.listStyle(GroupedListStyle())
+        
+        
+        
+//        List(fetcher.suggestions.filter({ username.isEmpty ? true : $0.fullName.contains(username)})){ suggestion in
+//
+//
+//        }.listStyle(GroupedListStyle())e
     }
 }
 
