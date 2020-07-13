@@ -16,57 +16,105 @@ struct Feed: View {
     var body: some View {
         VStack(spacing: 0.0){
             FeedTabBar(selectedTab: $selectedTab)
-            FeedList()
+            FeedList(selectedTab: $selectedTab)
         }
     }
 }
 
 
 struct FeedList: View {
+    @Binding var selectedTab: String
 @ObservedObject var fetcher = PostFetcher()
+    @ObservedObject var friendFetcher = FriendPostFetcher()
     var body: some View {
-        
-        List(fetcher.posts){ post in
-            HStack(alignment: .center){
-                VStack(alignment: .center){
-                        Image(systemName: "globe").font(.system(size: 16.0))
-                    Text(post.time).font(.custom("Gotham-Book", size: 14))
-                    }
-                    
-                    Spacer().frame(width: 50)
-                    
-                VStack(alignment: .center){
-                    Text(post.title)
-                            .font(.custom("Gotham-Medium", size: 14))
-                            .multilineTextAlignment(.center)
-                        
+        List{
+            if selectedTab == "public" {
+                
+                ForEach(fetcher.posts){ post in
                     HStack(alignment: .center){
-                        Image(post.profileLeft).resizable()
-                                .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                            Rectangle()
-                                .foregroundColor(ColorManager.wyrePurple)
-                                .frame(height: 2)
-                        Image(post.profileRight).resizable()
-                                .frame(width: 40, height: 40)
-                            .clipShape(Circle())
+                        VStack(alignment: .center){
+                                Image(systemName: "globe").font(.system(size: 16.0))
+                            Text(post.time).font(.custom("Gotham-Book", size: 14))
+                            }
+
+                            Spacer().frame(width: 50)
+
+                        VStack(alignment: .center){
+                            Text("\(post.user1)" + " paid " + "\(post.user2)")
+                                    .font(.custom("Gotham-Medium", size: 14))
+                                    .multilineTextAlignment(.center)
+
+                            HStack(alignment: .center){
+                                Image(post.profileLeft).resizable()
+                                        .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                    Rectangle()
+                                        .foregroundColor(ColorManager.wyrePurple)
+                                        .frame(height: 2)
+                                Image(post.profileRight).resizable()
+                                        .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                }
+
+                            Text(post.caption)
+                                    .font(.custom("Gotham-Book", size: 14))
+                                    .multilineTextAlignment(.center)
                         }
-                        
-                    Text(post.caption)
-                            .font(.custom("Gotham-Book", size: 14))
-                            .multilineTextAlignment(.center)
+                        .lineSpacing(3.0)
+
+                            Spacer().frame(width: 50)
+
+                        HStack(alignment: .center){
+                                    Image(systemName: "heart").font(.system(size: 16.0))
+                            Text("\(post.likeCount)").font(.custom("Gotham-Book", size: 14))
+                            }
+
+                        }.padding(15)
                 }
-                .lineSpacing(3.0)
-                    
-                    Spacer().frame(width: 50)
-                    
-                HStack(alignment: .center){
-                            Image(systemName: "heart").font(.system(size: 16.0))
-                    Text("\(post.likeCount)").font(.custom("Gotham-Book", size: 14))
-                    }
-                    
+                
+            } else if selectedTab == "friends" {
+                ForEach(friendFetcher.posts){ post in
+                    HStack(alignment: .center){
+                        VStack(alignment: .center){
+                                Image(systemName: "globe").font(.system(size: 16.0))
+                            Text(post.time).font(.custom("Gotham-Book", size: 14))
+                            }
+
+                            Spacer().frame(width: 50)
+
+                        VStack(alignment: .center){
+                            Text("\(post.user1)" + " paid " + "\(post.user2)")
+                                    .font(.custom("Gotham-Medium", size: 14))
+                                    .multilineTextAlignment(.center)
+
+                            HStack(alignment: .center){
+                                Image(post.profileLeft).resizable()
+                                        .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                    Rectangle()
+                                        .foregroundColor(ColorManager.wyrePurple)
+                                        .frame(height: 2)
+                                Image(post.profileRight).resizable()
+                                        .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                }
+
+                            Text(post.caption)
+                                    .font(.custom("Gotham-Book", size: 14))
+                                    .multilineTextAlignment(.center)
+                        }
+                        .lineSpacing(3.0)
+
+                            Spacer().frame(width: 50)
+
+                        HStack(alignment: .center){
+                                    Image(systemName: "heart").font(.system(size: 16.0))
+                            Text("\(post.likeCount)").font(.custom("Gotham-Book", size: 14))
+                            }
+
+                        }.padding(15)
                 }
-                .padding(15)
+            }
         }
         
     }

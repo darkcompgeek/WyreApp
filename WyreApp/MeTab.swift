@@ -22,7 +22,6 @@ struct MeTab: View {
                     .padding()
                 Spacer()
             }
-            FeedList()
         }
     }
 }
