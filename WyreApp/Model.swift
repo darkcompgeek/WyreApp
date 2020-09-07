@@ -112,7 +112,7 @@ public class FriendPostFetcher: ObservableObject {
                     print("No Data")
                 }
             } catch {
-                print("Error")
+                print("Something went wrong")
             }
             
             
